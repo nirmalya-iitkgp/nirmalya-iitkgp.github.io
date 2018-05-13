@@ -106,7 +106,7 @@ button:hover, a:hover {
     cursor: pointer; /* Add a pointer on hover */
 }
 img{
-border-radius : 50%;
+border-radius : 5%;
 }
 
 #facebook, #quora
