@@ -20,7 +20,7 @@ margin:auto;
 
 .card {
     box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.2);
-    max-width: 250px;
+    max-width: 25%;
 	background : white;
     margin: auto;
 	border-radius: 2%;
@@ -41,7 +41,7 @@ button {
     background-color: #000;
     text-align: center;
     cursor: pointer;
-    width: 50px;
+    width: 5%;
     font-size: 18px;
 }
 
@@ -61,7 +61,7 @@ button:hover, a:hover {
   color: #444;
   cursor: pointer;
   padding: 18px;
-  width: 50%;
+  width: 30%;
   border: none;
   text-align: left;
   outline: none;
@@ -96,7 +96,7 @@ button:hover, a:hover {
     position:none; /* Sit on top of the page content */
     display: none; /* Hidden by default */
     width: 100%; /* Full width (cover the whole page) */
-    height: 100px; /* Full height (cover the whole page) */
+    height: 100%; /* Full height (cover the whole page) */
     top: 0; 
     left: 0;
     right: 0;
