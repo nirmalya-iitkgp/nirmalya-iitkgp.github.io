@@ -119,7 +119,14 @@ hr {
   background-size: cover;
  
 }
-
+@media only screen and (max-width: 1020px) {
+    .card {
+        display: none;
+    }
+    .btn-text {
+      font-size: 15px;
+    }
+}
 .button{
   background: black;
   display: inline-block;
@@ -375,15 +382,6 @@ button:hover, a:hover {
   width:90%; 
   margin:3%; 
   height:300px;
-}
-
-@media only screen and (max-width: 1020px) {
-    .card {
-        display: none;
-    }
-    .btn {
-      display: none;
-    }
 }
 
 #particles-js{
