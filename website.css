@@ -22,7 +22,9 @@ body{
   background:#000 ;
 }
 .center-content{
-  height: 100%;
+  height: 80%;
+  margin-left: 10%;
+  margin-right: 20%;
 }
 
 .toptext{
@@ -57,7 +59,7 @@ span {
 .box-3 {
   position: relative;
   vertical-align: bottom;
-  height: 30vh;
+  height: 20vh;
 }
 .btn-text {
   font-size: 2vw;
@@ -111,7 +113,7 @@ span {
   transform: scale(1,1);
 }
 .card {
-  position: relative;
+  position: sticky;
   float:right;
   box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.2);
   min-height: 100%;
@@ -188,28 +190,8 @@ button:hover, a:hover {
   color: white;
 }
 
-.twitter {
-  background: #55ACEE;
-  color: white;
-}
-
-.google {
-  background: #21759b;
-  color: white;
-}
-
-.linkedin {
-  background: #007bb5;
-  color: white;
-}
-
-.youtube {
-  background: #121212;
-  color: white;
-}
-
 .gmail, #myBtn {
-  background: black;
+  background: transperant;
   color: white;
   display: inline-block;
   font-size: 1.5vw;
@@ -387,6 +369,7 @@ button:hover, a:hover {
 }
 .Highlight{
 	color: yellowgreen;
+	font-style: italic;
 }	
 #particles-js{
   position:fixed;
