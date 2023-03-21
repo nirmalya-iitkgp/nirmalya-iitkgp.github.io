@@ -139,6 +139,15 @@ span {
       background: transparent;
     }
 }
+@media only screen and (max-width: 320px) {
+    .card {
+        display: inline-block;
+		min-width: 60%;
+    }
+    .center-content{
+		display: none;
+	}	
+}
 .button{
   background: black;
   display: inline-block;
