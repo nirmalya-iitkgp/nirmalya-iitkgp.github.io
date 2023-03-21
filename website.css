@@ -93,7 +93,7 @@ span {
   opacity: 0 ;
   transform: scale(0.5,0.5);
 }
-
+/*
 .btn-three::after {
   content: '';
   position: absolute;
@@ -107,7 +107,7 @@ span {
   border: 1px solid yellowgreen;
   transform: scale(1.2,1.2);
 }
-
+*/
 .btn-three:hover::after {
   opacity: 1;
   transform: scale(1,1);
