@@ -17,17 +17,17 @@ body{
   height: 30vh;
   padding-top: 5%;
   font-size: 5vw;
-  -webkit-text-stroke: 1px yellowgreen;
+  -webkit-text-stroke: 0.05vw yellowgreen;
   color: transparent;
   background-image: linear-gradient(#fff,#fff);
   background-repeat: no-repeat;
   -webkit-background-clip: text;
-  background-position: -700px 30px;
+  background-position: -300px 30px;
   -webkit-animation: backcolor 15s linear infinite alternate;
 }
 @keyframes backcolor {
   100%{
-    background-position: 0 0;
+    background-position: -1400px 0;
   }
 }
 .typetext{
@@ -79,6 +79,7 @@ span {
   opacity: 0 ;
   transform: scale(0.5,0.5);
 }
+/*
 .btn-three::after {
   content: '';
   position: absolute;
@@ -92,6 +93,7 @@ span {
   border: 1px solid yellowgreen;
   transform: scale(1.2,1.2);
 }
+*/
 .btn-three:hover::after {
   opacity: 1;
   transform: scale(1,1);
@@ -105,7 +107,7 @@ span {
   border-radius: 0px;
   background : white;
   text-align: center;
-  display:inline-block;
+  display: inline-block;
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
@@ -371,7 +373,9 @@ button:hover, a:hover {
   margin:3%; 
   height:300px;
 }
-
+.Highlight{
+	color: yellowgreen;
+}	
 #particles-js{
   position:fixed;
   width: 100%;
