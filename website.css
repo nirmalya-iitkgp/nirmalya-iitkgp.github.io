@@ -74,8 +74,8 @@ h1:hover span{
 }
 .typetext{
   position: relative;
-  margin-top: 10%;
-  height: 30vh;
+  padding-top: 10%;
+  padding-bottom: 10%;
 }
 h2 {
   color: white;
@@ -87,7 +87,7 @@ h2 {
 .box-3 {
   position: relative;
   vertical-align: bottom;
-  height: 20vh;
+  padding-bottom: 10%;
 }
 .btn-text {
   font-size: 2vw;
@@ -237,7 +237,7 @@ button:hover, a:hover {
   background: transperant;
   color: white;
   display: inline-block;
-  font-size: 1.5vw;
+  font-size: 22px;
   
 }
 
@@ -246,7 +246,7 @@ button:hover, a:hover {
   font-size: 30px;
 }
 .footer {
-    position:fixed;
+    position:fixed;z
     left: 0;
     bottom: 0;
     width: 100%;
