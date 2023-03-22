@@ -120,6 +120,12 @@ h2 {
 .btn-three:hover::before {
   opacity: 0;
   transform: scale(0.5,0.5);
+  
+}
+.btn-three .btn-text:hover::before {
+  opacity: 0;
+  transform: scale(0.5,0.5);
+  
 }
 /*
 .btn-three::after {
@@ -164,13 +170,16 @@ h2 {
       font-size: 15px;
     }
     .btn-three{
-      background: transparent;
+      opacity: 0.5;
+    }
+    .btn-text{
+      color: yellowgreen;
     }
 }
 @media only screen and (max-width: 320px) {
     .card {
         display: inline-block;
-		min-width: 60%;
+		    min-width: 60%;
     }
     .center-content{
 		display: none;
