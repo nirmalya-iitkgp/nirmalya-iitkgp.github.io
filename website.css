@@ -26,24 +26,6 @@ body{
   margin-left: 10%;
   margin-right: 20%;
 }
-
-/*.toptext{
-  height: 30vh;
-  padding-top: 5%;
-  font-size: 5vw;
-  -webkit-text-stroke: 0.05vw yellowgreen;
-  color: transparent;
-  background-image: linear-gradient(#fff,#fff);
-  background-repeat: no-repeat;
-  -webkit-background-clip: text;
-  background-position: 100% 100%;
-  -webkit-animation: backcolor 15s linear infinite alternate;
-}
-@keyframes backcolor {
-  100%{
-    background-position: -100% 0;
-  }
-}*/
 h1{
   position: relative;
   padding-top: 10vw;
@@ -174,6 +156,9 @@ h2 {
     }
     .btn-text{
       color: yellowgreen;
+    }
+    canvas{
+      position: fixed;
     }
 }
 @media only screen and (max-width: 320px) {
