@@ -87,7 +87,7 @@ h2 {
 .box-3 {
   position: relative;
   vertical-align: bottom;
-  padding-bottom: 10%;
+  padding-bottom: 5%;
 }
 .btn-text {
   font-size: 2vw;
@@ -118,7 +118,7 @@ h2 {
   transition: all 0.3s;
 }
 .btn-three:hover::before {
-  opacity: 0 ;
+  opacity: 0;
   transform: scale(0.5,0.5);
 }
 /*
@@ -137,7 +137,7 @@ h2 {
 }
 */
 .btn-three:hover::after {
-  opacity: 1;
+  opacity: 0.5;
   transform: scale(1,1);
 }
 .card {
@@ -156,7 +156,7 @@ h2 {
   background-size: cover;
  
 }
-@media only screen and (max-width: 1020px) {
+@media only screen and (max-width: 757px) {
     .card {
         display: none;
     }
@@ -165,6 +165,9 @@ h2 {
     }
     .btn-three{
       background: transparent;
+    }
+    canvas {
+      display: none;
     }
 }
 @media only screen and (max-width: 320px) {
@@ -175,6 +178,15 @@ h2 {
     .center-content{
 		display: none;
 	}	
+}
+@import url(//fonts.googleapis.com/css?family=Lato:300:400);
+
+
+p {
+  font-family: 'Lato', sans-serif;
+  letter-spacing: 1px;
+  font-size:14px;
+  color: #333333;
 }
 .button{
   background: black;
@@ -228,10 +240,15 @@ button:hover, a:hover {
   opacity: 0.7;
 }
 
-.facebook {
+.facebook, .linkedin, .twitter, .wordpress, .reddit {
   background: #3B5998;
   color: white;
 }
+.blogger, .instagram, .medium, .tumblr, .github {
+  background: black;
+  color: white;
+}
+
 
 .gmail, #myBtn {
   background: transperant;
@@ -433,17 +450,8 @@ button:hover, a:hover {
 #stats, .count-particles{ -webkit-user-select: none; margin-top: 5px; margin-left: 5px; } 
 #stats{ border-radius: 3px 3px 0 0; overflow: hidden; } 
 .count-particles{ border-radius: 0 0 3px 3px; }
-canvas{ display: block; vertical-align: bottom; color:white;}*/
+/*canvas{ display: block; vertical-align: bottom; color:white;}*/
 
-@import url(//fonts.googleapis.com/css?family=Lato:300:400);
-
-
-p {
-  font-family: 'Lato', sans-serif;
-  letter-spacing: 1px;
-  font-size:14px;
-  color: #333333;
-}
 
 .flex { /*Flexbox for containers*/
   display: flex;
