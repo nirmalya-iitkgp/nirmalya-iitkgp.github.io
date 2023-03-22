@@ -1,207 +1,200 @@
 @import url(//fonts.googleapis.com/css?family=Lato:300:400);
 html{
-  height:100%;
+	height:100%;
+  width: 100%;
 }
 @media screen and (min-width: 320px) and (max-width: 767px) and (orientation: portrait) {
-  html {
-    transform: rotate(-90deg);
-    transform-origin: left top;
-    width: 100vh;
-    height: 100vw;
-    overflow-x: hidden;
-    position: absolute;
-    top: 100%;
-    left: 0;
-  }
+	html {
+		transform: rotate(-90deg);
+		transform-origin: left top;
+		width: 100vh;
+		height: 100vw;
+		overflow-x: hidden;
+		position: absolute;
+		top: 100%;
+		left: 0;
+	}
 }
 body{
-  height:100%;
-  width:100%;
-  text-align:center;
-  font-family: Georgia; 
-  margin:auto;
-  background:#000 ;
+	height:100%;
+	width:100%;
+	text-align:center;
+	font-family: Georgia; 
+	margin:auto;
+	background:#000 ;
 }
 .center-content{
-  height: 80%;
-  margin-left: 10%;
-  margin-right: 20%;
+	height: 80%;
+	margin-left: 10%;
+	margin-right: 20%;
 }
 h1{
-  position: relative;
-  padding-top: 10vw;
-  color: #484848;
-  font-size: 50px;
-  font-weight: bold;
-  font-family: monospace;
-  letter-spacing: 7px;
-  cursor: pointer
+	position: relative;
+	padding-top: 10vw;
+	color: #484848;
+	font-size: 50px;
+	font-weight: bold;
+	font-family: monospace;
+	letter-spacing: 7px;
+	cursor: pointer
 }
 h1 span{
-  transition: .5s linear
+	transition: .5s linear
 }
 h1:hover span:nth-child(1){
-  margin-right: 5px
+	margin-right: 5px
 }
 h1:hover span:nth-child(1):after{
-  content: " ";
+	content: " ";
 }
 h1:hover span:nth-child(2){
-  margin-left: 30px
+	margin-left: 30px
 }
 h1:hover span{
-  color: #fff;
-  text-shadow: 0 0 10px #967bb6,
-               0 0 20px #967bb6, 
-               0 0 40px #967bb6;
+	color: #fff;
+	text-shadow: 0 0 10px #967bb6,
+							 0 0 20px #967bb6, 
+							 0 0 40px #967bb6;
 }
 .typetext{
-  position: relative;
-  padding-top: 10%;
-  padding-bottom: 10%;
+	position: relative;
+	padding-top: 10%;
+	padding-bottom: 10%;
 }
 h2 {
-  color: white;
-  font-size: 4vw;
+	color: white;
+	font-size: 4vw;
 }
 .auto-type {
-  color: yellowgreen;
+	color: yellowgreen;
 }
 /*
 .box-3 {
-  position: relative;
-  vertical-align: bottom;
-  padding-bottom: 5%;
+	position: relative;
+	vertical-align: bottom;
+	padding-bottom: 5%;
 }
 .btn-text {
-  font-size: 2vw;
-  font-family: Goudy Old Style;
-  text-align: center;
-  color: #808080;
-  opacity: 0.8;
-  display: inline-block;
-  word-wrap: normal;
+	font-size: 2vw;
+	font-family: Goudy Old Style;
+	text-align: center;
+	color: #808080;
+	opacity: 0.8;
+	display: inline-block;
+	word-wrap: normal;
 
 }
 
 .btn-three {
-  color: #FFF;
-  transition: all 0.5s;
-  position: relative;
-  word-wrap: normal;
+	color: #FFF;
+	transition: all 0.5s;
+	position: relative;
+	word-wrap: normal;
 }
 .btn-three::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 1;
-  background-color: rgba(255,255,255,0.1);
-  transition: all 0.3s;
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+	background-color: rgba(255,255,255,0.1);
+	transition: all 0.3s;
 }
 .btn-three:hover::before {
-  opacity: 0;
-  transform: scale(0.5,0.5);
-  
+	opacity: 0;
+	transform: scale(0.5,0.5);
+	
 }
 .btn-three .btn-text:hover::before {
-  opacity: 0;
-  transform: scale(0.5,0.5);
-  
+	opacity: 0;
+	transform: scale(0.5,0.5);
+	
 }
 */
 /*
 .btn-three::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 1;
-  opacity: 0;
-  transition: all 0.3s;
-  border: 1px solid yellowgreen;
-  transform: scale(1,1);
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+	opacity: 0;
+	transition: all 0.3s;
+	border: 1px solid yellowgreen;
+	transform: scale(1,1);
 }
 */
 /*
 .btn-three:hover::after {
-  opacity: 0.5;
-  transform: scale(1,1);
+	opacity: 0.5;
+	transform: scale(1,1);
 }
 */
 .btn-shine {
-  position: relative;
-  vertical-align: bottom;
-  padding-bottom: 10%;
-  display: inline-block;
-  color: #fff;
-  background: linear-gradient(to right, #4d4d4d 0, #fff 10%, #4d4d4d 40%);
-  background-position: 0;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: shine 3s infinite linear;
-  animation-fill-mode: forwards;
-  -webkit-text-size-adjust: none;
-  font-size: 2vw;
-  text-decoration: none;
-  white-space: nowrap;
+	position: relative;
+	vertical-align: bottom;
+	padding-bottom: 10%;
+	display: inline-block;
+	color: #fff;
+	background: linear-gradient(to right, #4d4d4d 0, #fff 10%, #4d4d4d 40%);
+	background-position: 0;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	animation: shine 3s infinite linear;
+	animation-fill-mode: forwards;
+	-webkit-text-size-adjust: none;
+	font-size: 2vw;
+	text-decoration: none;
+	white-space: nowrap;
 }
 @keyframes shine {
-  0% {
-    background-position: 0;
-  }
-  60% {
-    background-position: 180px;
-  }
-  100% {
-    background-position: 180px;
-  }
+	0% {
+		background-position: 0;
+	}
+	60% {
+		background-position: 180px;
+	}
+	100% {
+		background-position: 180px;
+	}
 }
 .btn-shine:hover{
-  text-decoration: none;
+	text-decoration: none;
 }
 .card {
-  position: sticky;
-  float:right;
-  box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.2);
-  min-height: 100%;
-  width: 30%;
-  border-radius: 0px;
-  background : white;
-  text-align: center;
-  display: inline-block;
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+	position: sticky;
+	float:right;
+	min-height: 100%;
+	width: 30%;
+	border-radius: 0px;
+	background : white;
+	text-align: center;
+	display: inline-block;
+	background-attachment: fixed;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
  
 }
 @media only screen and (max-width: 757px) {
-    .card {
-        display: none;
-    }
-    /*
-    .btn-text {
-      font-size: 15px;
-    }
-    .btn-three{
-      opacity: 0.5;
-    }
-    .btn-text{
-      color: yellowgreen;
-    }
-    */
+		.card {
+				display: none;
+		}
+		.btn-shine{
+			font-size: 15px;
+			color: yellowgreen;
+		}
 }
 @media only screen and (max-width: 320px) {
-    .card {
-        display: inline-block;
-		    min-width: 60%;
-    }
-    .center-content{
+		.card {
+				display: inline-block;
+				min-width: 60%;
+		}
+		.center-content{
 		display: none;
 	}	
 }
@@ -209,134 +202,134 @@ h2 {
 
 
 p {
-  font-family: 'Lato', sans-serif;
-  letter-spacing: 1px;
-  font-size:14px;
-  color: #333333;
+	font-family: 'Lato', sans-serif;
+	letter-spacing: 1px;
+	font-size:14px;
+	color: #333333;
 }
 .button{
-  background: black;
-  display: inline-block;
-  width:45%;
-  height:10%;
-  color: white;
-  padding: 1%;
-  margin:2%;
-  border-radius: 16px;
-  text-align: center;
-  cursor: pointer;
+	background: black;
+	display: inline-block;
+	width:45%;
+	height:10%;
+	color: white;
+	padding: 1%;
+	margin:2%;
+	border-radius: 16px;
+	text-align: center;
+	cursor: pointer;
 }
 
 a {
-    text-decoration: none;
-    font-size: 22px;
-    color: black;
+		text-decoration: none;
+		font-size: 22px;
+		color: black;
 }
 
 button:hover, a:hover {
-    opacity: 0.7;
+		opacity: 0.7;
 }
 
 .icon-bar {
-  position: fixed;
-  width: 5%;
-  min-width: 50px;
-  top: 45%;
-  -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
+	position: fixed;
+	width: 5%;
+	min-width: 50px;
+	top: 45%;
+	-webkit-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	transform: translateY(-50%);
 }
 .nav-item {
-  display: none;
-  visibility: hidden;
+	display: none;
+	visibility: hidden;
 }
 
 .icon-bar a {
-  display: block;
-  text-align: center;
-  padding: 1vw;
-  transition: all 0.3s ease;
-  color: white;
-  font-size: 20px;
+	display: block;
+	text-align: center;
+	padding: 1vw;
+	transition: all 0.3s ease;
+	color: white;
+	font-size: 20px;
 }
 .icon-bar i {
-  color: whitesmoke;
+	color: whitesmoke;
 }
 .icon-bar a:hover {
-  opacity: 0.7;
+	opacity: 0.7;
 }
 
 .facebook, .linkedin, .twitter, .wordpress, .reddit {
-  background: #3B5998;
-  color: white;
+	background: #3B5998;
+	color: white;
 }
 .blogger, .instagram, .medium, .tumblr, .github {
-  background: black;
-  color: white;
+	background: black;
+	color: white;
 }
 
 
 .gmail, #myBtn {
-  background: transperant;
-  color: white;
-  display: inline-block;
-  font-size: 22px;
-  
+	background: transperant;
+	color: white;
+	display: inline-block;
+	font-size: 22px;
+	
 }
 
 .content {
-  margin-left: 75px;
-  font-size: 30px;
+	margin-left: 75px;
+	font-size: 30px;
 }
 .footer {
-    position:fixed;z
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    background-color:none;
-    color: white;
-    text-align: center;
-  }
+		position:fixed;z
+		left: 0;
+		bottom: 0;
+		width: 100%;
+		background-color:none;
+		color: white;
+		text-align: center;
+	}
 
 /* The Modal (background) */
 .modal {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
-  left: 0;
-  top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+	display: none; /* Hidden by default */
+	position: fixed; /* Stay in place */
+	z-index: 1; /* Sit on top */
+	left: 0;
+	top: 0;
+	width: 100%; /* Full width */
+	height: 100%; /* Full height */
+	overflow: auto; /* Enable scroll if needed */
+	background-color: rgb(0,0,0); /* Fallback color */
+	background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
 }
 
 /* Modal Content/Box */
 
 
 .modal-content {
-  background-color: #fefefe;
-  margin: 15% auto; 
-  padding: 20px;
-  border: 1px solid #888;
-  width: 80%;  Could be more or less, depending on screen size 
+	background-color: #fefefe;
+	margin: 15% auto; 
+	padding: 20px;
+	border: 1px solid #888;
+	width: 80%;  
 }
 
 
 /* The Close Button */
 .close {
-  color: #aaa;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
+	color: #aaa;
+	float: right;
+	font-size: 28px;
+	font-weight: bold;
 }
 
 .close:hover,
 .close:focus {
-  color: black;
-  text-decoration: none;
-  cursor: pointer;
+	color: black;
+	text-decoration: none;
+	cursor: pointer;
 } 
 
 
@@ -347,198 +340,185 @@ button:hover, a:hover {
 
 /* Slideshow container */
 .slideshow-container {
-  max-width: 90%;
-  position: relative;
-  margin: auto;
+	max-width: 90%;
+	position: relative;
+	margin: auto;
 }
 
 /* Hide the images by default */
 .mySlides {
-  display: none;
+	display: none;
 }
 
 /* Next & previous buttons */
 .prev, .next {
-  cursor: pointer;
-  position: absolute;
-  top: 50%;
-  width: auto;
-  margin-top: -22px;
-  padding: 16px;
-  color: white;
-  font-weight: bold;
-  font-size: 18px;
-  transition: 0.6s ease;
-  border-radius: 0 3px 3px 0;
-  user-select: none;
+	cursor: pointer;
+	position: absolute;
+	top: 50%;
+	width: auto;
+	margin-top: -22px;
+	padding: 16px;
+	color: white;
+	font-weight: bold;
+	font-size: 18px;
+	transition: 0.6s ease;
+	border-radius: 0 3px 3px 0;
+	user-select: none;
 }
 
 /* Position the "next button" to the right */
 .next {
-  right: 0;
-  border-radius: 3px 0 0 3px;
+	right: 0;
+	border-radius: 3px 0 0 3px;
 }
 
 /* On hover, add a black background color with a little bit see-through */
 .prev:hover, .next:hover {
-  background-color: rgba(0,0,0,0.8);
+	background-color: rgba(0,0,0,0.8);
 }
 
 /* Caption text */
 .text {
-  color: #f2f2f2;
-  font-size: 15px;
-  padding: 8px 12px;
-  position: absolute;
-  bottom: 8px;
-  width: 100%;
-  text-align: center;
+	color: #f2f2f2;
+	font-size: 15px;
+	padding: 8px 12px;
+	position: absolute;
+	bottom: 8px;
+	width: 100%;
+	text-align: center;
 }
 
 /* Number text (1/3 etc) */
 .numbertext {
-  color: #f2f2f2;
-  font-size: 12px;
-  padding: 8px 12px;
-  position: absolute;
-  top: 0;
+	color: #f2f2f2;
+	font-size: 12px;
+	padding: 8px 12px;
+	position: absolute;
+	top: 0;
 }
 
 /* The dots/bullets/indicators */
 .dot {
-  cursor: pointer;
-  height: 15px;
-  width: 15px;
-  margin: 0 2px;
-  background-color: #bbb;
-  border-radius: 50%;
-  display: inline-block;
-  transition: background-color 0.6s ease;
+	cursor: pointer;
+	height: 15px;
+	width: 15px;
+	margin: 0 2px;
+	background-color: #bbb;
+	border-radius: 50%;
+	display: inline-block;
+	transition: background-color 0.6s ease;
 }
 
 .active, .dot:hover {
-  background-color: #717171;
+	background-color: #717171;
 }
 
 /* Fading animation */
 .fade {
-  -webkit-animation-name: fade;
-  -webkit-animation-duration: 1.5s;
-  animation-name: fade;
-  animation-duration: 1.5s;
+	-webkit-animation-name: fade;
+	-webkit-animation-duration: 1.5s;
+	animation-name: fade;
+	animation-duration: 1.5s;
 }
 
 @-webkit-keyframes fade {
-  from {opacity: .4}
-  to {opacity: 1}
+	from {opacity: .4}
+	to {opacity: 1}
 }
 
 @keyframes fade {
-  from {opacity: .4}
-  to {opacity: 1}
+	from {opacity: .4}
+	to {opacity: 1}
 }
 
 .slide{
-  overflow: hidden;
-  object-fit: cover;
-  width:90%; 
-  margin:3%; 
-  height:300px;
+	overflow: hidden;
+	object-fit: cover;
+	width:90%; 
+	margin:3%; 
+	height:300px;
 }
 .Highlight{
 	color: yellowgreen;
 	font-style: italic;
 }	
+#spark {
+  display:none;
+}
+canvas {
+  width:100%;
+  height:15vh;
+
+}
 #particles-js{
-  position:fixed;
-  width: 100%;
-  min-height: 75%; 
-  background-color: transparent;  
-  background-repeat: no-repeat; 
-  background-size: cover; 
-  background-position: 50% 50%; } /* ---- stats.js ---- */ 
-
-.count-particles{ 
-  background: #000022; 
-  position: absolute; 
-  top: 48px; left: 0; 
-  width: 80px; 
-  color: #13E8E9; 
-  font-size: .8em; 
-  text-align: left; 
-  text-indent: 4px; 
-  line-height: 14px; 
-  padding-bottom: 2px; 
-  font-family: Helvetica, Arial, sans-serif; 
-  font-weight: bold; } 
-
-.js-count-particles{ font-size: 1.1em; } 
-#stats, .count-particles{ -webkit-user-select: none; margin-top: 5px; margin-left: 5px; } 
-#stats{ border-radius: 3px 3px 0 0; overflow: hidden; } 
-.count-particles{ border-radius: 0 0 3px 3px; }
-/*canvas{ display: block; vertical-align: bottom; color:white;}*/
-
+	position:fixed;
+	width: 100%;
+	min-height: 75%; 
+	background-color: transparent;  
+	background-repeat: no-repeat; 
+	background-size: cover; 
+	background-position: 50% 50%; } /* ---- stats.js ---- */ 
 
 .flex { /*Flexbox for containers*/
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
 }
 
 .waves {
-  position:relative;
-  width: 100%;
-  height:15vh;
-  margin-bottom:-7px; /*Fix for safari gap*/
-  min-height:30px;
-  max-height:100px;
+	position:relative;
+	width: 100%;
+	height:15vh;
+	margin-bottom:-7px; /*Fix for safari gap*/
+	min-height:30px;
+	max-height:100px;
 }
 
 .content {
-  position:relative;
-  height:20vh;
-  text-align:center;
-  background-color: white;
+	position:relative;
+	height:20vh;
+	text-align:center;
+	background-color: white;
 }
 
 /* Animation */
 
 .parallax > use {
-  animation: move-forever 25s cubic-bezier(.55,.5,.45,.5)     infinite;
+	animation: move-forever 25s cubic-bezier(.55,.5,.45,.5)     infinite;
 }
 .parallax > use:nth-child(1) {
-  animation-delay: -2s;
-  animation-duration: 7s;
+	animation-delay: -2s;
+	animation-duration: 7s;
 }
 .parallax > use:nth-child(2) {
-  animation-delay: -3s;
-  animation-duration: 10s;
+	animation-delay: -3s;
+	animation-duration: 10s;
 }
 .parallax > use:nth-child(3) {
-  animation-delay: -4s;
-  animation-duration: 13s;
+	animation-delay: -4s;
+	animation-duration: 13s;
 }
 .parallax > use:nth-child(4) {
-  animation-delay: -5s;
-  animation-duration: 20s;
+	animation-delay: -5s;
+	animation-duration: 20s;
 }
 @keyframes move-forever {
-  0% {
-   transform: translate3d(-90px,0,0);
-  }
-  100% { 
-    transform: translate3d(85px,0,0);
-  }
+	0% {
+	 transform: translate3d(-90px,0,0);
+	}
+	100% { 
+		transform: translate3d(85px,0,0);
+	}
 }
 /*Shrinking for mobile*/
 @media (max-width: 768px) {
-  .waves {
-    height:1%;
-    min-height:10px;
-  }
-  .content {
-    height:30vh;
-  }
-  
+	.waves {
+		height:1%;
+		min-height:10px;
+	}
+	.content {
+		height:30vh;
+	}
+	
 }
