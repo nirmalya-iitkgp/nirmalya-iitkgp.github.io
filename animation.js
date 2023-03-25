@@ -175,7 +175,7 @@ class TextSparks
     }
 
     clear() {
-        this.engine.fillStyle = '#111';
+        this.engine.fillStyle = 'black';
         this.engine.fillRect(0, 0, this.width, this.height);
     }
 
