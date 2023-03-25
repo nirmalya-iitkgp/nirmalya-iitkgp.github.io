@@ -25,6 +25,7 @@ body{
 }
 .center-content{
 	height: 80%;
+	max-height: 500px;
 	margin-left: 10%;
 	margin-right: 20%;
 }
@@ -68,72 +69,6 @@ h2 {
 .auto-type {
 	color: yellowgreen;
 }
-/*
-.box-3 {
-	position: relative;
-	vertical-align: bottom;
-	padding-bottom: 5%;
-}
-.btn-text {
-	font-size: 2vw;
-	font-family: Goudy Old Style;
-	text-align: center;
-	color: #808080;
-	opacity: 0.8;
-	display: inline-block;
-	word-wrap: normal;
-
-}
-
-.btn-three {
-	color: #FFF;
-	transition: all 0.5s;
-	position: relative;
-	word-wrap: normal;
-}
-.btn-three::before {
-	content: '';
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	z-index: 1;
-	background-color: rgba(255,255,255,0.1);
-	transition: all 0.3s;
-}
-.btn-three:hover::before {
-	opacity: 0;
-	transform: scale(0.5,0.5);
-	
-}
-.btn-three .btn-text:hover::before {
-	opacity: 0;
-	transform: scale(0.5,0.5);
-	
-}
-*/
-/*
-.btn-three::after {
-	content: '';
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	z-index: 1;
-	opacity: 0;
-	transition: all 0.3s;
-	border: 1px solid yellowgreen;
-	transform: scale(1,1);
-}
-*/
-/*
-.btn-three:hover::after {
-	opacity: 0.5;
-	transform: scale(1,1);
-}
-*/
 .btn-shine {
 	position: relative;
 	vertical-align: bottom;
@@ -168,10 +103,11 @@ h2 {
 .card {
 	position: sticky;
 	float:right;
-	min-height: 100%;
+	min-height: 80%;
+	max-height: 500px;
 	width: 20%;
 	border-radius: 0px;
-	background : #000000;
+	background : transparent;
 	text-align: center;
 	display: inline-block;
 	background-attachment: fixed;
@@ -208,26 +144,27 @@ p {
 	color: #333333;
 }
 .button{
-	background: black;
-	display: inline-block;
-	width:45%;
-	height:10%;
-	color: white;
-	padding: 1%;
-	margin:2%;
-	border-radius: 16px;
-	text-align: center;
-	cursor: pointer;
+	width: 40%;
+  height: 10%;
+  position:relative;
+  display: inline-block;
+  border: solid rgba(255,255,255,0.1) 1px;
+  background: transparent;
+  cursor:pointer;
+  transition: all 1s;
+}
+.button:hover{
+	background : rgba(255,255,255,0.5);
 }
 
 a {
-		text-decoration: none;
 		font-size: 22px;
 		color: black;
 }
 
 button:hover, a:hover {
 		opacity: 0.7;
+		text-decoration: none;
 }
 
 .icon-bar {
@@ -274,7 +211,6 @@ button:hover, a:hover {
 	color: white;
 	display: inline-block;
 	font-size: 22px;
-	
 }
 
 .content {
@@ -332,7 +268,21 @@ button:hover, a:hover {
 	cursor: pointer;
 } 
 
+.mid-ht{
+	position: absolute;
+	display: inline-block;
+	width: 75%;
+	padding-left: 5%;
+	background-color: transparent;
+	height: 30vh;
+	position: relative;
 
+}
+@media only screen and (max-height: 750px){
+	.mid-ht{
+		display: none;
+	}
+}
 
 /* MAKING OF THE SLIDESHOW */
 
@@ -448,6 +398,7 @@ button:hover, a:hover {
 canvas {
   width:100%;
   height:15vh;
+  vertical-align: bottom;
 
 }
 #particles-js{
