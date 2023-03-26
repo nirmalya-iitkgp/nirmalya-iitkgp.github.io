@@ -135,18 +135,13 @@ h2 {
 	}	
 }
 
-@media only screen and (min-height: 750px){
-	.btn-shine{
-		display: none;
-	}
-}
 #btn_container{
 	width: 80%;
 	padding-left: 5%;
 }
 .btn-b {
 	float: right;
-	height: 5vh;
+	height: 10vh;
 	 background-color: #000;
 	 padding: 1rem 1rem;
 	 text-decoration: none;
@@ -157,7 +152,7 @@ h2 {
 }
  .btn-b i {
 	 color: #fc4f08;
-	 font-size: 4vw;
+	 font-size: 2vw;
 	 padding-right: 10px;
 	 transition: all 0.3s ease-in-out;
 }
@@ -191,7 +186,7 @@ h2 {
 }
  .btn-w {
  	 float: left ;
- 	 height: 5vh;
+ 	 height: 10vh;
 	 background-color: #000;
 	 padding: 1rem 1rem;
 	 text-decoration: none;
@@ -203,7 +198,7 @@ h2 {
 }
  .btn-w i {
 	 color: #286ed6;
-	 font-size: 4vw;
+	 font-size: 2vw;
 	 padding-right: 10px;
 	 transition: all 0.3s ease-in-out;
 }
