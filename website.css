@@ -14,6 +14,10 @@ html{
 		top: 100%;
 		left: 0;
 	}
+	.mid-ht, #btn_container{
+		display: none;
+	}
+
 }
 body{
 	height:100%;
@@ -367,12 +371,21 @@ button:hover, a:hover {
 	width: 75%;
 	padding-left: 5%;
 	background-color: transparent;
-	height: 60%;
+	height: 70%;
 	position: relative;
 	border: none;
 
 }
-@media only screen and (max-height: 500px){
+iframe{
+	height: 100%;
+	width: 80%;
+}
+@media only screen and (max-height: 750px){
+	.mid-ht, #btn_container{
+		display: none;
+	}
+}
+@media screen and (min-width: 320px) and (max-width: 767px) and (orientation: portrait) {
 	.mid-ht, #btn_container{
 		display: none;
 	}
