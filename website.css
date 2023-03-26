@@ -377,7 +377,7 @@ button:hover, a:hover {
 	border: none;
 
 }
-@media only screen and (max-height: 750px){
+@media only screen and (max-height: 500px){
 	.mid-ht, #btn_container{
 		display: none;
 	}
