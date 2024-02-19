@@ -83,7 +83,7 @@ class TextSparks
 
         // const canvas = document.querySelector('#test');
         const canvas = document.createElement('canvas');
-        const engine = canvas.getContext('2d');
+        const engine = canvas.getContext('2d',{ willReadFrequently: true });
 
         canvas.setAttribute('width', width);
         canvas.setAttribute('height', height);
