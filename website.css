@@ -13,6 +13,7 @@ body {
   overflow-x: hidden;
 }
 
+/* Layout */
 .main-flex-container {
   display: flex;
   width: 100vw;
@@ -107,7 +108,7 @@ h2 {
   100% { background-position: 180px; }
 }
 
-/* Right column: flex vertical, then row for canvas+resume */
+/* Right column: flex vertical, then row for canvas */
 .right-column {
   flex: 0 0 25vw;
   min-width: 240px;
@@ -266,6 +267,82 @@ h2 {
   }
 }
 
+/* Navigation bar: vertical by default, horizontal on small screens */
+.icon-bar {
+  width: 100%;
+  min-width: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  z-index: 5;
+  position: static;
+  left: unset;
+  top: unset;
+  background: transparent;
+}
+.icon-bar a {
+  display: block;
+  text-align: center;
+  padding: 1vw;
+  color: white;
+  font-size: 2vw;
+}
+.icon-bar i { color: whitesmoke; }
+.icon-bar a:hover > i { opacity: 0.7; }
+.icon-bar i:hover { transform: scale(0.9); }
+
+/* Make nav bar horizontal on small screens via JS toggle */
+.icon-bar-horizontal {
+  flex-direction: row !important;
+  width: 100vw !important;
+  min-width: 0 !important;
+  height: auto !important;
+  justify-content: center !important;
+  align-items: center !important;
+  font-size: 20px !important;
+  position: static !important;
+  left: unset !important;
+  top: unset !important;
+  background: transparent !important;
+}
+.icon-bar-horizontal a {
+  padding: 10px 12px !important;
+  font-size: 28px !important;
+  display: inline-block !important;
+}
+
+/* Modal Styles */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0; top: 0;
+  width: 100vw; height: 100vh;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.4);
+}
+.modal-content {
+  background-color: #fefefe;
+  margin: 10% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+.close:hover, .close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+.Highlight{ color: yellowgreen; font-style: italic; }
+#spark { display: none; }
+
 /* Responsive styles */
 @media only screen and (max-width: 1200px) {
   .right-column {
@@ -327,15 +404,7 @@ h2 {
   }
 }
 @media only screen and (max-width: 480px) {
-  .icon-bar {
-    flex-direction: row;
-    width: 100vw;
-    min-width: unset;
-    height: auto;
-    justify-content: center;
-    align-items: center;
-    font-size: 20px;
-  }
+  /* Do not override .icon-bar, only .icon-bar-horizontal will apply for horizontal nav */
   .main-flex-container {
     flex-direction: column;
   }
@@ -359,54 +428,3 @@ h2 {
     display: none !important;
   }
 }
-
-.icon-bar {
-  width: 100%;
-  min-width: 50px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-  z-index: 5;
-}
-.icon-bar a {
-  display: block;
-  text-align: center;
-  padding: 1vw;
-  color: white;
-  font-size: 2vw;
-}
-.icon-bar i { color: whitesmoke; }
-.icon-bar a:hover > i { opacity: 0.7; }
-.icon-bar i:hover { transform: scale(0.9); }
-
-/* Modal Styles */
-.modal {
-  display: none;
-  position: fixed;
-  z-index: 1000;
-  left: 0; top: 0;
-  width: 100vw; height: 100vh;
-  overflow: auto;
-  background-color: rgba(0,0,0,0.4);
-}
-.modal-content {
-  background-color: #fefefe;
-  margin: 10% auto;
-  padding: 20px;
-  border: 1px solid #888;
-  width: 80%;
-}
-.close {
-  color: #aaa;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
-}
-.close:hover, .close:focus {
-  color: black;
-  text-decoration: none;
-  cursor: pointer;
-}
-.Highlight{ color: yellowgreen; font-style: italic; }
-#spark { display: none; }
