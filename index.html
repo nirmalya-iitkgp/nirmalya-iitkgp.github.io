@@ -4,363 +4,112 @@
     <title>NP Pvt Ltd.</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
     <link href="website.css" rel="stylesheet" type="text/css"/>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
   </head>
-  
   <body>
-
-  <!-- <div class="parallax"> -->
-    <div id="particles-js">
-      <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script> 
-      <!-- <script src="https://threejs.org/examples/js/libs/stats.min.js"></script> -->
+    <div class="main-flex-container">
+      <!-- Left: Nav bar -->
+      <div class="nav-column">
+        <div class="icon-bar" id="main-icon-bar">
+          <a href="https://nirmalyapanigrahi.home.blog/" class="wordpress" target="_blank"><i class="fa fa-rss-square"></i></a>
+          <a href="https://www.reddit.com/r/Ideas_We_Believe/" class="reddit" target="_blank"><i class="fa fa-reddit"></i></a>
+          <a href="https://medium.com/@nirmalya.panigrahi" class="medium" target="_blank"><i class="fa fa-medium"></i></a>
+          <a href="https://www.linkedin.com/in/nirmalya-panigrahi-461958140/" class="linkedin" target="_blank"><i class="fa fa-linkedin"></i></a>
+          <a href="https://open.spotify.com/show/0WzbCXJGX3X18sZXyG0qjC?si=552111d512a344f7" class="tumblr" target="_blank"><i class="fa fa-spotify"></i></a>
+          <a href="https://www.facebook.com/PanigrahiNirma" class="facebook" target="_blank"><i class="fa fa-facebook"></i></a>
+          <a href="https://github.com/nirmalya-iitkgp" class="github" target="_blank"><i class="fa fa-github-alt"></i></a>
+          <a href="https://twitter.com/nirma_iitkgp" class="twitter" target="_blank"><i class="fa fa-twitter"></i></a>
+        </div>
+      </div>
+      <!-- Center: Particles background + Text content -->
+      <div class="center-column">
+        <div id="particles-js"></div>
+        <div class="center-content">
+          <h1><span>N</span>IRMALYA&emsp;<span>PANIGRAHI</span></h1>
+          <h2 class="typetext"> I'm an <span class="auto-type"> </span></h2>
+          <a href="https://nirmalyapanigrahi.blogspot.com/" class="btn-shine" target="_blank">
+            <i class="fa fa-angle-double-left"></i> &emsp; click on the icons to dive deeper
+          </a>
+          <br><br>
+        </div>
+      </div>
+      <!-- Right: Slideshow + Canvas row (canvas is a button for modal) -->
+      <div class="right-column">
+        <div class="slideshow-responsive">
+          <div class="slideshow-container">
+            <div class="mySlides fade">
+              <div class="numbertext">1 / 4</div>
+              <img class="slide" src="images/1.jpg">
+            </div>
+            <div class="mySlides fade">
+              <div class="numbertext">2 / 4</div>
+              <img class="slide" src="images/2.jpg">
+            </div>
+            <div class="mySlides fade">
+              <div class="numbertext">3 / 4</div>
+              <img class="slide" src="images/3.jpg">
+            </div>
+            <div class="mySlides fade">
+              <div class="numbertext">4 / 4</div>
+              <img class="slide" src="images/4.jpg">
+            </div>
+          </div>
+          <br>
+          <div style="text-align:center">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+            <span class="dot" onclick="currentSlide(4)"></span>
+          </div>
+        </div>
+        <div class="right-canvas-row">
+          <div class="canvas-wrapper">
+            <canvas id="test" tabindex="0" title="Click to view My Resume"></canvas>
+          </div>
+        </div>
+        <!-- spark is required for animation.js -->
+        <div id="spark" style="display:none">
+          <ul data-time="3000">
+            <li data-hue="072">I</li>
+            <li data-hue="144">I</li>
+            <li data-hue="216">M</li>
+            <li data-hue="288">-</li>
+            <li data-hue="000">A</li>
+          </ul>
+          <ul data-time="3000">
+            <li data-hue="045">I</li>
+            <li data-hue="090">I</li>
+            <li data-hue="135">T</li>
+            <li data-hue="180">-</li>
+            <li data-hue="225">K</li>
+            <li data-hue="270">G</li>
+            <li data-hue="315">P</li>
+          </ul>
+        </div>
+      </div>
     </div>
-      
-    <div class="icon-bar">
-      <a href="https://nirmalyapanigrahi.home.blog/" class="wordpress" target="_blank"><i class="fa fa-rss-square"></i></a>
-      <!-- <p class="nav-item">Wordpress</p>-->
-      <a href="https://www.reddit.com/r/Ideas_We_Believe/" class="reddit" target="_blank"><i class="fa fa-reddit"></i></a>
-      <!-- <p class="nav-item">Reddit</p>-->
-      <a href="https://medium.com/@nirmalya.panigrahi" class="medium" target="_blank"><i class="fa fa-medium"></i></a>
-      <!-- <p class="nav-item">Medium</p>-->
-      <a href="https://www.linkedin.com/in/nirmalya-panigrahi-461958140/" class="linkedin" target="_blank"><i class="fa fa-linkedin"></i></a>
-      <!-- <p class="nav-item">LinkedIn</p>-->
-      <a href="https://open.spotify.com/show/0WzbCXJGX3X18sZXyG0qjC?si=552111d512a344f7" class="tumblr" target="_blank"><i class="fa fa-spotify"></i></a>
-      <!-- <p class="nav-item">Tumblr</p>-->
-      <a href="https://www.facebook.com/PanigrahiNirma" class="facebook" target="_blank"><i class="fa fa-facebook"></i></a>
-      <!-- <p class="nav-item">Facebook</p>-->
-      <a href="https://github.com/nirmalya-iitkgp" class="github" target="_blank"><i class="fa fa-github-alt"></i></a>
-      <!-- <p class="nav-item">Github</p>-->
-      <a href="https://twitter.com/nirma_iitkgp" class="twitter" target="_blank"><i class="fa fa-twitter"></i></a>
-      <!-- <p class="nav-item">Twitter</p>-->
-    </div> -->
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <div class="card">        
-      <div class="slideshow-container">
-      <!-- Full-width images with number and caption text -->
-        <div class="mySlides fade">
-          <div class="numbertext">1 / 4</div>
-          <img class="slide" src="images/photo.jpg" >                 
-        </div>
-
-        <div class="mySlides fade">
-          <div class="numbertext">2 / 4</div>
-          <img class="slide" src="images/yes.jpg" > 
-        </div>
-
-        <div class="mySlides fade">
-          <div class="numbertext">3 / 4</div>
-          <img class="slide" src="images/kgp.jpg" >                 
-        </div>
-
-        <div class="mySlides fade">
-          <div class="numbertext">4 / 4</div>
-          <img class="slide" src="images/i.jpg" >                 
-        </div>
-
-        <!-- Next and previous buttons -->
-        <!-- <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-        <a class="next" onclick="plusSlides(1)">&#10095;</a> -->
-      </div>
-      <br> 
-
-      <!-- The dots/circles -->
-      <div style="text-align:center">
-        <span class="dot" onclick="currentSlide(1)"></span>
-        <span class="dot" onclick="currentSlide(2)"></span>
-        <span class="dot" onclick="currentSlide(3)"></span>
-        <span class="dot" onclick="currentSlide(4)"></span>
-      </div> 
-        
-        
-      <div id="hide">
-        <button  class="button" id="myBtn"><p>My Resume</p></i></button>
-        <!--<button  class="button">
-          <a  href="https://nirmalyapanigrahi.blogspot.com/" class="gmail"><i class="fa-solid fa-blog"></i></a>
-        </button>-->
-      </div>
-            
-      <div id="spark">
-        <ul data-time="3000">
-          <li data-hue="072"  >I</li>
-          <li data-hue="144"  >I</li>
-          <li data-hue="216"  >M</li>
-          <li data-hue="288"  >-</li>
-          <li data-hue="000"  >A</li>
-        </ul>
-      <!-- </div>
-      <div id="spark">-->
-        <ul data-time="3000">
-          <li data-hue="045"  >I</li>
-          <li data-hue="090"  >I</li>
-          <li data-hue="135"  >T</li>
-          <li data-hue="180"  >-</li>
-          <li data-hue="225"  >K</li>
-          <li data-hue="270"  >G</li>
-          <li data-hue="315"  >P</li>
-        </ul>
-      </div>
-
-      <canvas id="test"></canvas>
-      <script src="animation.js"></script>       
-    </div> 
-      
+    <!-- MODAL (ALWAYS ABOVE CANVAS) -->
     <div id="myModal" class="modal">
       <div class="modal-content">
         <span class="close">&times;</span>
-        <p >
+        <p>
           <img style="border-radius: 10px ; max-width:90%; max-height:90%;" src="images/resume.jpg">
         </p>
       </div>
     </div>
-    
-    <div class="center-content">
-      <h1><span>N</span>IRMALYA&emsp;<span>PANIGRAHI</span>
-      </h1>        
-      <h2 class="typetext"> I'm an <span class="auto-type"> </span> 
-      </h2>
-      <script src="https://unpkg.com/typed.js@2.0.132/dist/typed.umd.js">
-      </script>
-      <script >
-        var typed = new Typed(".auto-type", {
-        strings: ["","McKinsey Consultant", "Automobile Engineer", "Occasional Poet", " Avid Blogger"],
-        typeSpeed: 100,
-        backSpeed: 30,
-        loop: true})
-      </script>
-
-      <a href="https://nirmalyapanigrahi.blogspot.com/" class="btn-shine" target="_blank">
-        <i class="fa fa-angle-double-left"></i> &emsp; click on the icons to dive deeper
-      </a>
-      <br>
-      <br>
-      <br>
-    </div>
-    
-    <!--  
-    <div class="mid-ht">
-      <iframe src="https://nirmalyapanigrahi.blogspot.com/" name="iframe_a" title="Viewer"></iframe>
-    </div>
-    <object class="mid-ht" data="https://nirmalyapanigrahi.blogspot.com/" >
-      <embed src="https://nirmalyapanigrahi.blogspot.com/" width="80%" height="100%"> </embed>
-      Error: Embedded data could not be displayed.
-    </object>
-    <object class="mid-ht" data="https://nirmalyapanigrahi.home.blog/" >
-      <embed src="https://nirmalyapanigrahi.home.blog/" width="80%" height="100%"> </embed>
-      Error: Embedded data could not be displayed.
-    </object>
-    -->
-
-    <script type="text/javascript">
-      // Get the modal
-      var modal = document.getElementById('myModal');
-
-      // Get the button that opens the modal
-      var btn = document.getElementById("myBtn");
-
-      // Get the <span> element that closes the modal
-      var span = document.getElementsByClassName("close")[0];
-
-      // When the user clicks on the button, open the modal
-      btn.onclick = function() {
-        modal.style.display = "inline-block";
-      }
-
-      // When the user clicks on <span> (x), close the modal
-      span.onclick = function() {
-        modal.style.display = "none";
-      }
-
-      // When the user clicks anywhere outside of the modal, close it
-      window.onclick = function(event) {
-        if (event.target == modal) {
-          modal.style.display = "none";
-        }
-      }
-
-      var slideIndex = 0;
-      showSlides();
-
-      function showSlides() {
-        var i;
-        var slides = document.getElementsByClassName("mySlides");
-        var dots = document.getElementsByClassName("dot");
-        
-        for (i = 0; i < slides.length; i++) {
-          slides[i].style.display = "none";
-        }
-        
-        for (i = 0; i < dots.length; i++) {
-          dots[i].className = dots[i].className.replace(" active", "");
-        }
-        
-        slideIndex++;
-        if (slideIndex > slides.length) {slideIndex = 1}
-          slides[slideIndex-1].style.display = "block";
-          dots[slideIndex-1].className += " active";
-          setTimeout(showSlides, 2000); // Change image every 2 seconds
-        } 
-
-      // var slideIndex = 1;
-      // showSlides(slideIndex);
-      // // Next/previous controls
-      // function plusSlides(n) {
-      //   showSlides(slideIndex += n);
-      // }
-
-      // // Thumbnail image controls
-      // function currentSlide(n) {
-      //   showSlides(slideIndex = n);
-      // }
-
-      // function showSlides(n) {
-      //   var i;
-      //   var slides = document.getElementsByClassName("mySlides");
-      //   var dots = document.getElementsByClassName("dot");
-      //   if (n > slides.length) {slideIndex = 1}
-      //   if (n < 1) {slideIndex = slides.length}
-      //   for (i = 0; i < slides.length; i++) {
-      //       slides[i].style.display = "none";
-      //   }
-      
-      //   for (i = 0; i < dots.length; i++) {
-      //       dots[i].className = dots[i].className.replace(" active", "");
-      //   }
-      //   slides[slideIndex-1].style.display = "block";
-      //   dots[slideIndex-1].className += " active";
-      // }
-
-
-
-      particlesJS(
-        "particles-js",{
-          "particles":{
-            "number":{
-              "value":80,
-              "density":{
-                "enable":true,
-                "value_area":800
-              }
-            },
-            "color":{
-              "value":"#ffffff"},
-              "shape":{
-                "type":"circle","stroke":{
-                  "width":0,
-                  "color":"#000000"
-                },
-                "polygon":{
-                  "nb_sides":5
-                },
-                "image":{
-                  "src":"img/github.svg",
-                  "width":100,
-                  "height":100
-                }
-              },
-              "opacity":{
-                "value":0.4,
-                "random":false,
-                "anim":{
-                  "enable":false,
-                  "speed":1,
-                  "opacity_min":0.1,
-                  "sync":false
-                }
-              },
-              "size":{
-                "value":3,
-                "random":true,
-                "anim":{
-                  "enable":false,
-                  "speed":40.00000000000001,
-                  "size_min":0.1,
-                  "sync":false
-                }
-              },
-              "line_linked":{
-                "enable":true,
-                "distance":150,
-                "color":"#ffffff",
-                "opacity":0.4,
-                "width":1
-              },
-              "move":{
-                "enable":true,
-                "speed":6,
-                "direction":"none",
-                "random":false,
-                "straight":false,
-                "out_mode":"out",
-                "bounce":false,
-                "attract":{
-                  "enable":false,
-                  "rotateX":600,
-                  "rotateY":1200
-                }
-              }
-            },
-            "interactivity":{
-              "detect_on":"canvas",
-              "events":{
-                "onhover":{
-                  "enable":true,
-                  "mode":"repulse"
-                },
-                "onclick":{
-                  "enable":true,
-                  "mode":"push"
-                },
-                "resize":true
-              },
-              "modes":{
-                "grab":{
-                  "distance":400,
-                  "line_linked":{
-                    "opacity":1
-                  }
-                },
-                "bubble":{
-                  "distance":400,
-                  "size":40.00000000000001,
-                  "duration":2,
-                  "opacity":8,
-                  "speed":3
-                },
-                "repulse":{
-                  "distance":200,
-                  "duration":0.4
-                },
-                "push":{
-                  "particles_nb":4
-                },
-                "remove":{
-                  "particles_nb":2
-                }
-              }
-            },
-            "retina_detect":true
-        }
-      );
-    </script>
-
+    <!-- WAVES -->
     <div class="footer">
-    <!-- <p>This page is created by Nirmalya Panigrahi, All rights reserved. 2019 -->
-      <div>
+      <div class="waves-container">
         <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
         viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
-        
           <defs>
             <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
           </defs>
-        
           <g class="parallax">
-            <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(255,255,255,0.7" />
+            <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(255,255,255,0.7)" />
             <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(255,255,255,0.5)" />
             <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(255,255,255,0.3)" />
             <use xlink:href="#gentle-wave" x="48" y="7" fill="#fff" />
@@ -368,5 +117,9 @@
         </svg>
       </div>
     </div>
+    <script src="https://unpkg.com/typed.js@2.0.132/dist/typed.umd.js"></script>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="animation.js"></script>
+    <script src="website.js"></script>
   </body>
 </html>

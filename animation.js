@@ -1,3 +1,4 @@
+// animation.js (unchanged, assumed to be your provided animation.js code)
 const newParticlesPerFrame = 50;
 
 const color = (hsl, o) => {
@@ -7,7 +8,6 @@ const color = (hsl, o) => {
 class TextSparks
 {
     constructor() {
-
         this.opa    = 0;
         this.tick   = 0;
         this.drawCB = null;
@@ -25,18 +25,16 @@ class TextSparks
 
         this.particleMap = new Map();
 
+        window.addEventListener('resize', () => this.resize());
     }
 
     buildStackCache() {
-
         this.maskCache = this.stack.map((stack) => {
             return this.buildTextMask(stack.texts);
         });
-
     }
 
     fetchData() {
-
         this.stackId = -1;
         this.stack   = [...document.querySelectorAll('div > ul')].map(ul => {
             return {
@@ -55,23 +53,22 @@ class TextSparks
                 })
             };
         });
-
     }
 
     resize() {
-
-        this.width  = window.innerWidth;
-        this.height = window.innerHeight;
+        // 16:9 aspect ratio, size based on canvas parent
+        let parent = this.canvas.parentElement;
+        let width = parent.offsetWidth || 300;
+        let height = width * 9 / 16;
+        this.width  = width;
+        this.height = height;
 
         this.canvas.setAttribute('width', this.width);
         this.canvas.setAttribute('height', this.height);
-
     }
 
     buildTextMask(texts) {
-
         const mask = [];
-
         const textAll = texts.reduce((all, textStack) => {
             return all.concat(textStack.text);
         }, '');
@@ -81,7 +78,6 @@ class TextSparks
         const height       = width / (this.width / this.height) | 0;
         const baseFontSize = 20;
 
-        // const canvas = document.querySelector('#test');
         const canvas = document.createElement('canvas');
         const engine = canvas.getContext('2d',{ willReadFrequently: true });
 
@@ -111,7 +107,6 @@ class TextSparks
         const bot = height / 2 + fSize * 0.35;
 
         Object.values(texts).forEach(textStack => {
-
             engine.clearRect(0, 0, width, height);
 
             engine.fillText(
@@ -147,9 +142,7 @@ class TextSparks
     }
 
     createNewParticle() {
-
         for (let i = 0; i < newParticlesPerFrame; i++) {
-
             let main        = Math.random() * this.mask.length | 0;
             let subMask     = this.mask[main];
             let maskElement = this.mask[main].s[Math.random() * this.mask[main].s.length | 0];
@@ -164,7 +157,6 @@ class TextSparks
 
                 this.particleMap.set(particle, particle);
             }
-
         }
     }
 
@@ -186,7 +178,6 @@ class TextSparks
     }
 
     prepareParticle(particle) {
-
         const r1 = Math.random();
         const r2 = Math.random();
         const r3 = Math.random();
@@ -196,8 +187,6 @@ class TextSparks
         particle.x += (-0.5 + r1) / 300;
         particle.y += (-0.5 + r2) / 300;
         particle.si = 1 + Math.random() * 4 | 0;
-        // particle.cc = this.randFromList(r2, r3);
-        // particle.cc = this.hue / 365;
 
         particle.s = 0.003 + this.randFromList(r1, r2) / 10;
         particle.l = 0;
@@ -209,7 +198,6 @@ class TextSparks
     }
 
     drawParticle(particle) {
-
         if (particle.l >= 1) {
             particle.c = null;
             return;
@@ -225,21 +213,15 @@ class TextSparks
     }
 
     renderParticles() {
-
         this.particleMap.forEach((particle) => {
-
             particle.c.call(this, particle);
-
             if (!particle.c) {
                 this.particleMap.delete(particle);
             }
-
         });
-
     }
 
     drawStatic() {
-
         let i = 0;
         const step = 0.01;
 
@@ -287,15 +269,10 @@ class TextSparks
 
             });
         });
-
-
-
     }
 
     draw() {
-
         this.tick++;
-
         this.nextMaskCb();
         this.createNewParticle();
         this.clear();
@@ -306,7 +283,6 @@ class TextSparks
         this.engine.globalCompositeOperation = 'source-over';
 
         requestAnimationFrame(this.drawCB);
-
     }
 
     fadeInMask() {
@@ -314,45 +290,34 @@ class TextSparks
 
         if (this.opa >= 1) {
             this.opa = 1;
-
             this.afterFadeIn();
         }
     }
 
     afterFadeIn() {
-
         this.opa = 1;
-
         if (this.stack[this.stackId].ticks) {
             this.maskTick   = 0;
             this.nextMaskCb = this.tickMask.bind(this);
         } else {
             this.nextMaskCb = () => {};
         }
-
     }
 
     fadeOutMask() {
-
         this.opa -= this.stack[this.stackId].fadeOut;
-
         if (this.opa <= 0) {
             this.afterFadeOut();
         }
-
     }
 
     afterFadeOut() {
-
         this.opa = 0;
         this.nextMaskCb = this.nextMask.bind(this);
-
     }
 
     tickMask() {
-
         this.maskTick++;
-
         if (this.maskTick >= this.stack[this.stackId].ticks) {
             if (this.stack[this.stackId].fadeOut) {
                 this.nextMaskCb = this.fadeOutMask.bind(this);
@@ -360,11 +325,9 @@ class TextSparks
                 this.afterFadeOut();
             }
         }
-
     }
 
     nextMask() {
-
         this.stackId++;
 
         if (this.stackId >= this.stack.length) {
@@ -382,10 +345,8 @@ class TextSparks
     }
 
     run() {
-
         this.drawCB = this.draw.bind(this);
         this.drawCB();
-
     }
 }
 
