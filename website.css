@@ -1,39 +1,104 @@
+:root {
+  /* 1. Primary Accent Color (User-Selected) */
+  --accent-primary: #00A3AD;
+  --accent-primary-rgb: 0, 163, 173;
+
+  /* 2. Primary Accent Color - Lighter Shade for Hover States */
+  --accent-primary-hover: #00C8D0;
+  --accent-primary-hover-rgb: 0, 200, 208;
+
+  /* --- MONOCHROMATIC SCALE (Grays/Black/White) --- */
+  --color-dark-bg: #000;
+  --color-dark-overlay: rgba(33, 33, 33, 0.85); /* Right Column Background */
+
+  /* Text Colors */
+  --color-light-text: #fff; /* Pure white for primary text/titles */
+  --color-subtle-text-1: #EEE; /* Lighter gray for secondary text/product titles */
+  --color-subtle-text-2: #DDD; /* Slightly darker light gray for descriptions */
+  --color-subtle-text-3: #AAA; /* Defined missing variable for product description text */
+  --color-placeholder-text: #484848; /* Dark gray for the initial H1 text */
+  --color-icon-hover: #f5f5f5; /* Whitesmoke for icon base color */
+
+  /* Divider & Border Colors */
+  --color-divider: #333; /* For responsive borders */
+  --color-modal-border: #888;
+  --color-modal-text: #aaa; /* For modal close button */
+
+  /* Typography Base */
+  font-size: 14px; /* Base font size for rem calculation */
+}
+
+/* Base styles */
 html, body {
   height: 100%;
   width: 100%;
   margin: 0;
   padding: 0;
-}
-
-body {
   font-family: Georgia, serif;
-  background: #000;
+  background: var(--color-dark-bg);
+  color: var(--color-light-text);
   min-height: 100vh;
-  position: relative;
   overflow-x: hidden;
+  position: relative;
 }
 
 /* Layout */
 .main-flex-container {
   display: flex;
   width: 100vw;
-  min-height: 100vh;
-  height: 100vh;
+  min-height: 80vh;
+  flex-wrap: nowrap;
 }
-
+/*----------------------------------------------------------------*/
+/* NAVIGATION COLUMN */
+/*----------------------------------------------------------------*/
 .nav-column {
   flex: 0 0 5vw;
   min-width: 50px;
   max-width: 100px;
-  background: transparent;
-  z-index: 2;
   display: flex;
   align-items: center;
   justify-content: flex-start;
+  background: transparent;
+  z-index: 2;
 }
 
+/* Icon bar navigation (Vertical - Desktop) */
+.icon-bar {
+  width: 100%;
+  min-width: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  z-index: 5;
+  position: static;
+  background: transparent;
+}
+
+.icon-bar a {
+  display: block;
+  text-align: center;
+  color: var(--color-light-text);
+  padding: 1rem; /* Switched to rem */
+}
+
+.icon-bar i {
+  color: var(--color-icon-hover);
+  transition: transform 0.2s, opacity 0.2s, color 0.2s;
+  font-size: 2rem; /* Adjusted for better scaling */
+}
+
+.icon-bar a:hover > i {
+  color: var(--accent-primary);
+  opacity: 1;
+}
+.icon-bar i:hover { transform: scale(0.9); }
+
+/*----------------------------------------------------------------*/
+/* CENTER COLUMN (MAIN CONTENT) */
+/*----------------------------------------------------------------*/
 .center-column {
-  flex: 1 1 0;
+  flex: 1 1 auto;
   position: relative;
   min-width: 0;
   display: flex;
@@ -43,6 +108,8 @@ body {
   z-index: 1;
   overflow: hidden;
 }
+
+/* Particles.js background */
 #particles-js {
   position: absolute;
   top: 0; left: 0; right: 0; bottom: 0;
@@ -50,54 +117,57 @@ body {
   height: 100%;
   z-index: 1;
   background: transparent;
-  pointer-events: none;
+  pointer-events: auto;
 }
+
+/* Center column content */
 .center-content {
   position: relative;
   z-index: 2;
-  padding: 40px 0;
+  padding-top: calc(60px + 1rem); 
+  padding-bottom: 20px;
   margin: 0 5vw;
-  color: #fff;
   text-align: center;
 }
+
+/* Header styles - Used clamp for better fluid typography */
 h1 {
-  color: #484848;
-  font-size: 3vw;
+  color: var(--color-placeholder-text);
+  /* clamp(MIN_SIZE, PREFERRED_VW_SIZE, MAX_SIZE) */
+  font-size: clamp(1.5rem, 5vw, 3rem);
   font-weight: bold;
   font-family: monospace;
-  letter-spacing: 7px;
-  margin: 2vw 0 1vw 0;
+  letter-spacing: 0.4rem; /* Switched to rem */
+  margin: 1.5rem 0 0.8rem; /* Switched to rem */
   position: relative;
-  padding-top: 10vw;
-  cursor: pointer;
+  padding-top: 5rem; /* Switched to rem */
   transition: color 0.5s, text-shadow 0.5s;
 }
 h1 span {
-  transition: .5s linear;
+  transition: 0.5s linear;
 }
-h1:hover span:nth-child(1){
-  margin-right: 5px;
-}
-h1:hover span:nth-child(2){
-  margin-left: 30px;
-}
-h1:hover span{
-  color: #fff;
-  text-shadow: 0 0 10px #967bb6,
-               0 0 20px #967bb6, 
-               0 0 40px #967bb6;
+h1:hover span:nth-child(1) { margin-right: 5px; }
+h1:hover span:nth-child(2) { margin-left: 30px; }
+h1:hover span {
+  color: var(--color-light-text);
+  /* Use accent-primary for a branded glow */
+  text-shadow: 0 0 10px var(--accent-primary), 0 0 20px var(--accent-primary), 0 0 40px var(--accent-primary);
 }
 h2 {
-  color: white;
-  font-size: 2vw;
-  margin: 1vw 0 1vw 0;
+  color: var(--color-light-text);
+  font-size: clamp(1.2rem, 3vw, 2rem);
+  margin: 1rem 0;
 }
-.auto-type { color: yellowgreen; }
+.auto-type { color: var(--accent-primary); }
+
+/* Button with shine animation */
 .btn-shine {
-  font-size: 1.2vw;
-  color: #fff;
-  background: linear-gradient(to right, #4d4d4d 0%, #fff 10%, #4d4d4d 40%);
+  font-size: 1.1rem;
+  color: var(--color-light-text);
+  /* Monochromatic shine: dark gray to white */
+  background: linear-gradient(to right, #4d4d4d 0%, var(--color-light-text) 10%, #4d4d4d 40%);
   -webkit-background-clip: text;
+  background-clip: text; /* Standard property included */
   -webkit-text-fill-color: transparent;
   animation: shine 3s infinite linear;
   text-decoration: none;
@@ -107,8 +177,9 @@ h2 {
   60% { background-position: 180px; }
   100% { background-position: 180px; }
 }
-
-/* Right column: flex vertical, then row for canvas */
+/*----------------------------------------------------------------*/
+/* RIGHT COLUMN (SIDEBAR) */
+/*----------------------------------------------------------------*/
 .right-column {
   flex: 0 0 25vw;
   min-width: 240px;
@@ -119,312 +190,341 @@ h2 {
   justify-content: flex-start;
   position: relative;
   z-index: 2;
-  background: transparent;
-  gap: 0;
-}
-.slideshow-responsive {
-  width: 100%;
-  flex: 1 0 auto;
-  margin-top: 30px;
-  display: block;
-}
-.slideshow-container {
-  max-width: 100%;
-  margin: auto;
-  position: relative;
-}
-.mySlides { display: none; }
-.numbertext {
-  color: #f2f2f2;
-  font-size: 12px;
-  padding: 8px 12px;
-  position: absolute;
-  top: 0;
-}
-.dot {
-  cursor: pointer;
-  height: 15px;
-  width: 15px;
-  margin: 0 2px;
-  background-color: #bbb;
-  border-radius: 50%;
-  display: inline-block;
-  transition: background-color 0.6s ease;
-}
-.active, .dot:hover { background-color: #717171; }
-.fade {
-  animation-name: fade;
-  animation-duration: 1.5s;
-}
-@keyframes fade { from {opacity: .4} to {opacity: 1} }
-.slide {
-  overflow: hidden;
-  object-fit: cover;
-  width:90%; 
-  margin:3%; 
-  height:200px;
+  background: var(--color-dark-overlay);
+  border-radius: 0;
+  padding: 1em 1.2em;
+  box-sizing: border-box;
+  gap: 0.5em;
 }
 
-/* Block for canvas, centered below slideshow */
+/* Continuous horizontal sliding carousel container */
+.continuous-carousel {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  height: 220px; /* fixed height */
+  margin-bottom: 1em;
+}
+
+/* Pause animation on hover for performance/accessibility */
+.continuous-carousel:hover .carousel-track {
+  animation-play-state: paused;
+}
+
+/* Carousel track animation */
+.carousel-track {
+  display: flex;
+  width: 800%;
+  animation: slide-left 24s linear infinite;
+}
+
+.carousel-track img {
+  width: 275px;
+  height: 220px;
+  flex-shrink: 0;
+  opacity: 0.7;
+  transition: opacity 1s ease;
+  object-fit: cover;
+  filter: brightness(0.95);
+  user-select: none;
+}
+
+/* Hover and focus effect for slide images */
+.carousel-track img:hover,
+.carousel-track img:focus-visible {
+  opacity: 1;
+  filter: brightness(1);
+}
+
+/* Keyframe animation definitions for sliding */
+@keyframes slide-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Freebie notice styling */
+.freebie-notice {
+  color: var(--accent-primary);
+  font-weight: bold;
+  font-size: 1rem;
+  margin-bottom: 1em;
+  text-align: center;
+}
+
+/* Free Products CTA Section */
+.free-products-cta {
+    padding: 1em;
+    background-color: rgba(255 255 255 / 0.05);
+    border-radius: 8px;
+    color: var(--color-subtle-text-1);
+    font-size: 0.9rem;
+    text-align: left;
+    box-shadow: 0 0 10px rgba(var(--accent-primary-rgb), 0.15);
+}
+
+/* Product list - vertical stack for sidebar */
+.product-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+}
+
+/* Product container full width - MODIFIED FOR FLEX LAYOUT */
+.product-item {
+    background: rgba(255 255 255 / 0.1);
+    border-radius: 8px;
+    padding: 1em;
+    width: 100%;
+    position: relative;
+    cursor: pointer;
+    box-shadow: 0 0 8px rgba(var(--accent-primary-rgb), 0.25);
+    transition: box-shadow 0.3s, transform 0.2s;
+    outline-offset: 4px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.product-item:focus,
+.product-item:hover {
+    box-shadow: 0 0 20px rgba(var(--accent-primary-rgb), 0.6);
+    transform: translateY(-3px);
+}
+
+/* Product title styling */
+.product-item h4 {
+    font-size: 1rem;
+    margin: 0;
+    flex-grow: 1;
+    color: var(--color-subtle-text-1);
+    user-select: none;
+}
+
+/* Product description */
+.product-desc {
+    width: 100%;
+    margin: 0.5em 0 0 0;
+    font-size: 0.85rem;
+    color: var(--color-subtle-text-3);
+    line-height: 1.4;
+    user-select: text;
+}
+
+/* Download button (Icon) */
+.btn-download {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 0 0 1em;
+    width: 32px;
+    height: 32px;
+    padding: 0;
+    flex-shrink: 0;
+    background-color: var(--accent-primary);
+    color: var(--color-light-text);
+    font-weight: 600;
+    border-radius: 50%;
+    text-decoration: none;
+    box-shadow: 0 2px 4px rgba(var(--accent-primary-rgb), 0.4);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.2s;
+    cursor: pointer;
+    user-select: none;
+}
+
+.btn-download:hover,
+.btn-download:focus {
+    background-color: var(--accent-primary-hover);
+    box-shadow: 0 4px 8px rgba(var(--accent-primary-hover-rgb), 0.6);
+    transform: translateY(-1px);
+    outline: none;
+}
+
+/* Ensure the SVG inside is sized correctly */
+.btn-download svg {
+    width: 20px;
+    height: 20px;
+    stroke: currentColor;
+}
+
+/* Canvas container */
 .right-canvas-row {
   width: 100%;
   min-height: 140px;
   display: flex;
-  flex-direction: row;
   align-items: center;
   justify-content: center;
-  margin-bottom: 0.5em;
-  margin-top: 0.5em;
+  margin: 0.5em 0;
 }
 
-/* Canvas: 16:9 and responsive, not fixed, just a block element, interactive */
 .canvas-wrapper {
   width: 60%;
   max-width: 300px;
   min-width: 120px;
-  aspect-ratio: 16/9;
+  aspect-ratio: 16 / 9;
   display: flex;
   align-items: center;
   justify-content: center;
   pointer-events: auto;
 }
-.canvas-wrapper canvas#test {
-  display: block;
+
+canvas#test {
   width: 100%;
   height: 100%;
-  background: transparent;
-  margin: 0 auto;
   border-radius: 12px;
   cursor: pointer;
-  box-shadow: 0 0 0 rgba(255,255,255,0.2);
+  box-shadow: 0 0 0 rgba(255, 255, 255, 0.2);
   transition: box-shadow 0.2s;
   outline: none;
 }
-.canvas-wrapper canvas#test:focus,
-.canvas-wrapper canvas#test:hover {
-  outline: 2px solid #aaa;
-  box-shadow: 0 0 8px 4px rgba(255,255,255,0.15);
+
+canvas#test:focus,
+canvas#test:hover {
+  /* ACCENT COLOR GLOW */
+  outline: 2px solid var(--accent-primary);
+  box-shadow: 0 0 12px 6px rgba(var(--accent-primary-rgb), 0.4);
 }
 
-/* Animated Waves */
+/*----------------------------------------------------------------*/
+/* FOOTER & MODAL */
+/*----------------------------------------------------------------*/
+/* Footer waves */
 .footer {
-  position: relative;
-  left: 0;
-  bottom: 0;
-  width: 100vw;
-  background-color: transparent;
-  color: white;
-  text-align: center;
-  z-index: 10;
-  pointer-events: none;
+  position: relative;
+  width: 100vw;
+  background-color: transparent;
+  color: var(--color-light-text);
+  text-align: center;
+  pointer-events: auto;
+  z-index: 10;
+}
+.color-picker-container{
+	position:fixed;
+	bottom:0;
+	left: 0;
+	z-index: 20;
+	max-height: 1rem;
+	display:flex;
+	justify-content: right;
 }
 .waves-container {
   width: 100vw;
-  min-width: 100vw;
   height: 15vh;
-  margin: 0;
-  padding: 0;
   overflow: hidden;
   position: relative;
+  margin: 0;
+  padding: 0;
 }
+
 .waves {
   position: absolute;
-  left: 0;
-  bottom: 0;
   width: 100vw;
   height: 15vh;
+  left: 0;
+  bottom: 0;
   min-height: 30px;
   max-height: 100px;
-  z-index: 11;
-  display: block;
   pointer-events: none;
+  z-index: 11;
 }
+
 .parallax > use {
-  animation: move-forever 25s cubic-bezier(.55,.5,.45,.5) infinite;
+  animation: move-forever 25s cubic-bezier(0.55, 0.5, 0.45, 0.5) infinite;
 }
-.parallax > use:nth-child(1) {
-  animation-delay: -2s;
-  animation-duration: 7s;
-}
-.parallax > use:nth-child(2) {
-  animation-delay: -3s;
-  animation-duration: 10s;
-}
-.parallax > use:nth-child(3) {
-  animation-delay: -4s;
-  animation-duration: 13s;
-}
-.parallax > use:nth-child(4) {
-  animation-delay: -5s;
-  animation-duration: 20s;
-}
+
+.parallax > use:nth-child(1) { animation-delay: -2s; animation-duration: 7s; }
+.parallax > use:nth-child(2) { animation-delay: -3s; animation-duration: 10s; }
+.parallax > use:nth-child(3) { animation-delay: -4s; animation-duration: 13s; }
+.parallax > use:nth-child(4) { animation-delay: -5s; animation-duration: 20s; }
+
 @keyframes move-forever {
-  0% {
-    transform: translate3d(-90px,0,0);
-  }
-  100% { 
-    transform: translate3d(85px,0,0);
-  }
+  0% { transform: translate3d(-90px, 0, 0); }
+  100% { transform: translate3d(85px, 0, 0); }
 }
 
-/* Navigation bar: vertical by default, horizontal on small screens */
-.icon-bar {
-  width: 100%;
-  min-width: 50px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-  z-index: 5;
-  position: static;
-  left: unset;
-  top: unset;
-  background: transparent;
-}
-.icon-bar a {
-  display: block;
-  text-align: center;
-  padding: 1vw;
-  color: white;
-  font-size: 2vw;
-}
-.icon-bar i { color: whitesmoke; }
-.icon-bar a:hover > i { opacity: 0.7; }
-.icon-bar i:hover { transform: scale(0.9); }
-
-/* Make nav bar horizontal on small screens via JS toggle */
-.icon-bar-horizontal {
-  flex-direction: row !important;
-  width: 100vw !important;
-  min-width: 0 !important;
-  height: auto !important;
-  justify-content: center !important;
-  align-items: center !important;
-  font-size: 20px !important;
-  position: static !important;
-  left: unset !important;
-  top: unset !important;
-  background: transparent !important;
-}
-.icon-bar-horizontal a {
-  padding: 10px 12px !important;
-  font-size: 28px !important;
-  display: inline-block !important;
-}
-
-/* Modal Styles */
+/* Modal styling */
 .modal {
   display: none;
   position: fixed;
   z-index: 1000;
-  left: 0; top: 0;
-  width: 100vw; height: 100vh;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
   overflow: auto;
-  background-color: rgba(0,0,0,0.4);
+  background-color: rgba(0, 0, 0, 0.4);
 }
+
 .modal-content {
   background-color: #fefefe;
   margin: 10% auto;
   padding: 20px;
-  border: 1px solid #888;
+  border: 1px solid var(--color-modal-border);
   width: 80%;
+  max-width: 600px;
+  border-radius: 12px;
 }
+
 .close {
-  color: #aaa;
+  color: var(--color-modal-text);
   float: right;
   font-size: 28px;
   font-weight: bold;
-}
-.close:hover, .close:focus {
-  color: black;
-  text-decoration: none;
+  background: transparent;
+  border: none;
   cursor: pointer;
 }
-.Highlight{ color: yellowgreen; font-style: italic; }
-#spark { display: none; }
 
-/* Responsive styles */
-@media only screen and (max-width: 1200px) {
-  .right-column {
-    min-width: 150px;
-    max-width: 240px;
-  }
-  .canvas-wrapper {
-    max-width: 180px;
-    min-width: 80px;
-  }
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  outline: none;
 }
-@media only screen and (max-width: 768px) {
-  .main-flex-container {
-    flex-direction: column;
-  }
-  .nav-column {
-    flex-direction: row;
-    width: 100vw;
-    min-width: 0;
-    max-width: unset;
-    justify-content: center;
-    align-items: flex-start;
-    height: 60px;
-    border-bottom: 1px solid #333;
-  }
-  .center-column {
-    min-width: 0;
-    width: 100vw;
-    height: auto;
-  }
-  .right-column {
-    position: static;
-    min-width: 0;
-    max-width: 100vw;
-    width: 100vw;
-    height: auto;
-  }
-  .canvas-wrapper {
-    width: 40vw;
-    min-width: 100px;
-    max-width: 200px;
-  }
+
+/* Hide spark container (used by animation.js) */
+#spark {
+  display: none;
 }
-@media only screen and (max-width: 768px) {
-  .right-column,
-  .slideshow-responsive,
-  .canvas-wrapper,
-  .right-canvas-row {
-    display: none !important;
-  }
-  .center-content {
-    font-size: 16px;
-    padding: 10px 0;
-    margin: 0 10vw;
-  }
-  .nav-column {
-    min-width: 40px;
-    max-width: 60px;
-  }
+@media only screen and (min-width: 769px) {
+	.right-column{
+		display:inline;
+	}
+	.center-carousel-container{
+		display: none;
+	}
+	.icon-bar{
+		flex-direction:column;
+	}
 }
-@media only screen and (max-width: 480px) {
-  /* Do not override .icon-bar, only .icon-bar-horizontal will apply for horizontal nav */
-  .main-flex-container {
-    flex-direction: column;
-  }
-  .nav-column {
-    flex-direction: row;
-    width: 100vw;
-    min-width: 0;
-    max-width: unset;
-    height: 40px;
-    border-bottom: 1px solid #333;
-  }
-  .center-content {
-    margin: 0 2vw;
-    font-size: 13px;
-    padding: 4vw 0;
-  }
-  .right-column,
-  .slideshow-responsive,
-  .canvas-wrapper,
-  .right-canvas-row {
-    display: none !important;
-  }
+
+@media only screen and (max-width: 769px) {
+	.right-column{
+		display:none;
+	}
+	.center-carousel-container{
+		display: inline;
+	}
+	.nav-column {
+        position: fixed; 
+        top: 0;
+        left: 0;
+	}
+	.icon-bar{
+		flex-direction:row;
+	}
+	.icon-bar a {
+        padding: 0.5rem; /* Reduced space between icons for mobile density */
+    }
+	.icon-bar i {
+        font-size: 1rem; /* Slightly smaller than the 2rem desktop size */
+    }
+	.waves-container{
+		display:none;
+	}
 }
