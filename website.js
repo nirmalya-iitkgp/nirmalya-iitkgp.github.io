@@ -1,217 +1,178 @@
 document.addEventListener("DOMContentLoaded", function () {
-  // Typed.js initialization
-  if (window.Typed) {
-    new Typed(".auto-type", {
+  // ===== TYPED.JS INITIALIZATION =====
+  const dynamicRole = document.querySelector(".dynamic-role");
+  if (dynamicRole && window.Typed) {
+    new Typed(dynamicRole, {
       strings: [
-        "Consultant at McKinsey and Company",
-        "Mechanical Engineer from IIT Kharagpur",
-        "MBA graduate from IIM Ahmedabad",
+        "Consultant at McKinsey",
+        "Mechanical Engineer",
+        "MBA from IIM Ahmedabad",
+        "Product Developer",
       ],
-      typeSpeed: 125,
-      backSpeed: 30,
+      typeSpeed: 80,
+      backSpeed: 40,
+      backDelay: 1500,
       loop: true,
-      showCursor: true,
-      cursorChar: "|",
+      showCursor: false,
     });
   }
 
-  // Modal logic
-  const modal = document.getElementById("myModal");
-  const closeBtn = modal.querySelector(".close");
-  const canvasBtn = document.getElementById("test");
+  // ===== RESUME MODAL LOGIC =====
+  const resumeModal = document.getElementById("resumeModal");
+  const resumeCard = document.getElementById("resumeCard");
+  const modalClose = document.querySelector(".modal-close");
 
-  // Open modal when canvas clicked or activated by keyboard (Enter/Space)
-  if (canvasBtn) {
-    canvasBtn.style.cursor = "pointer";
-
-    canvasBtn.addEventListener("click", () => {
-      openModal();
-    });
-
-    canvasBtn.addEventListener("keypress", (e) => {
+  if (resumeCard) {
+    resumeCard.addEventListener("click", openResumeModal);
+    resumeCard.addEventListener("keypress", (e) => {
       if (e.key === "Enter" || e.key === " ") {
         e.preventDefault();
-        openModal();
+        openResumeModal();
       }
     });
   }
 
-  function closeModal() {
-    modal.style.display = "none";
-    if (canvasBtn) canvasBtn.focus();
+  function openResumeModal() {
+    resumeModal.classList.add("active");
+    modalClose.focus();
+    document.body.style.overflow = "hidden";
   }
 
-  function openModal() {
-    modal.style.display = "block";
-    closeBtn.focus();
+  function closeResumeModal() {
+    resumeModal.classList.remove("active");
+    resumeCard?.focus();
+    document.body.style.overflow = "auto";
   }
 
-  closeBtn.addEventListener("click", closeModal);
+  if (modalClose) {
+    modalClose.addEventListener("click", closeResumeModal);
+  }
 
-  window.addEventListener("click", (e) => {
-    if (e.target === modal) {
-      closeModal();
+  resumeModal?.addEventListener("click", (e) => {
+    if (e.target === resumeModal) {
+      closeResumeModal();
     }
   });
 
   window.addEventListener("keydown", (e) => {
-    if (e.key === "Escape" && modal.style.display === "block") {
-      closeModal();
+    if (e.key === "Escape" && resumeModal.classList.contains("active")) {
+      closeResumeModal();
     }
   });
 
-  // Responsive adjustments
-  function handleResponsiveElements() {
-    const w = window.innerWidth;
-    const carousel = document.querySelector(".carousel, .continuous-carousel");
-    const canvasWrapper = document.querySelector(".canvas-wrapper");
-    const rightColumn = document.querySelector(".right-column");
-    const rightCanvasRow = document.querySelector(".right-canvas-row");
-    const iconBar = document.getElementById("main-icon-bar");
-
-    if (w <= 768) {
-      if (carousel) carousel.style.display = "none";
-      if (canvasWrapper) canvasWrapper.style.display = "none";
-      if (rightColumn) rightColumn.style.display = "none";
-      if (rightCanvasRow) rightCanvasRow.style.display = "none";
-    } else {
-      if (carousel) carousel.style.display = "";
-      if (canvasWrapper) canvasWrapper.style.display = "";
-      if (rightColumn) rightColumn.style.display = "";
-      if (rightCanvasRow) rightCanvasRow.style.display = "";
-    }
-
-    if (iconBar) {
-      if (w <= 480) {
-        iconBar.classList.add("icon-bar-horizontal");
-      } else {
-        iconBar.classList.remove("icon-bar-horizontal");
-      }
-    }
-  }
-
-  let resizeTimeout;
-  window.addEventListener("resize", () => {
-    clearTimeout(resizeTimeout);
-    resizeTimeout = setTimeout(handleResponsiveElements, 150);
-  });
-
-  // Initial call
-  handleResponsiveElements();
-
-// -------------------------------------------------------------------
-// START OF NEW COLOR PICKER LOGIC
-// -------------------------------------------------------------------
-
-  // Utility function to convert HEX to RGB components (e.g., "#00A3AD" -> "0, 163, 173")
+  // ===== COLOR PICKER LOGIC =====
   function hexToRgb(hex) {
-      let r = 0, g = 0, b = 0;
-      
-      // Handle shorthand hex values (e.g., #abc)
-      if (hex.length === 4) {
-          r = parseInt(hex[1] + hex[1], 16);
-          g = parseInt(hex[2] + hex[2], 16);
-          b = parseInt(hex[3] + hex[3], 16);
-      } else if (hex.length === 7) {
-          r = parseInt(hex.substring(1, 3), 16);
-          g = parseInt(hex.substring(3, 5), 16);
-          b = parseInt(hex.substring(5, 7), 16);
-      }
-      return `${r}, ${g}, ${b}`;
+    let r = 0,
+      g = 0,
+      b = 0;
+
+    if (hex.length === 4) {
+      r = parseInt(hex[1] + hex[1], 16);
+      g = parseInt(hex[2] + hex[2], 16);
+      b = parseInt(hex[3] + hex[3], 16);
+    } else if (hex.length === 7) {
+      r = parseInt(hex.substring(1, 3), 16);
+      g = parseInt(hex.substring(3, 5), 16);
+      b = parseInt(hex.substring(5, 7), 16);
+    }
+    return `${r}, ${g}, ${b}`;
   }
 
-  // Utility function to lighten a HEX color (for the hover state)
   function lightenHex(hex, percent) {
-      var num = parseInt(hex.slice(1), 16),
-          amt = Math.round(2.55 * percent),
-          R = (num >> 16) + amt,
-          G = (num >> 8 & 0x00FF) + amt,
-          B = (num & 0x0000FF) + amt;
-      
-      // Clamp values to 255
-      R = (R < 255) ? R : 255;
-      G = (G < 255) ? G : 255;
-      B = (B < 255) ? B : 255;
+    const num = parseInt(hex.slice(1), 16);
+    const amt = Math.round(2.55 * percent);
+    let R = (num >> 16) + amt;
+    let G = ((num >> 8) & 0x00ff) + amt;
+    let B = (num & 0x0000ff) + amt;
 
-      // Convert back to HEX string
-      // Note: Math.min/max is safer but this bitwise approach is compact and common for clamping
-      R = Math.min(255, R);
-      G = Math.min(255, G);
-      B = Math.min(255, B);
+    R = Math.min(255, R);
+    G = Math.min(255, G);
+    B = Math.min(255, B);
 
-      return `#${((1 << 24) + (R << 16) + (G << 8) + B).toString(16).slice(1).padStart(6, '0')}`;
+    return `#${((1 << 24) + (R << 16) + (G << 8) + B)
+      .toString(16)
+      .slice(1)
+      .padStart(6, "0")}`;
   }
 
-  const colorPicker = document.getElementById('accentColorPicker');
-  const root = document.documentElement; // This refers to the <html> (:root)
+  const colorPicker = document.getElementById("accentColorPicker");
+  const root = document.documentElement;
 
   if (colorPicker) {
-    colorPicker.addEventListener('input', (event) => {
-        const newHex = event.target.value;
-        
-        // 1. Set the primary HEX variable
-        root.style.setProperty('--accent-primary', newHex);
-        
-        // 2. Set the RGB components variable for shadows
-        root.style.setProperty('--accent-primary-rgb', hexToRgb(newHex));
+    colorPicker.addEventListener("input", (event) => {
+      const newHex = event.target.value;
 
-        // 3. Set the lighter hover color (e.g., lighten by 15%)
-        const hoverHex = lightenHex(newHex, 15);
-        root.style.setProperty('--accent-primary-hover', hoverHex);
-        
-        // 4. Set the RGB components for hover shadows
-        root.style.setProperty('--accent-primary-hover-rgb', hexToRgb(hoverHex));
+      // Update CSS variables
+      root.style.setProperty("--accent-primary", newHex);
+      root.style.setProperty("--accent-primary-rgb", hexToRgb(newHex));
 
-        // 5. Update Particles.js color if it's initialized
-        if (window.pJSDom && pJSDom.length > 0) {
-            // Get the hex color without the '#'
-            const pjsColor = newHex.substring(1); 
-            // Update particles color (assuming the first instance is the one you want)
-            pJSDom[0].pJS.particles.color.value = pjsColor;
-            pJSDom[0].pJS.particles.line_linked.color = pjsColor;
-            pJSDom[0].pJS.fn.particlesDraw();
-            pJSDom[0].pJS.fn.particlesRefresh();
-        }
+      const hoverHex = lightenHex(newHex, 15);
+      root.style.setProperty("--accent-primary-hover", hoverHex);
+      root.style.setProperty("--accent-primary-hover-rgb", hexToRgb(hoverHex));
+
+      // Update Particles.js if available
+      if (window.pJSDom && pJSDom.length > 0) {
+        const pjsColor = newHex.substring(1);
+        pJSDom[0].pJS.particles.color.value = pjsColor;
+        pJSDom[0].pJS.particles.line_linked.color = pjsColor;
+        pJSDom[0].pJS.fn.particlesDraw();
+        pJSDom[0].pJS.fn.particlesRefresh();
+      }
     });
-    
-    // Initial call to set defaults/sync with picker's initial value
-    colorPicker.dispatchEvent(new Event('input'));
+
+    // Initialize with default
+    colorPicker.dispatchEvent(new Event("input"));
   }
 
-// -------------------------------------------------------------------
-// END OF NEW COLOR PICKER LOGIC
-// -------------------------------------------------------------------
-
-  // Particles.js initialization
+  // ===== PARTICLES.JS INITIALIZATION =====
   if (window.particlesJS) {
-    // Get the current value of the CSS variable for the particle color
-    const accentColor = getComputedStyle(root).getPropertyValue('--accent-primary').trim() || '#ffffff';
-    
+    const accentColor =
+      getComputedStyle(root).getPropertyValue("--accent-primary").trim() ||
+      "#ffffff";
+
     particlesJS("particles-js", {
       particles: {
-        number: { value: 80, density: { enable: true, value_area: 800 } },
-        // USE THE ACCENT COLOR VARIABLE HERE
-        color: { value: accentColor.replace('#', '') }, 
+        number: {
+          value: 80,
+          density: {
+            enable: true,
+            value_area: 800,
+          },
+        },
+        color: {
+          value: accentColor.replace("#", ""),
+        },
         shape: {
           type: "circle",
-          stroke: { width: 0, color: "#000000" },
-          polygon: { nb_sides: 5 },
+          stroke: {
+            width: 0,
+            color: "#000000",
+          },
         },
         opacity: {
-          value: 0.4,
+          value: 0.5,
           random: false,
-          anim: { enable: false, speed: 1, opacity_min: 0.1, sync: false },
+          anim: {
+            enable: false,
+            speed: 1,
+            opacity_min: 0.1,
+            sync: false,
+          },
         },
         size: {
           value: 3,
           random: true,
-          anim: { enable: false, speed: 40, size_min: 0.1, sync: false },
+          anim: {
+            enable: false,
+            speed: 40,
+            size_min: 0.1,
+            sync: false,
+          },
         },
         line_linked: {
           enable: true,
           distance: 150,
-          // USE THE ACCENT COLOR VARIABLE HERE
-          color: accentColor.replace('#', ''), 
+          color: accentColor.replace("#", ""),
           opacity: 0.4,
           width: 1,
         },
@@ -223,18 +184,33 @@ document.addEventListener("DOMContentLoaded", function () {
           straight: false,
           out_mode: "out",
           bounce: false,
-          attract: { enable: false, rotateX: 600, rotateY: 1200 },
+          attract: {
+            enable: false,
+            rotateX: 600,
+            rotateY: 1200,
+          },
         },
       },
       interactivity: {
         detect_on: "canvas",
         events: {
-          onhover: { enable: true, mode: "repulse" },
-          onclick: { enable: true, mode: "push" },
+          onhover: {
+            enable: true,
+            mode: "repulse",
+          },
+          onclick: {
+            enable: true,
+            mode: "push",
+          },
           resize: true,
         },
         modes: {
-          grab: { distance: 400, line_linked: { opacity: 1 } },
+          grab: {
+            distance: 400,
+            line_linked: {
+              opacity: 1,
+            },
+          },
           bubble: {
             distance: 400,
             size: 40,
@@ -242,12 +218,86 @@ document.addEventListener("DOMContentLoaded", function () {
             opacity: 8,
             speed: 3,
           },
-          repulse: { distance: 200, duration: 0.4 },
-          push: { particles_nb: 4 },
-          remove: { particles_nb: 2 },
+          repulse: {
+            distance: 200,
+            duration: 0.4,
+          },
+          push: {
+            particles_nb: 4,
+          },
+          remove: {
+            particles_nb: 2,
+          },
         },
       },
       retina_detect: true,
     });
   }
+
+  // ===== SMOOTH SCROLL OFFSET FOR ANCHOR LINKS =====
+  document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+    anchor.addEventListener("click", function (e) {
+      const href = this.getAttribute("href");
+      if (href !== "#" && href !== "#!" && document.querySelector(href)) {
+        e.preventDefault();
+        const target = document.querySelector(href);
+        const offsetTop = target.offsetTop - 70; // Navbar height
+        window.scrollTo({
+          top: offsetTop,
+          behavior: "smooth",
+        });
+      }
+    });
+  });
+
+  // ===== INTERSECTION OBSERVER FOR ANIMATIONS =====
+  const observerOptions = {
+    threshold: 0.1,
+    rootMargin: "0px 0px -50px 0px",
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = "1";
+        entry.target.style.transform = "translateY(0)";
+      }
+    });
+  }, observerOptions);
+
+  // Observe elements for animation
+  document.querySelectorAll(".app-card, .tool-card, .link-item").forEach((el) => {
+    el.style.opacity = "0";
+    el.style.transform = "translateY(20px)";
+    el.style.transition = "opacity 0.5s ease, transform 0.5s ease";
+    observer.observe(el);
+  });
+
+  // ===== SKIP TO MAIN CONTENT LINK =====
+  const skipLink = document.createElement("a");
+  skipLink.href = "#projects";
+  skipLink.textContent = "Skip to main content";
+  skipLink.className = "skip-to-main";
+  document.body.prepend(skipLink);
 });
+
+// Add CSS for skip-to-main link
+const style = document.createElement("style");
+style.textContent = `
+  .skip-to-main {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: var(--accent-primary);
+    color: white;
+    padding: 8px 16px;
+    text-decoration: none;
+    z-index: 100;
+    border-radius: 0 0 8px 0;
+  }
+  
+  .skip-to-main:focus {
+    top: 0;
+  }
+`;
+document.head.appendChild(style);
