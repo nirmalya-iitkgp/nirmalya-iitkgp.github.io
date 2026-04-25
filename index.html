@@ -3,213 +3,231 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Nirmalya Panigrahi - Product Developer & Consultant</title>
+    <title>Nirmalya Panigrahi - Consultant, Engineer, Entrepreneur</title>
     <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
     <link href="website.css" rel="stylesheet" />
 </head>
 <body>
     <!-- Navigation Header -->
-    <header class="navbar" role="banner">
+    <header class="navbar">
         <div class="navbar-container">
             <div class="logo">
-                <span class="logo-text">NP</span>
+                <a href="#home">NP</a>
             </div>
-            <nav class="social-nav" aria-label="Social Media Links">
-                <a href="https://github.com/nirmalya-iitkgp" target="_blank" rel="noopener noreferrer" aria-label="GitHub" class="social-link">
+            <nav class="nav-links">
+                <a href="#about" class="nav-link">About</a>
+                <a href="#tools" class="nav-link">Tools</a>
+                <a href="#resume" class="nav-link">Resume</a>
+            </nav>
+            <div class="navbar-social">
+                <a href="https://github.com/nirmalya-iitkgp" target="_blank" rel="noopener" aria-label="GitHub" title="GitHub">
                     <i class="fab fa-github"></i>
                 </a>
-                <a href="https://www.linkedin.com/in/nirmalya-panigrahi-461958140/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="social-link">
+                <a href="https://www.linkedin.com/in/nirmalya-panigrahi-461958140/" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn">
                     <i class="fab fa-linkedin"></i>
                 </a>
-                <a href="https://x.com/panigrahiNirma" target="_blank" rel="noopener noreferrer" aria-label="Twitter" class="social-link">
+                <a href="https://x.com/panigrahiNirma" target="_blank" rel="noopener" aria-label="Twitter" title="Twitter">
                     <i class="fab fa-x-twitter"></i>
                 </a>
-                <a href="https://medium.com/@nirmalya.panigrahi" target="_blank" rel="noopener noreferrer" aria-label="Medium" class="social-link">
-                    <i class="fab fa-medium"></i>
-                </a>
-                <div class="color-picker-wrapper">
-                    <label for="accentColorPicker" aria-label="Change accent color">
-                        <i class="fas fa-palette"></i>
-                    </label>
-                    <input type="color" id="accentColorPicker" value="#00A3AD" aria-label="Accent color picker">
-                </div>
-            </nav>
+            </div>
+            <div class="color-picker-wrapper">
+                <input type="color" id="accentColorPicker" value="#00A3AD" aria-label="Theme color picker">
+            </div>
         </div>
     </header>
 
-    <!-- Main Content -->
-    <main class="main-content">
-        <!-- Hero Section -->
-        <section class="hero" aria-label="Hero introduction">
-            <div class="hero-content">
-                <div id="particles-js" aria-hidden="true" class="particles-background"></div>
-                
-                <div class="hero-text">
-                    <h1 class="hero-title">
-                        <span class="text-gradient">Hi, I'm Nirmalya</span>
-                    </h1>
-                    <p class="hero-subtitle">
-                        <span class="dynamic-role">Consultant at McKinsey</span>
-                    </p>
-                    <p class="hero-description">
-                        Building innovative products & crafting digital experiences. Mechanical Engineer | MBA | Tech Enthusiast
-                    </p>
-                    <div class="hero-cta">
-                        <a href="#projects" class="btn btn-primary">Explore My Work</a>
-                        <a href="https://nirmalya-iitkgp.github.io/" class="btn btn-secondary">Read My Blog</a>
-                    </div>
-                </div>
-
-                <!-- Featured Image Carousel -->
-                <div class="hero-carousel" aria-label="Featured images carousel">
-                    <div class="carousel-wrapper">
-                        <div class="carousel-track" role="region" aria-live="polite">
-                            <img src="images/1.jpg" alt="Featured image 1" loading="lazy" />
-                            <img src="images/2.jpg" alt="Featured image 2" loading="lazy" />
-                            <img src="images/3.jpg" alt="Featured image 3" loading="lazy" />
-                            <img src="images/4.jpg" alt="Featured image 4" loading="lazy" />
-                            <img src="images/1.jpg" alt="" loading="lazy" aria-hidden="true" />
-                            <img src="images/2.jpg" alt="" loading="lazy" aria-hidden="true" />
-                            <img src="images/3.jpg" alt="" loading="lazy" aria-hidden="true" />
-                            <img src="images/4.jpg" alt="" loading="lazy" aria-hidden="true" />
-                        </div>
-                    </div>
-                </div>
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="particles" id="particles-js" aria-hidden="true"></div>
+        <div class="hero-content">
+            <h1 class="hero-title">
+                Hi, I'm <span class="highlight">Nirmalya</span> <span class="highlight">Panigrahi</span>
+            </h1>
+            <h2 class="hero-subtitle">
+                I am a <span class="auto-type"></span>
+            </h2>
+            <div class="hero-description">
+                <p>Consultant at McKinsey | IIT Kharagpur | IIM Ahmedabad</p>
             </div>
-        </section>
-
-        <!-- Free Tools / Vercel Apps Section -->
-        <section class="tools-section" id="projects" aria-label="Free tools and applications">
-            <div class="container">
-                <div class="section-header">
-                    <h2>Free Tools & Vercel Apps</h2>
-                    <p>Explore my projects built with modern tech</p>
-                </div>
-
-                <!-- Vercel Apps Showcase -->
-                <div class="apps-showcase">
-                    <h3 class="apps-title">Live on Vercel</h3>
-                    <div class="apps-grid">
-                        <article class="app-card vercel-app" tabindex="0" aria-describedby="desc-fin-calc">
-                            <div class="app-icon">
-                                <i class="fas fa-calculator"></i>
-                            </div>
-                            <h4>Advanced Finance Calculator</h4>
-                            <p id="desc-fin-calc" class="app-description">Complex financial calculations with banking & operations methods</p>
-                            <a href="https://np-fin.lovable.app" target="_blank" rel="noopener noreferrer" class="app-link">
-                                <span>Open App</span>
-                                <i class="fas fa-arrow-right"></i>
-                            </a>
-                        </article>
-
-                        <article class="app-card vercel-app" tabindex="0" aria-describedby="desc-cricket">
-                            <div class="app-icon">
-                                <i class="fas fa-hand-fist"></i>
-                            </div>
-                            <h4>Hand Cricket Game</h4>
-                            <p id="desc-cricket" class="app-description">AI-powered 3-wicket strategy game with a modern twist</p>
-                            <a href="https://np-hand-cricket.lovable.app" target="_blank" rel="noopener noreferrer" class="app-link">
-                                <span>Play Now</span>
-                                <i class="fas fa-arrow-right"></i>
-                            </a>
-                        </article>
-
-                        <article class="app-card vercel-app" tabindex="0" aria-describedby="desc-ttt">
-                            <div class="app-icon">
-                                <i class="fas fa-square"></i>
-                            </div>
-                            <h4>Tic-Tac-Toe Ultimate</h4>
-                            <p id="desc-ttt" class="app-description">The ultimate version of the classic game with fresh mechanics</p>
-                            <a href="https://np-ttt-game.vercel.app/" target="_blank" rel="noopener noreferrer" class="app-link">
-                                <span>Play Now</span>
-                                <i class="fas fa-arrow-right"></i>
-                            </a>
-                        </article>
-                    </div>
-                </div>
-
-                <!-- Other Free Tools -->
-                <div class="tools-showcase">
-                    <h3 class="tools-title">Additional Tools</h3>
-                    <div class="tools-grid">
-                        <article class="tool-card" tabindex="0" aria-describedby="desc-journal">
-                            <div class="tool-icon">
-                                <i class="fas fa-book"></i>
-                            </div>
-                            <h4>Thought Journal</h4>
-                            <p id="desc-journal" class="tool-description">CBT-based journal for managing anxiety and mood</p>
-                            <a href="https://drive.google.com/file/d/1BJKZuhwSpcUG5SQDKaOmcGpxy0SqL0GV/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="tool-link">
-                                <i class="fas fa-download"></i>
-                                <span>Download</span>
-                            </a>
-                        </article>
-                    </div>
-                </div>
+            <div class="cta-buttons">
+                <a href="#tools" class="btn btn-primary">Explore My Tools</a>
+                <a href="#resume" class="btn btn-secondary">View Resume</a>
             </div>
-        </section>
-
-        <!-- Resume Section -->
-        <section class="resume-section" aria-label="Resume">
-            <div class="container">
-                <div class="resume-card" tabindex="0" role="button" id="resumeCard" aria-label="Click to view full resume">
-                    <div class="resume-visual">
-                        <img src="images/resume.jpg" alt="Nirmalya Panigrahi Resume" loading="lazy" />
-                    </div>
-                    <div class="resume-info">
-                        <h3>My Resume</h3>
-                        <p>View my complete professional background</p>
-                        <span class="click-hint">Click to expand</span>
-                    </div>
-                </div>
+        </div>
+        <div class="hero-image-carousel">
+            <div class="carousel-track" role="list" aria-label="Slideshow">
+                <img src="images/1.jpg" alt="Portfolio Image 1" loading="lazy" role="listitem" />
+                <img src="images/2.jpg" alt="Portfolio Image 2" loading="lazy" role="listitem" />
+                <img src="images/3.jpg" alt="Portfolio Image 3" loading="lazy" role="listitem" />
+                <img src="images/4.jpg" alt="Portfolio Image 4" loading="lazy" role="listitem" />
+                <img src="images/1.jpg" alt="" loading="lazy" aria-hidden="true" />
+                <img src="images/2.jpg" alt="" loading="lazy" aria-hidden="true" />
+                <img src="images/3.jpg" alt="" loading="lazy" aria-hidden="true" />
+                <img src="images/4.jpg" alt="" loading="lazy" aria-hidden="true" />
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Extended Social Links -->
-        <section class="additional-links" aria-label="Additional platforms">
-            <div class="container">
-                <h3>More About Me</h3>
-                <div class="links-grid">
-                    <a href="https://nirmalyapanigrahi.home.blog/" target="_blank" rel="noopener noreferrer" class="link-item" aria-label="WordPress Blog">
-                        <i class="fas fa-rss"></i>
-                        <span>WordPress Blog</span>
+    <!-- Social Links Section -->
+    <section class="social-links-section">
+        <div class="container">
+            <h2>Connect With Me</h2>
+            <div class="social-grid">
+                <a href="https://nirmalyapanigrahi.home.blog/" target="_blank" rel="noopener" class="social-card" aria-label="WordPress Blog">
+                    <i class="fas fa-rss"></i>
+                    <span>Blog</span>
+                </a>
+                <a href="https://medium.com/@nirmalya.panigrahi" target="_blank" rel="noopener" class="social-card" aria-label="Medium">
+                    <i class="fab fa-medium"></i>
+                    <span>Medium</span>
+                </a>
+                <a href="https://www.linkedin.com/in/nirmalya-panigrahi-461958140/" target="_blank" rel="noopener" class="social-card" aria-label="LinkedIn">
+                    <i class="fab fa-linkedin"></i>
+                    <span>LinkedIn</span>
+                </a>
+                <a href="https://open.spotify.com/show/0WzbCXJGX3X18sZXyG0qjC?si=552111d512a344f7" target="_blank" rel="noopener" class="social-card" aria-label="Spotify Podcast">
+                    <i class="fab fa-spotify"></i>
+                    <span>Podcast</span>
+                </a>
+                <a href="https://www.reddit.com/r/Ideas_We_Believe/" target="_blank" rel="noopener" class="social-card" aria-label="Reddit">
+                    <i class="fab fa-reddit"></i>
+                    <span>Reddit</span>
+                </a>
+                <a href="https://www.facebook.com/PanigrahiNirma" target="_blank" rel="noopener" class="social-card" aria-label="Facebook">
+                    <i class="fab fa-facebook"></i>
+                    <span>Facebook</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Free Tools Section (Vercel Apps) -->
+    <section id="tools" class="tools-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>🎉 Free Tools for Everyone</h2>
+                <p>Explore my collection of free applications built with modern tech</p>
+            </div>
+            <div class="tools-grid">
+                <!-- Tool Card 1 -->
+                <div class="tool-card">
+                    <div class="tool-icon finance">
+                        <i class="fas fa-calculator"></i>
+                    </div>
+                    <h3>Advanced Finance Calculator</h3>
+                    <p>A powerful calculator equipped with complex finance, operations & banking methods. Perfect for financial planning and analysis.</p>
+                    <a href="https://np-fin.lovable.app" target="_blank" rel="noopener" class="tool-link" aria-label="Try Advanced Finance Calculator">
+                        <span>Try It Now</span>
+                        <i class="fas fa-arrow-right"></i>
                     </a>
-                    <a href="https://www.reddit.com/r/Ideas_We_Believe/" target="_blank" rel="noopener noreferrer" class="link-item" aria-label="Reddit Community">
-                        <i class="fab fa-reddit"></i>
-                        <span>Reddit Community</span>
+                </div>
+
+                <!-- Tool Card 2 -->
+                <div class="tool-card">
+                    <div class="tool-icon cricket">
+                        <i class="fas fa-hand-fist"></i>
+                    </div>
+                    <h3>Cricket Champ</h3>
+                    <p>Outsmart the AI in this 3-wicket strategy game. Relive the classroom classic with a modern twist and challenge the computer.</p>
+                    <a href="https://np-hand-cricket.lovable.app" target="_blank" rel="noopener" class="tool-link" aria-label="Play Hand Cricket Game">
+                        <span>Play Now</span>
+                        <i class="fas fa-arrow-right"></i>
                     </a>
-                    <a href="https://open.spotify.com/show/0WzbCXJGX3X18sZXyG0qjC?si=552111d512a344f7" target="_blank" rel="noopener noreferrer" class="link-item" aria-label="Spotify Podcast">
-                        <i class="fab fa-spotify"></i>
-                        <span>Spotify Podcast</span>
+                </div>
+
+                <!-- Tool Card 3 -->
+                <div class="tool-card">
+                    <div class="tool-icon tictactoe">
+                        <i class="fas fa-th"></i>
+                    </div>
+                    <h3>Tic-Tac-Toe Ultimate</h3>
+                    <p>Experience the ultimate twist on the classic game. Are you ready for the most challenging version ever created?</p>
+                    <a href="https://np-ttt-game.vercel.app/" target="_blank" rel="noopener" class="tool-link" aria-label="Play Tic-Tac-Toe Ultimate">
+                        <span>Play Now</span>
+                        <i class="fas fa-arrow-right"></i>
                     </a>
-                    <a href="https://www.facebook.com/PanigrahiNirma" target="_blank" rel="noopener noreferrer" class="link-item" aria-label="Facebook Profile">
-                        <i class="fab fa-facebook"></i>
-                        <span>Facebook</span>
+                </div>
+
+                <!-- Tool Card 4 -->
+                <div class="tool-card">
+                    <div class="tool-icon journal">
+                        <i class="fas fa-book"></i>
+                    </div>
+                    <h3>Thought Journal</h3>
+                    <p>CBT-based journal to support anxiety & mood management. A personal wellness tool designed to help you track and improve mental health.</p>
+                    <a href="https://drive.google.com/file/d/1BJKZuhwSpcUG5SQDKaOmcGpxy0SqL0GV/view?usp=sharing" target="_blank" rel="noopener" class="tool-link" aria-label="Download Thought Journal">
+                        <span>Download</span>
+                        <i class="fas fa-download"></i>
                     </a>
                 </div>
             </div>
-        </section>
-    </main>
+        </div>
+    </section>
 
-    <!-- Modal for Resume -->
-    <div id="resumeModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" aria-describedby="modalDesc" tabindex="-1">
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <h2>About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>I'm a seasoned consultant with a passion for building innovative solutions and sharing knowledge. My background spans mechanical engineering, business strategy, and entrepreneurship.</p>
+                    <p>Currently consulting at McKinsey & Company, I combine analytical rigor with creative problem-solving to deliver impactful results.</p>
+                </div>
+                <div class="about-stats">
+                    <div class="stat">
+                        <h3>5+</h3>
+                        <p>Years Experience</p>
+                    </div>
+                    <div class="stat">
+                        <h3>50+</h3>
+                        <p>Projects Completed</p>
+                    </div>
+                    <div class="stat">
+                        <h3>20+</h3>
+                        <p>Free Tools</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resume Section -->
+    <section id="resume" class="resume-section">
+        <div class="container">
+            <h2>My Resume</h2>
+            <div class="resume-container">
+                <button id="resumeBtn" class="resume-btn" aria-label="Click to view resume">
+                    <canvas id="resumeCanvas" aria-hidden="true"></canvas>
+                    <span>Click to View</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resume Modal -->
+    <div id="resumeModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="resumeModalTitle">
         <div class="modal-content">
-            <button class="modal-close" aria-label="Close Modal">
-                <i class="fas fa-times"></i>
-            </button>
+            <button class="modal-close" aria-label="Close resume modal">×</button>
             <div class="modal-body">
-                <img src="images/resume.jpg" alt="Nirmalya Panigrahi Full Resume" loading="lazy" />
+                <img src="images/resume.jpg" alt="Nirmalya Panigrahi Resume" />
             </div>
         </div>
     </div>
 
-    <!-- Footer with Animated Waves -->
-    <footer class="footer" aria-label="Footer">
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2026 Nirmalya Panigrahi. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="#home">Home</a>
+                <a href="#tools">Tools</a>
+                <a href="#resume">Resume</a>
+            </div>
+        </div>
         <div class="waves-container" aria-hidden="true">
-            <svg class="waves" xmlns="http://www.w3.org/2000/svg" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+            <svg class="waves" xmlns="http://www.w3.org/2000/svg" viewBox="0 24 150 28" preserveAspectRatio="none">
                 <defs>
                     <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
                 </defs>
@@ -221,12 +239,9 @@
                 </g>
             </svg>
         </div>
-        <div class="footer-content">
-            <p>&copy; 2026 Nirmalya Panigrahi. All rights reserved.</p>
-        </div>
     </footer>
 
-    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://unpkg.com/typed.js@2.0.132/dist/typed.umd.js"></script>
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script src="animation.js"></script>

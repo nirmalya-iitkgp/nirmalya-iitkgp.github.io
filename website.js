@@ -1,116 +1,52 @@
-document.addEventListener("DOMContentLoaded", function () {
-  // ===== TYPED.JS INITIALIZATION =====
-  const dynamicRole = document.querySelector(".dynamic-role");
-  if (dynamicRole && window.Typed) {
-    new Typed(dynamicRole, {
+document.addEventListener('DOMContentLoaded', function () {
+  // Typed.js initialization
+  if (window.Typed) {
+    new Typed('.auto-type', {
       strings: [
-        "Consultant at McKinsey",
-        "Mechanical Engineer",
-        "MBA from IIM Ahmedabad",
-        "Product Developer",
+        'Consultant at McKinsey and Company',
+        'Mechanical Engineer from IIT Kharagpur',
+        'MBA graduate from IIM Ahmedabad',
+        'Entrepreneur & Innovator',
+        'Problem Solver & Builder',
       ],
-      typeSpeed: 80,
-      backSpeed: 40,
-      backDelay: 1500,
+      typeSpeed: 100,
+      backSpeed: 50,
       loop: true,
-      showCursor: false,
+      showCursor: true,
+      cursorChar: '|',
     });
   }
 
-  // ===== RESUME MODAL LOGIC =====
-  const resumeModal = document.getElementById("resumeModal");
-  const resumeCard = document.getElementById("resumeCard");
-  const modalClose = document.querySelector(".modal-close");
+  // Color Picker functionality
+  const colorPicker = document.getElementById('accentColorPicker');
+  const root = document.documentElement;
 
-  if (resumeCard) {
-    resumeCard.addEventListener("click", openResumeModal);
-    resumeCard.addEventListener("keypress", (e) => {
-      if (e.key === "Enter" || e.key === " ") {
-        e.preventDefault();
-        openResumeModal();
-      }
-    });
-  }
-
-  function openResumeModal() {
-    resumeModal.classList.add("active");
-    modalClose.focus();
-    document.body.style.overflow = "hidden";
-  }
-
-  function closeResumeModal() {
-    resumeModal.classList.remove("active");
-    resumeCard?.focus();
-    document.body.style.overflow = "auto";
-  }
-
-  if (modalClose) {
-    modalClose.addEventListener("click", closeResumeModal);
-  }
-
-  resumeModal?.addEventListener("click", (e) => {
-    if (e.target === resumeModal) {
-      closeResumeModal();
-    }
-  });
-
-  window.addEventListener("keydown", (e) => {
-    if (e.key === "Escape" && resumeModal.classList.contains("active")) {
-      closeResumeModal();
-    }
-  });
-
-  // ===== COLOR PICKER LOGIC =====
   function hexToRgb(hex) {
-    let r = 0,
-      g = 0,
-      b = 0;
-
-    if (hex.length === 4) {
-      r = parseInt(hex[1] + hex[1], 16);
-      g = parseInt(hex[2] + hex[2], 16);
-      b = parseInt(hex[3] + hex[3], 16);
-    } else if (hex.length === 7) {
-      r = parseInt(hex.substring(1, 3), 16);
-      g = parseInt(hex.substring(3, 5), 16);
-      b = parseInt(hex.substring(5, 7), 16);
-    }
+    const r = parseInt(hex.slice(1, 3), 16);
+    const g = parseInt(hex.slice(3, 5), 16);
+    const b = parseInt(hex.slice(5, 7), 16);
     return `${r}, ${g}, ${b}`;
   }
 
   function lightenHex(hex, percent) {
-    const num = parseInt(hex.slice(1), 16);
-    const amt = Math.round(2.55 * percent);
-    let R = (num >> 16) + amt;
-    let G = ((num >> 8) & 0x00ff) + amt;
-    let B = (num & 0x0000ff) + amt;
-
-    R = Math.min(255, R);
-    G = Math.min(255, G);
-    B = Math.min(255, B);
-
-    return `#${((1 << 24) + (R << 16) + (G << 8) + B)
-      .toString(16)
-      .slice(1)
-      .padStart(6, "0")}`;
+    let num = parseInt(hex.slice(1), 16);
+    let amt = Math.round(2.55 * percent);
+    let R = Math.min(255, (num >> 16) + amt);
+    let G = Math.min(255, (num >> 8 & 0x00FF) + amt);
+    let B = Math.min(255, (num & 0x0000FF) + amt);
+    return `#${((1 << 24) + (R << 16) + (G << 8) + B).toString(16).slice(1).padStart(6, '0')}`;
   }
 
-  const colorPicker = document.getElementById("accentColorPicker");
-  const root = document.documentElement;
-
   if (colorPicker) {
-    colorPicker.addEventListener("input", (event) => {
+    colorPicker.addEventListener('input', (event) => {
       const newHex = event.target.value;
-
-      // Update CSS variables
-      root.style.setProperty("--accent-primary", newHex);
-      root.style.setProperty("--accent-primary-rgb", hexToRgb(newHex));
-
+      root.style.setProperty('--accent-primary', newHex);
+      root.style.setProperty('--accent-primary-rgb', hexToRgb(newHex));
       const hoverHex = lightenHex(newHex, 15);
-      root.style.setProperty("--accent-primary-hover", hoverHex);
-      root.style.setProperty("--accent-primary-hover-rgb", hexToRgb(hoverHex));
+      root.style.setProperty('--accent-primary-hover', hoverHex);
+      root.style.setProperty('--accent-primary-hover-rgb', hexToRgb(hoverHex));
 
-      // Update Particles.js if available
+      // Update Particles.js color
       if (window.pJSDom && pJSDom.length > 0) {
         const pjsColor = newHex.substring(1);
         pJSDom[0].pJS.particles.color.value = pjsColor;
@@ -119,98 +55,132 @@ document.addEventListener("DOMContentLoaded", function () {
         pJSDom[0].pJS.fn.particlesRefresh();
       }
     });
-
-    // Initialize with default
-    colorPicker.dispatchEvent(new Event("input"));
+    colorPicker.dispatchEvent(new Event('input'));
   }
 
-  // ===== PARTICLES.JS INITIALIZATION =====
-  if (window.particlesJS) {
-    const accentColor =
-      getComputedStyle(root).getPropertyValue("--accent-primary").trim() ||
-      "#ffffff";
+  // Resume Modal
+  const resumeModal = document.getElementById('resumeModal');
+  const resumeBtn = document.getElementById('resumeBtn');
+  const modalClose = document.querySelector('.modal-close');
 
-    particlesJS("particles-js", {
+  if (resumeBtn) {
+    resumeBtn.addEventListener('click', () => {
+      resumeModal.classList.add('active');
+    });
+  }
+
+  if (modalClose) {
+    modalClose.addEventListener('click', () => {
+      resumeModal.classList.remove('active');
+    });
+  }
+
+  resumeModal.addEventListener('click', (e) => {
+    if (e.target === resumeModal) {
+      resumeModal.classList.remove('active');
+    }
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && resumeModal.classList.contains('active')) {
+      resumeModal.classList.remove('active');
+    }
+  });
+
+  // Resume Canvas Drawing
+  const canvas = document.getElementById('resumeCanvas');
+  if (canvas) {
+    const ctx = canvas.getContext('2d');
+    canvas.width = canvas.offsetWidth;
+    canvas.height = canvas.offsetHeight;
+
+    function drawResume() {
+      const width = canvas.width;
+      const height = canvas.height;
+      const accentColor = getComputedStyle(root).getPropertyValue('--accent-primary').trim();
+
+      ctx.fillStyle = '#1a1a1a';
+      ctx.fillRect(0, 0, width, height);
+
+      // Draw decorative elements
+      const gradient = ctx.createLinearGradient(0, 0, width, height);
+      gradient.addColorStop(0, accentColor + '00');
+      gradient.addColorStop(1, accentColor + '40');
+      ctx.fillStyle = gradient;
+      ctx.fillRect(0, 0, width, height);
+
+      // Draw border
+      ctx.strokeStyle = accentColor;
+      ctx.lineWidth = 2;
+      ctx.strokeRect(10, 10, width - 20, height - 20);
+
+      // Draw text
+      ctx.fillStyle = '#ffffff';
+      ctx.font = 'bold 20px Inter';
+      ctx.textAlign = 'center';
+      ctx.fillText('My Resume', width / 2, height / 2 - 20);
+      ctx.font = '14px Inter';
+      ctx.fillStyle = '#b0b0b0';
+      ctx.fillText('Click to view full resume', width / 2, height / 2 + 20);
+    }
+
+    drawResume();
+
+    // Redraw on color change
+    const observer = new MutationObserver(drawResume);
+    observer.observe(root, { attributes: true, attributeFilter: ['style'] });
+  }
+
+  // Particles.js initialization
+  if (window.particlesJS) {
+    const accentColor = getComputedStyle(root).getPropertyValue('--accent-primary').trim() || '#00A3AD';
+
+    particlesJS('particles-js', {
       particles: {
-        number: {
-          value: 80,
-          density: {
-            enable: true,
-            value_area: 800,
-          },
-        },
-        color: {
-          value: accentColor.replace("#", ""),
-        },
+        number: { value: 80, density: { enable: true, value_area: 800 } },
+        color: { value: accentColor.replace('#', '') },
         shape: {
-          type: "circle",
-          stroke: {
-            width: 0,
-            color: "#000000",
-          },
+          type: 'circle',
+          stroke: { width: 0, color: '#000000' },
+          polygon: { nb_sides: 5 },
         },
         opacity: {
-          value: 0.5,
+          value: 0.4,
           random: false,
-          anim: {
-            enable: false,
-            speed: 1,
-            opacity_min: 0.1,
-            sync: false,
-          },
+          anim: { enable: false, speed: 1, opacity_min: 0.1, sync: false },
         },
         size: {
           value: 3,
           random: true,
-          anim: {
-            enable: false,
-            speed: 40,
-            size_min: 0.1,
-            sync: false,
-          },
+          anim: { enable: false, speed: 40, size_min: 0.1, sync: false },
         },
         line_linked: {
           enable: true,
           distance: 150,
-          color: accentColor.replace("#", ""),
+          color: accentColor.replace('#', ''),
           opacity: 0.4,
           width: 1,
         },
         move: {
           enable: true,
           speed: 6,
-          direction: "none",
+          direction: 'none',
           random: false,
           straight: false,
-          out_mode: "out",
+          out_mode: 'out',
           bounce: false,
-          attract: {
-            enable: false,
-            rotateX: 600,
-            rotateY: 1200,
-          },
+          attract: { enable: false, rotateX: 600, rotateY: 1200 },
         },
       },
       interactivity: {
-        detect_on: "canvas",
+        detect_on: 'canvas',
         events: {
-          onhover: {
-            enable: true,
-            mode: "repulse",
-          },
-          onclick: {
-            enable: true,
-            mode: "push",
-          },
+          onhover: { enable: true, mode: 'repulse' },
+          onclick: { enable: true, mode: 'push' },
           resize: true,
         },
         modes: {
-          grab: {
-            distance: 400,
-            line_linked: {
-              opacity: 1,
-            },
-          },
+          grab: { distance: 400, line_linked: { opacity: 1 } },
           bubble: {
             distance: 400,
             size: 40,
@@ -218,86 +188,22 @@ document.addEventListener("DOMContentLoaded", function () {
             opacity: 8,
             speed: 3,
           },
-          repulse: {
-            distance: 200,
-            duration: 0.4,
-          },
-          push: {
-            particles_nb: 4,
-          },
-          remove: {
-            particles_nb: 2,
-          },
+          repulse: { distance: 200, duration: 0.4 },
+          push: { particles_nb: 4 },
+          remove: { particles_nb: 2 },
         },
       },
       retina_detect: true,
     });
   }
 
-  // ===== SMOOTH SCROLL OFFSET FOR ANCHOR LINKS =====
+  // Smooth scroll behavior for navigation
   document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-    anchor.addEventListener("click", function (e) {
-      const href = this.getAttribute("href");
-      if (href !== "#" && href !== "#!" && document.querySelector(href)) {
+    anchor.addEventListener('click', function (e) {
+      const href = this.getAttribute('href');
+      if (href !== '#' && document.querySelector(href)) {
         e.preventDefault();
-        const target = document.querySelector(href);
-        const offsetTop = target.offsetTop - 70; // Navbar height
-        window.scrollTo({
-          top: offsetTop,
-          behavior: "smooth",
-        });
       }
     });
   });
-
-  // ===== INTERSECTION OBSERVER FOR ANIMATIONS =====
-  const observerOptions = {
-    threshold: 0.1,
-    rootMargin: "0px 0px -50px 0px",
-  };
-
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.style.opacity = "1";
-        entry.target.style.transform = "translateY(0)";
-      }
-    });
-  }, observerOptions);
-
-  // Observe elements for animation
-  document.querySelectorAll(".app-card, .tool-card, .link-item").forEach((el) => {
-    el.style.opacity = "0";
-    el.style.transform = "translateY(20px)";
-    el.style.transition = "opacity 0.5s ease, transform 0.5s ease";
-    observer.observe(el);
-  });
-
-  // ===== SKIP TO MAIN CONTENT LINK =====
-  const skipLink = document.createElement("a");
-  skipLink.href = "#projects";
-  skipLink.textContent = "Skip to main content";
-  skipLink.className = "skip-to-main";
-  document.body.prepend(skipLink);
 });
-
-// Add CSS for skip-to-main link
-const style = document.createElement("style");
-style.textContent = `
-  .skip-to-main {
-    position: absolute;
-    top: -40px;
-    left: 0;
-    background: var(--accent-primary);
-    color: white;
-    padding: 8px 16px;
-    text-decoration: none;
-    z-index: 100;
-    border-radius: 0 0 8px 0;
-  }
-  
-  .skip-to-main:focus {
-    top: 0;
-  }
-`;
-document.head.appendChild(style);
