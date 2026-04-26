@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nirmalya Panigrahi | Portfolio</title>
+    <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico" />
+        
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>  
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles@3.3.0/tsparticles.bundle.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/@tsparticles/all@3.1.0/tsparticles.all.bundle.min.js"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'brand-bg': '#050505',
+                        'brand-nav': '#0a0a0a',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'ui-sans-serif', 'system-ui'],
+                        serif: ['Playfair Display', 'serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="min-h-screen flex flex-col font-sans selection:bg-white selection:text-black bg-brand-bg text-white">
+
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-brand-nav/80 backdrop-blur-md border-b border-white/10 px-8 h-16 flex items-center justify-between">
+        <div class="flex items-center gap-12">
+            <div class="flex flex-col">
+                <div class="text-xl font-serif italic tracking-tighter text-white leading-none">
+                    <span class="hidden md:inline">Nirmalya Panigrahi</span>
+                    <span class="md:hidden">Nirmalya P.</span>
+                </div>
+            </div>
+            <div class="hidden md:flex items-center gap-8 text-[11px] font-bold tracking-[0.2em] uppercase text-white/40">
+                <button id="nav-social" class="nav-link-underline glow-hover hover:text-white transition-colors">Social Media</button>
+                <button id="nav-blog" class="nav-link-underline glow-hover hover:text-white transition-colors">Blog</button>
+                <button id="nav-contact" class="nav-link-underline glow-hover hover:text-white transition-colors">Contact</button>
+            </div>
+        </div>
+
+        <div class="flex items-center gap-6">
+            <button id="nav-apps" class="flex items-center gap-3 px-4 py-2 rounded-full transition-all border bg-white/5 hover:bg-white/10 border-white/10">
+                <div class="grid grid-cols-2 gap-0.5">
+                    <div class="w-1.5 h-1.5 rounded-full bg-blue-500"></div>
+                    <div class="w-1.5 h-1.5 rounded-full bg-red-500"></div>
+                    <div class="w-1.5 h-1.5 rounded-full bg-yellow-500"></div>
+                    <div class="w-1.5 h-1.5 rounded-full bg-green-500"></div>
+                </div>
+                <span class="text-[10px] font-black uppercase tracking-widest leading-none">My Apps</span>
+            </button>
+
+            <button class="md:hidden p-2 text-white/60" id="mobile-menu-toggle">
+                <i data-lucide="menu"></i>
+            </button>
+        </div>
+    </nav>
+
+    <div id="dropdown-overlay" class="fixed inset-0 z-30 bg-black/60 backdrop-blur-sm hidden opacity-0 transition-opacity duration-300"></div>
+    <div id="dropdown-menu" class="fixed top-20 left-1/2 -translate-x-1/2 z-40 w-[95vw] max-w-5xl bg-zinc-900 border border-white/10 rounded-2xl p-6 md:p-8 shadow-2xl hidden opacity-0 transition-all duration-300 scale-95">
+        <div class="absolute top-4 right-4 z-50">
+            <button id="close-dropdown" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-white/10 transition-colors">
+                <i data-lucide="x" class="w-4 h-4"></i>
+            </button>
+        </div>
+        <div id="dropdown-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 pt-8">
+            </div>
+    </div>
+
+    <div id="mobile-menu" class="fixed inset-0 z-[60] bg-brand-bg p-12 flex flex-col items-center justify-center gap-12 hidden">
+        <button class="absolute top-8 right-8" id="close-mobile-menu">
+            <i data-lucide="x" class="w-8 h-8"></i>
+        </button>
+        <div class="flex flex-col items-center gap-8 text-2xl font-serif italic text-white">
+            <button class="mobile-nav-item" data-type="social">Social Media</button>
+            <button class="mobile-nav-item" data-type="blog">Blog</button>
+            <button class="mobile-nav-item" data-type="contact">Contact</button>
+            <button class="mobile-nav-item" data-type="apps">My Apps</button>
+        </div>
+    </div>
+
+    <main class="h-[calc(100vh-80px)] flex flex-col pt-16">
+        <section id="hero-section" class="relative flex-grow flex flex-col items-center justify-center px-12 overflow-hidden text-center transition-colors duration-1000">
+            <div id="tsparticles" class="absolute inset-0 z-0"></div>
+
+            <div class="relative z-10 max-w-5xl mx-auto flex flex-col items-center">
+                <div class="mb-6 md:mb-8 opacity-50 text-[10px] uppercase tracking-[0.5em] font-light">
+                    Strategy | Operations | Product
+                </div>
+                
+                <h1 class="text-5xl md:text-8xl font-serif mb-6 md:mb-10 leading-[1.1] tracking-tight text-white">
+					Crafting 
+					<!-- <span class="italic opacity-80 underline underline-offset-[8px] md:underline-offset-[12px] decoration-1"> -->
+					<span class="italic decoration-1 theme-gradient-text text-transparent bg-clip-text transition-all duration-1000" style="background-image: linear-gradient(to right, #9ca3af, #ffffff);">
+						Systems
+					</span> 
+					<!-- </span> --> 
+					<br/> 
+					for the Future.
+				</h1>
+
+                <div class="text-base md:text-xl text-zinc-500 font-light max-w-2xl leading-relaxed mb-6 md:mb-8 h-12 md:h-16">
+                    I am a <span id="typed-text" class="italic transition-colors duration-1000"></span>
+                </div>
+
+                <div class="flex flex-wrap items-center justify-center gap-4">
+                    <a href="https://vercel.com/nirmalyaiitkharagpur-9572s-projects" target="_blank" class="px-10 py-3.5 bg-white text-black font-black uppercase tracking-widest rounded-full text-xs hover:bg-zinc-200 transition-all glow-on-click">
+                        View Projects
+                    </a>
+                    
+                    <a href="https://nirmalyapanigrahi.blogspot.com/" target="_blank" class="px-10 py-3.5 border border-white/20 hover:border-white/50 rounded-full text-xs font-black uppercase tracking-widest transition-all glow-on-click">
+                        Read Notes
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="main-footer" class="h-20 border-t border-white/10 flex items-center overflow-hidden z-20 relative transition-colors duration-1000 bg-brand-bg/90">
+        <div class="flex-none px-6 md:px-8 border-r border-white/5 h-full flex items-center">
+           <button id="theme-toggle" class="flex items-center gap-3 px-4 py-2 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 transition-all group overflow-hidden relative">
+             <div id="theme-dots" class="flex gap-1.5">
+			   <div class="theme-dot active" data-theme="default"></div>
+			   <div class="theme-dot inactive" data-theme="serene"></div>
+			   <div class="theme-dot inactive" data-theme="aurora"></div>
+			   <div class="theme-dot inactive" data-theme="cosmos"></div>
+			</div>
+             <div class="absolute right-3 top-1/2 -translate-y-1/2 flex flex-col h-4 overflow-hidden pointer-events-none">
+                <div id="theme-label-container">
+					<div class="theme-label">CLASSIC</div>
+					<div class="theme-label">SERENE</div>
+					<div class="theme-label">AURORA</div>	
+					<div class="theme-label">COSMOS</div>
+				</div>
+             </div>
+             <span class="w-12 h-4"></span>
+           </button>
+        </div>
+
+        <div class="flex-grow relative overflow-hidden h-full flex items-center">
+          <div id="marquee-content" class="flex items-center gap-16 md:gap-24 whitespace-nowrap animate-marquee px-12">
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
