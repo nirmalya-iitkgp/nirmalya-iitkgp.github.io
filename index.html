@@ -17,6 +17,8 @@
 </head>
 <body>
     <div class="main-flex-container">
+
+        <!-- LEFT NAV — social icons -->
         <nav class="nav-column" aria-label="Social Media Links">
             <div class="icon-bar" id="main-icon-bar">
                 <a href="https://nirmalyapanigrahi.home.blog/" class="wordpress" target="_blank" rel="noopener" aria-label="WordPress Blog"><i class="fa fa-rss-square"></i></a>
@@ -27,41 +29,36 @@
                 <a href="https://www.facebook.com/PanigrahiNirma" class="facebook" target="_blank" rel="noopener" aria-label="Facebook Profile"><i class="fa fa-facebook"></i></a>
                 <a href="https://github.com/nirmalya-iitkgp" class="github" target="_blank" rel="noopener" aria-label="GitHub Profile"><i class="fa fa-github-alt"></i></a>
                 <a href="https://x.com/panigrahiNirma" class="twitter" target="_blank" rel="noopener" aria-label="Twitter Profile"><i class="fa fa-twitter"></i></a>
+                <!-- NEW: Instagram -->
+                <a href="https://www.instagram.com/pomodoro.breaks/" class="instagram" target="_blank" rel="noopener" aria-label="Instagram Profile"><i class="fa fa-instagram"></i></a>
+                <!-- NEW: YouTube -->
+                <a href="https://www.youtube.com/@nirmalyapanigrahi" class="youtube" target="_blank" rel="noopener" aria-label="YouTube Channel"><i class="fa fa-youtube-play"></i></a>
             </div>
         </nav>
 
+        <!-- CENTER COLUMN -->
         <main class="center-column">
             <div id="particles-js" aria-hidden="true"></div>
             <div class="center-content">
-                <h1 tabindex="0">Hi, I am <span>NIRMALYA</span> <span>PANIGRAHI</span><br>
-                </h1>
+                <h1 tabindex="0">Hi, I am <span>NIRMALYA</span> <span>PANIGRAHI</span><br></h1>
                 <h2 class="typetext" aria-live="polite" aria-atomic="true">I am a <span class="auto-type"></span></h2>
-                
-                <div class="center-carousel-container">
-                    <div class="carousel-track" aria-live="polite" aria-atomic="true" role="list">
-                        <img src="images/1.jpg" alt="Slideshow Image 1 Description" loading="lazy" role="listitem" />
-                        <img src="images/2.jpg" alt="Slideshow Image 2 Description" loading="lazy" role="listitem" />
-                        <img src="images/3.jpg" alt="Slideshow Image 3 Description" loading="lazy" role="listitem" />
-                        <img src="images/4.jpg" alt="Slideshow Image 4 Description" loading="lazy" role="listitem" />
-                        <img src="images/1.jpg" alt="" loading="lazy" aria-hidden="true" />
-                        <img src="images/2.jpg" alt="" loading="lazy" aria-hidden="true" />
-                        <img src="images/3.jpg" alt="" loading="lazy" aria-hidden="true" />
-                        <img src="images/4.jpg" alt="" loading="lazy" aria-hidden="true" />
-                    </div>
-                </div>
+
                 <a href="https://nirmalyapanigrahi.blogspot.com/" class="btn-shine" target="_blank" rel="noopener" role="button" aria-label="Visit Blogspot">
                     <i class="fa fa-angle-double-left" aria-hidden="true"></i>  Click on the icons to dive deeper
                 </a>
             </div>
         </main>
 
+        <!-- RIGHT COLUMN -->
         <aside class="right-column" aria-label="Slideshow, App Store and Resume Canvas">
+
+            <!-- Image carousel -->
             <section class="continuous-carousel" aria-label="Continuous Image Carousel" role="region">
                 <div class="carousel-track" aria-live="polite" aria-atomic="true" role="list">
-                    <img src="images/1.jpg" alt="Slideshow Image 1 Description" loading="lazy" role="listitem" />
-                    <img src="images/2.jpg" alt="Slideshow Image 2 Description" loading="lazy" role="listitem" />
-                    <img src="images/3.jpg" alt="Slideshow Image 3 Description" loading="lazy" role="listitem" />
-                    <img src="images/4.jpg" alt="Slideshow Image 4 Description" loading="lazy" role="listitem" />
+                    <img src="images/1.jpg" alt="Slideshow Image 1" loading="lazy" role="listitem" />
+                    <img src="images/2.jpg" alt="Slideshow Image 2" loading="lazy" role="listitem" />
+                    <img src="images/3.jpg" alt="Slideshow Image 3" loading="lazy" role="listitem" />
+                    <img src="images/4.jpg" alt="Slideshow Image 4" loading="lazy" role="listitem" />
                     <img src="images/1.jpg" alt="" loading="lazy" aria-hidden="true" />
                     <img src="images/2.jpg" alt="" loading="lazy" aria-hidden="true" />
                     <img src="images/3.jpg" alt="" loading="lazy" aria-hidden="true" />
@@ -69,151 +66,136 @@
                 </div>
             </section>
 
-            <section class="free-products-cta" aria-label="My App Store">
-                <p class="freebie-notice">🎉 <strong>My App Store</strong></p>
-                <div class="product-list">
-                    <div class="product-item" tabindex="0" aria-describedby="desc1">
-                        <h4>Thought Journal</h4>
-                        <a href="https://drive.google.com/file/d/1BJKZuhwSpcUG5SQDKaOmcGpxy0SqL0GV/view?usp=sharing" target="_blank" rel="noopener" class="btn-download icon-link" aria-label="Download Thought Journal">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                                <polyline points="7 10 12 15 17 10"></polyline>
-                                <line x1="12" y1="15" x2="12" y2="3"></line>
+            <!-- App Store grid -->
+            <section class="app-store" aria-label="My App Store">
+                <p class="app-store-title">🛍️ <strong>My App Store</strong></p>
+
+                <div class="app-grid">
+
+                    <!-- Thought Journal -->
+                    <a href="https://drive.google.com/file/d/1BJKZuhwSpcUG5SQDKaOmcGpxy0SqL0GV/view?usp=sharing"
+                       target="_blank" rel="noopener"
+                       class="app-item" aria-label="Download Thought Journal"
+                       title="CBT-based journal to support anxiety & mood">
+                        <div class="app-icon" style="background: linear-gradient(135deg, #667eea, #764ba2);">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                                <polyline points="14 2 14 8 20 8"/>
+                                <line x1="16" y1="13" x2="8" y2="13"/>
+                                <line x1="16" y1="17" x2="8" y2="17"/>
+                                <polyline points="10 9 9 9 8 9"/>
                             </svg>
-                        </a>
-                        <p id="desc1" class="product-desc" role="tooltip">CBT-based journal to support anxiety & mood (not a medical solution).</p>
-                    </div>
+                        </div>
+                        <span class="app-name">Thought<br>Journal</span>
+                    </a>
 
-                    <div class="product-item" tabindex="0" aria-describedby="desc2">
-                        
-                        <h4>Adv Fin Calc</h4>
-						<a href="https://np-fin.lovable.app" target="_blank" rel="noopener" class="btn-download icon-link" aria-label="Try Advanced Fin Calculator">
-						    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-						        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-						        <polyline points="15 3 21 3 21 9"></polyline>
-						        <line x1="10" y1="14" x2="21" y2="3"></line>
-						    </svg>
-						</a>
-                        <p id="desc2" class="product-desc" role="tooltip">A calculator equipped with complex finance, operations & banking methods.</p>
-                    </div>
+                    <!-- Adv Fin Calc -->
+                    <a href="https://np-fin.lovable.app"
+                       target="_blank" rel="noopener"
+                       class="app-item" aria-label="Try Advanced Financial Calculator"
+                       title="Complex finance, operations & banking methods">
+                        <div class="app-icon" style="background: linear-gradient(135deg, #11998e, #38ef7d);">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="2" y="3" width="20" height="14" rx="2"/>
+                                <line x1="8" y1="21" x2="16" y2="21"/>
+                                <line x1="12" y1="17" x2="12" y2="21"/>
+                                <line x1="6" y1="8" x2="6" y2="13"/>
+                                <line x1="10" y1="10" x2="10" y2="13"/>
+                                <line x1="14" y1="7" x2="14" y2="13"/>
+                                <line x1="18" y1="9" x2="18" y2="13"/>
+                            </svg>
+                        </div>
+                        <span class="app-name">Fin<br>Calc</span>
+                    </a>
 
-					<div class="product-item" tabindex="0" aria-describedby="desc3">
-					    <h4>Cricket Champ</h4>
-					    
-					    <a href="https://np-hand-cricket.lovable.app" 
-					       target="_blank" 
-					       rel="noopener" 
-					       class="btn-download icon-link" 
-					       aria-label="Play Hand Cricket Game">
-					        
-					        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-					            <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"></path>
-					            <path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"></path>
-					            <path d="M4 22h16"></path>
-					            <path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"></path>
-					            <path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"></path>
-					            <path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"></path>
-					        </svg>
-					    </a>
-					
-					    <p id="desc3" class="product-desc" role="tooltip">
-					        Outsmart the AI in this 3-wicket strategy game. Relive the classroom classic with a modern twist.
-					    </p>
-					</div>
+                    <!-- Cricket Champ -->
+                    <a href="https://np-hand-cricket.lovable.app"
+                       target="_blank" rel="noopener"
+                       class="app-item" aria-label="Play Hand Cricket Game"
+                       title="3-wicket strategy game vs AI">
+                        <div class="app-icon" style="background: linear-gradient(135deg, #f7971e, #ffd200);">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/>
+                                <path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/>
+                                <path d="M4 22h16"/>
+                                <path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/>
+                                <path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/>
+                                <path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/>
+                            </svg>
+                        </div>
+                        <span class="app-name">Cricket<br>Champ</span>
+                    </a>
 
-					<div class="product-item" tabindex="0" aria-describedby="desc4">
-					    <h4>Tic-tac-toe **</h4>
-					    
-					    <a href="https://np-ttt-game.vercel.app/" 
-					       target="_blank" 
-					       rel="noopener" 
-					       class="btn-download icon-link" 
-					       aria-label="Play Tic-Tac-Toe with Ultimate Twist">
-					        
-					        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-					            <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"></path>
-					            <path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"></path>
-					            <path d="M4 22h16"></path>
-					            <path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"></path>
-					            <path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"></path>
-					            <path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"></path>
-					        </svg>
-					    </a>
-					
-					    <p id="desc4" class="product-desc" role="tooltip">
-					        Are you ready for the ultimate version of the classic game
-					    </p>
-					</div>
+                    <!-- Tic-Tac-Toe -->
+                    <a href="https://np-ttt-game.vercel.app/"
+                       target="_blank" rel="noopener"
+                       class="app-item" aria-label="Play Tic-Tac-Toe Ultimate"
+                       title="The ultimate version of the classic game">
+                        <div class="app-icon" style="background: linear-gradient(135deg, #fc4a1a, #f7b733);">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+                                <line x1="8" y1="2" x2="8" y2="22"/>
+                                <line x1="16" y1="2" x2="16" y2="22"/>
+                                <line x1="2" y1="8" x2="22" y2="8"/>
+                                <line x1="2" y1="16" x2="22" y2="16"/>
+                            </svg>
+                        </div>
+                        <span class="app-name">Tic-Tac<br>Toe **</span>
+                    </a>
 
-					<div class="product-item" tabindex="0" aria-describedby="desc5">
-					    <h4>Stellar Game</h4>
-					    
-					    <a href="https://np-stellar-game.vercel.app/" 
-					       target="_blank" 
-					       rel="noopener" 
-					       class="btn-download icon-link" 
-					       aria-label="Play Stellar Game">
-					        
-					        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-					            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
-					        </svg>
-					    </a>
-					
-					    <p id="desc5" class="product-desc" role="tooltip">
-					        An engaging space-themed game. Battle through stellar challenges and conquer the cosmos.
-					    </p>
-					</div>
+                    <!-- Stellar Game -->
+                    <a href="https://np-stellar-game.vercel.app/"
+                       target="_blank" rel="noopener"
+                       class="app-item" aria-label="Play Stellar Game"
+                       title="Space-themed battle game">
+                        <div class="app-icon" style="background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);">
+                            <svg viewBox="0 0 24 24" fill="currentColor" stroke="none">
+                                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                            </svg>
+                        </div>
+                        <span class="app-name">Stellar<br>Game</span>
+                    </a>
 
-					<div class="product-item" tabindex="0" aria-describedby="desc6">
-					    <h4>Singularity Game</h4>
-					    
-					    <a href="https://np-singularity-game.vercel.app/" 
-					       target="_blank" 
-					       rel="noopener" 
-					       class="btn-download icon-link" 
-					       aria-label="Play Singularity Game">
-					        
-					        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-					            <circle cx="12" cy="12" r="1"></circle>
-					            <circle cx="12" cy="12" r="5"></circle>
-					            <circle cx="12" cy="12" r="9"></circle>
-					        </svg>
-					    </a>
-					
-					    <p id="desc6" class="product-desc" role="tooltip">
-					        A mind-bending game where reality converges. Navigate through singularities and transcend dimensions.
-					    </p>
-					</div>
+                    <!-- Singularity Game -->
+                    <a href="https://np-singularity-game.vercel.app/"
+                       target="_blank" rel="noopener"
+                       class="app-item" aria-label="Play Singularity Game"
+                       title="Navigate through singularities">
+                        <div class="app-icon" style="background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460);">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <circle cx="12" cy="12" r="2" fill="currentColor"/>
+                                <circle cx="12" cy="12" r="5"/>
+                                <circle cx="12" cy="12" r="9"/>
+                            </svg>
+                        </div>
+                        <span class="app-name">Singu-<br>larity</span>
+                    </a>
 
-					<div class="product-item" tabindex="0" aria-describedby="desc7">
-					    <h4>Medical Calc</h4>
-					    
-					    <a href="https://np-medical-calc.vercel.app/" 
-					       target="_blank" 
-					       rel="noopener" 
-					       class="btn-download icon-link" 
-					       aria-label="Try Medical Calculator">
-					        
-					        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-					            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"></path>
-					            <path d="M12 8v8"></path>
-					            <path d="M8 12h8"></path>
-					        </svg>
-					    </a>
-					
-					    <p id="desc7" class="product-desc" role="tooltip">
-					        Medical calculations and formulas at your fingertips. A calculator designed for healthcare professionals.
-					    </p>
-					</div>
+                    <!-- Medical Calc -->
+                    <a href="https://np-medical-calc.vercel.app/"
+                       target="_blank" rel="noopener"
+                       class="app-item" aria-label="Try Medical Calculator"
+                       title="Medical calculations for healthcare professionals">
+                        <div class="app-icon" style="background: linear-gradient(135deg, #e53935, #e35d5b);">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+                                <rect x="3" y="3" width="18" height="18" rx="3"/>
+                                <line x1="12" y1="8" x2="12" y2="16"/>
+                                <line x1="8" y1="12" x2="16" y2="12"/>
+                            </svg>
+                        </div>
+                        <span class="app-name">Medical<br>Calc</span>
+                    </a>
+
                 </div>
             </section>
 
+            <!-- Resume canvas -->
             <section class="right-canvas-row">
                 <div class="canvas-wrapper">
                     <canvas id="test" tabindex="0" title="Click to view My Resume" aria-label="Resume Canvas Button"></canvas>
                 </div>
             </section>
 
+            <!-- Spark text data (hidden, used by animation.js) -->
             <div id="spark" style="display:none">
                 <ul data-time="3000">
                     <li data-hue="030">R</li>
@@ -221,13 +203,14 @@
                     <li data-hue="150">s</li>
                     <li data-hue="210">u</li>
                     <li data-hue="270">m</li>
-					<li data-hue="310">é</li>
+                    <li data-hue="310">é</li>
                 </ul>
-
             </div>
+
         </aside>
     </div>
 
+    <!-- Resume modal -->
     <div id="myModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" aria-describedby="modalDesc" tabindex="-1">
         <div class="modal-content">
             <button class="close" aria-label="Close Modal">×</button>
@@ -237,10 +220,8 @@
         </div>
     </div>
 
+    <!-- Footer — waves ONLY, color picker removed from HTML -->
     <footer class="footer" aria-label="Animated Waves Footer">
-        <div class="color-picker-container">
-            <input type="color" id="accentColorPicker" value="#00A3AD">
-        </div>
         <div class="waves-container">
             <svg class="waves" xmlns="http://www.w3.org/2000/svg" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto" aria-hidden="true">
                 <defs>
