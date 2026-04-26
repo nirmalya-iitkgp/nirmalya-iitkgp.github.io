@@ -5,11 +5,6 @@ This project features a custom theme engine, interactive particle backgrounds, a
 
 ---
 
-## 🚀 Live Demo
-👉 [Insert your hosted URL here, e.g. https://your-name.github.io/]
-
----
-
 ## ✨ Key Features
 
 ### 🎨 Dynamic Theme Engine
