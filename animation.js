@@ -1,5 +1,4 @@
 const newParticlesPerFrame = 5;
-const MAX_PARTICLES = 400; // FIX #3: cap to prevent unbounded growth
 
 // Helper function to generate hsla color string
 const color = (hsl, opacity) =>
@@ -7,43 +6,39 @@ const color = (hsl, opacity) =>
 
 class TextSparks {
   constructor() {
-    this.opa = 0;
-    this.tick = 0;
-    this.drawCB = null;
-    this.mask = null;
+    this.opa = 0; // global opacity for fade in/out
+    this.tick = 0; // animation tick counter
+    this.drawCB = null; // bound draw callback for animation loop
+    this.mask = null; // current pixel mask for particles
 
-    this.canvas = document.querySelector("canvas#test");
-    if (!this.canvas) {
-      console.warn("TextSparks: canvas#test not found.");
-      return;
-    }
+    // Get canvas and context
+    this.canvas = document.querySelector("canvas");
     this.engine = this.canvas.getContext("2d");
 
-    this.maskTick = 0;
-    this.nextMaskCb = this.nextMask.bind(this);
-    this.maskCache = [];
+    this.maskTick = 0; // counter for fading masks
+    this.nextMaskCb = this.nextMask.bind(this); // pointer to next mask function
+    this.maskCache = []; // cache of prepared masks for text stacks
 
+    // Initialize sizes, fetch text data, build caches
     this.resize();
     this.fetchData();
+    this.buildStackCache();
 
-    this.particleMap = new Map();
+    this.particleMap = new Map(); // store active particles
 
+    // Bind resize event
     window.addEventListener("resize", () => this.resize());
-
-    // FIX #2 — wait for fonts before measuring text for mask
-    document.fonts.ready.then(() => {
-      this.buildStackCache();
-      this.run();
-    });
   }
 
+  // Build a mask (opacity and pixel info) for each text stack and cache it
   buildStackCache() {
     this.maskCache = this.stack.map((stack) => this.buildTextMask(stack.texts));
   }
 
+  // Fetch text stacks and their properties from spark DOM element
   fetchData() {
     this.stackId = -1;
-    this.stack = [...document.querySelectorAll("#spark ul")].map((ul) => ({
+    this.stack = [...document.querySelectorAll("div > ul")].map((ul) => ({
       ticks: 0.05 * (ul.hasAttribute("data-time") ? ul.getAttribute("data-time") : 0),
       fadeIn: ul.hasAttribute("data-fade-in")
         ? 50 / Number(ul.getAttribute("data-fade-in"))
@@ -62,8 +57,8 @@ class TextSparks {
     }));
   }
 
+  // Resize canvas maintaining 16:9 aspect ratio relative to parent width
   resize() {
-    if (!this.canvas) return;
     const parent = this.canvas.parentElement;
     const width = parent.offsetWidth || 300;
     const height = (width * 9) / 16;
@@ -73,8 +68,10 @@ class TextSparks {
     this.canvas.height = this.height;
   }
 
+  // Build a pixel opacity mask from text for particle emission
   buildTextMask(texts) {
     const mask = [];
+    // Flatten all texts for full measurement
     const textAll = texts.reduce((all, ts) => all + ts.text, "");
 
     const sizeFactor = 0.8;
@@ -128,12 +125,9 @@ class TextSparks {
     return mask;
   }
 
-  // FIX #3 — enforce particle cap before adding new ones
+  // Create new particles based on current mask to add to particleMap
   createNewParticle() {
-    if (this.particleMap.size >= MAX_PARTICLES) return;
-
-    const slots = Math.min(newParticlesPerFrame, MAX_PARTICLES - this.particleMap.size);
-    for (let i = 0; i < slots; i++) {
+    for (let i = 0; i < newParticlesPerFrame; i++) {
       const main = Math.floor(Math.random() * this.mask.length);
       const subMask = this.mask[main];
       const maskElement =
@@ -146,20 +140,24 @@ class TextSparks {
           hsl: subMask.hsl,
           c: this.prepareParticle.bind(this),
         };
+
         this.particleMap.set(particle, particle);
       }
     }
   }
 
+  // Clears canvas with black background
   clear() {
     this.engine.fillStyle = "black";
     this.engine.fillRect(0, 0, this.width, this.height);
   }
 
+  // Average random values helper used in prepareParticle
   randFromList(...vals) {
     return vals.reduce((acc, v) => acc + v, 0) / vals.length;
   }
 
+  // Prepares particle properties for movement and animation
   prepareParticle(particle) {
     const r1 = Math.random();
     const r2 = Math.random();
@@ -179,9 +177,10 @@ class TextSparks {
     particle.c = this.drawParticle.bind(this);
   }
 
+  // Draws and updates individual particle animation frame
   drawParticle(particle) {
     if (particle.l >= 1) {
-      particle.c = null;
+      particle.c = null; // mark for removal
       return;
     }
 
@@ -198,6 +197,7 @@ class TextSparks {
     );
   }
 
+  // Render all active particles, removing finished ones
   renderParticles() {
     this.particleMap.forEach((particle) => {
       particle.c.call(this, particle);
@@ -205,6 +205,7 @@ class TextSparks {
     });
   }
 
+  // Draw static background spark effects behind particles
   drawStatic() {
     let count = 0;
     const step = 0.01;
@@ -215,7 +216,9 @@ class TextSparks {
 
         this.engine.fillStyle = color(
           subMask.hsl,
-          ((1 + Math.cos(pos.x * 5 * pos.y * 5 + this.tick / 10)) / 2) *
+          ((1 +
+            Math.cos(pos.x * 5 * pos.y * 5 + this.tick / 10)) /
+            2) *
             this.opa *
             pos.t *
             0.5
@@ -257,6 +260,7 @@ class TextSparks {
     });
   }
 
+  // Main draw loop handled by requestAnimationFrame
   draw() {
     this.tick++;
     this.nextMaskCb();
@@ -271,6 +275,7 @@ class TextSparks {
     requestAnimationFrame(this.drawCB);
   }
 
+  // Fade in opacity animation handling
   fadeInMask() {
     this.opa += this.stack[this.stackId].fadeIn;
     if (this.opa >= 1) {
@@ -279,6 +284,7 @@ class TextSparks {
     }
   }
 
+  // Actions after fade in completes
   afterFadeIn() {
     this.opa = 1;
     if (this.stack[this.stackId].ticks) {
@@ -289,16 +295,21 @@ class TextSparks {
     }
   }
 
+  // Fade out opacity animation
   fadeOutMask() {
     this.opa -= this.stack[this.stackId].fadeOut;
-    if (this.opa <= 0) this.afterFadeOut();
+    if (this.opa <= 0) {
+      this.afterFadeOut();
+    }
   }
 
+  // Actions after fade out completes
   afterFadeOut() {
     this.opa = 0;
     this.nextMaskCb = this.nextMask.bind(this);
   }
 
+  // Tick counts mask display time and transitions to fade out
   tickMask() {
     this.maskTick++;
     if (this.maskTick >= this.stack[this.stackId].ticks) {
@@ -310,9 +321,12 @@ class TextSparks {
     }
   }
 
+  // Switch to the next mask in the sequence and prepare fade in
   nextMask() {
     this.stackId++;
-    if (this.stackId >= this.stack.length) this.stackId = 0;
+    if (this.stackId >= this.stack.length) {
+      this.stackId = 0;
+    }
     this.mask = this.maskCache[this.stackId];
 
     if (this.stack[this.stackId].fadeIn) {
@@ -323,11 +337,13 @@ class TextSparks {
     }
   }
 
+  // Start animation loop
   run() {
     this.drawCB = this.draw.bind(this);
     this.drawCB();
   }
 }
 
-// Instantiate — run() is called inside constructor after fonts.ready
-new TextSparks();
+// Instantiate and start animation
+const textSparksInstance = new TextSparks();
+textSparksInstance.run();
