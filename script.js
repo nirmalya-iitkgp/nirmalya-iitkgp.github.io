@@ -9,7 +9,7 @@ const SOCIAL_MEDIA_LINKS = [
 ];
 
 const BLOG_LINKS = [
-  { icon: "fa-brands fa-medium", href: "https://medium.com/@nirmalya.panigrahi", label: "Medium", color: "bg-zinc-100 text-black" },
+  { icon: "fa-brands fa-medium", href: "https://medium.com/@nirmalya.panigrahi", label: "Medium", color: "bg-zinc-800" },
   { icon: "fa-brands fa-blogger", href: "https://nirmalyapanigrahi.blogspot.com/", label: "Blogger", color: "bg-orange-500" },
   { icon: "fa-brands fa-wordpress", href: "https://nirmalyapanigrahi.home.blog/", label: "Wordpress", color: "bg-blue-500" },
 ];
