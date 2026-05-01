@@ -23,6 +23,7 @@
 .bg-zinc-800 { background-color: #27272a !important; }
 .bg-blue-900 { background-color: #1e3a8a !important; }
 .bg-slate-800 { background-color: #1e293b !important; }
+.bg-teal-600 { background-color: #0d9488 !important; }
 
 body {
   background-color: var(--brand-bg);
