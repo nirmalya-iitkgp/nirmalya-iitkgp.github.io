@@ -24,8 +24,10 @@ const APPS = [
 	
   { name: "Mind Your Subscription", desc: "SaaS subscription management", color: "bg-blue-600", icon: "fa-solid fa-wand-magic-sparkles", href: "https://mind-your-subscription.vercel.app/" },
   { name: "Medical Calc", desc: "Healthcare professional tool", color: "bg-red-600", icon: "fa-solid fa-stethoscope", href: "https://np-medical-calc.vercel.app/" },
-  {   name: "Automotive SCM", desc: "Digital twin for supply chain", color: "bg-teal-600", icon: "fa-solid fa-computer", href: "https://automotive-scm-digital-twin.vercel.app/" 
-},
+  { name: "Automotive SCM", desc: "Digital twin for supply chain", color: "bg-teal-600", icon: "fa-solid fa-computer", href: "https://automotive-scm-digital-twin.vercel.app/" },
+  { name: "Chitra Art Guide", desc: "AI-assisted art exploration", color: "bg-rose-500", icon: "fa-solid fa-palette", href: "https://chitra-art-guide.vercel.app/" },
+  { name: "Forest Focus", desc: "Nature-based productivity", color: "bg-emerald-600", icon: "fa-solid fa-tree", href: "https://forest-focus-game.vercel.app/" },
+  { name: "Rewire", desc: "Self-improvement journey", color: "bg-amber-500", icon: "fa-solid fa-arrow-trend-up", href: "https://improve-your-life.lovable.app/" },
   { name: "Thought Journal", desc: "CBT-based mental health", color: "bg-indigo-500", icon: "fa-solid fa-heart-pulse", href: "https://drive.google.com/file/..." },
   { name: "Fin Calc", desc: "Complex operation finance", color: "bg-emerald-500", icon: "fa-solid fa-briefcase", href: "https://np-fin.lovable.app" },
   { name: "Cricket Champ", desc: "AI-based strategy game", color: "bg-solid fa-gamepad", icon: "fa-solid fa-gamepad", href: "https://np-hand-cricket.lovable.app" },
