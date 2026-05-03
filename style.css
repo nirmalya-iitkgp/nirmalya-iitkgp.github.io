@@ -24,6 +24,9 @@
 .bg-blue-900 { background-color: #1e3a8a !important; }
 .bg-slate-800 { background-color: #1e293b !important; }
 .bg-teal-600 { background-color: #0d9488 !important; }
+.bg-rose-500 { background-color: #f43f5e !important; }
+.bg-emerald-600 { background-color: #059669 !important; }
+.bg-amber-500 { background-color: #f59e0b !important; }
 
 body {
   background-color: var(--brand-bg);
