@@ -63,6 +63,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initParticles();
     initMarquee();
     setupEventListeners();
+    initMobileMenu();
     
     // Initialize icons
     if (window.lucide) {
@@ -283,4 +284,39 @@ function cycleTheme() {
         container.options.particles.links.color = theme.primary;
         container.refresh();
     }
+}
+
+function initMobileMenu() {
+    const mobileMenu = document.getElementById('mobile-menu');
+    const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+    const closeMobileMenu = document.getElementById('close-mobile-menu');
+    
+    if (!mobileMenu || !mobileMenuToggle || !closeMobileMenu) return;
+
+    // Combine all link arrays into one flat list
+    const allLinks = [...SOCIAL_MEDIA_LINKS, ...BLOG_LINKS, ...CONTACT_LINKS];
+
+    // Select the container inside mobile-menu (or replace the existing static list)
+    const listContainer = mobileMenu.querySelector('.flex-col.items-center');
+
+    // Generate the HTML for all icons/links
+    listContainer.innerHTML = allLinks.map(item => `
+        <a href="${item.href}" target="_blank" class="flex items-center gap-6 text-xl font-serif italic text-white hover:opacity-70 transition-opacity">
+            <div class="w-12 h-12 rounded-lg ${item.color} flex items-center justify-center text-white shadow-lg">
+                <i class="${item.icon}"></i>
+            </div>
+            <span>${item.label}</span>
+        </a>
+    `).join('');
+
+    // Toggle logic
+    mobileMenuToggle.onclick = () => {
+        mobileMenu.classList.remove('hidden');
+        mobileMenu.classList.add('show'); // Ensure CSS handles the .show class
+    };
+
+    closeMobileMenu.onclick = () => {
+        mobileMenu.classList.add('hidden');
+        mobileMenu.classList.remove('show');
+    };
 }

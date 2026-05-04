@@ -187,8 +187,15 @@ body {
 }
 
 /* 8. Mobile Menu Logic */
+#mobile-menu {
+  display: none; /* Default state */
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
 #mobile-menu.show {
-  display: flex;
+  display: flex; /* Overrides display: none */
+  opacity: 1;
 }
 
 /* 9. Utility Gradient (Matching React Case) */
@@ -218,3 +225,18 @@ body {
   z-index: 1;
 }
 
+/* Mobile Menu Link Styling */
+.mobile-link-item {
+  width: 100%;
+  max-width: 300px;
+  padding: 0.75rem;
+  border-radius: 0.75rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px border-white/5;
+  transition: all 0.2s ease;
+}
+
+.mobile-link-item:active {
+  transform: scale(0.98);
+  background: rgba(255, 255, 255, 0.1);
+}
