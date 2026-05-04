@@ -30,7 +30,7 @@ const APPS = [
   { name: "Rewire", desc: "Self-improvement journey", color: "bg-amber-500", icon: "fa-solid fa-arrow-trend-up", href: "https://improve-your-life.lovable.app/" },
   { name: "Thought Journal", desc: "CBT-based mental health", color: "bg-indigo-500", icon: "fa-solid fa-heart-pulse", href: "https://drive.google.com/file/..." },
   { name: "Fin Calc", desc: "Complex operation finance", color: "bg-emerald-500", icon: "fa-solid fa-briefcase", href: "https://np-fin.lovable.app" },
-  { name: "Cricket Champ", desc: "AI-based strategy game", color: "bg-solid fa-gamepad", icon: "fa-solid fa-gamepad", href: "https://np-hand-cricket.lovable.app" },
+  { name: "Cricket Champ", desc: "AI-based strategy game", color: "bg-blue-600", icon: "fa-solid fa-gamepad", href: "https://np-hand-cricket.lovable.app" },
   { name: "Tic-Tac-Toe", desc: "Ultimate version", color: "bg-rose-500", icon: "fa-solid fa-code", href: "https://np-ttt-game.vercel.app/" },
   { name: "Stellar Game", desc: "Space-themed battle", color: "bg-blue-900", icon: "fa-solid fa-rocket", href: "https://np-stellar-game.vercel.app/" },
   { name: "Singularity", desc: "Strategic navigation", color: "bg-slate-800", icon: "fa-solid fa-earth-americas", href: "https://np-singularity-game.vercel.app/" },
