@@ -94,15 +94,44 @@ body {
 }
 
 /* 6. Dropdown & Overlay States */
+/* 6. Dropdown & Overlay States */
+#dropdown-overlay {
+  display: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
 #dropdown-overlay.show {
   display: block;
   opacity: 1;
+}
+
+#dropdown-menu {
+  display: none;
+  opacity: 0;
+  transform: translate(-50%, -20px) scale(0.95);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  
+  /* SCROLL FIXES HERE */
+  max-height: 85vh;          /* Limits height to 85% of screen */
+  overflow-y: auto;          /* Enables vertical scrolling */
+  scrollbar-width: thin;     /* Firefox scrollbar styling */
+  scrollbar-color: rgba(255, 255, 255, 0.2) transparent;
 }
 
 #dropdown-menu.show {
   display: block;
   opacity: 1;
   transform: translate(-50%, 0) scale(1);
+}
+
+/* Custom Scrollbar for Chrome/Safari */
+#dropdown-menu::-webkit-scrollbar {
+  width: 6px;
+}
+#dropdown-menu::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
 }
 
 /* 7. Theme Toggle Dot Animations */
