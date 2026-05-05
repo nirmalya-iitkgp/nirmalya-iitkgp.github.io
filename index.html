@@ -97,7 +97,13 @@
 
             <div class="relative z-10 max-w-5xl mx-auto flex flex-col items-center">
                 <div class="mb-6 md:mb-8 opacity-50 text-[10px] uppercase tracking-[0.5em] font-light">
-                    Strategy | Operations | Product
+                    <div class="mb-6 md:mb-8 opacity-50 text-[10px] uppercase tracking-[0.5em] font-light">
+                        <!-- Show 'Ops' on small screens, hide on medium+ -->
+                        <span class="md:hidden">Strategy | Ops | Product</span>
+                        
+                        <!-- Hide on small screens, show on medium+ -->
+                        <span class="hidden md:inline">Strategy | Operations | Product</span>
+                    </div>
                 </div>
                 
                 <h1 class="text-5xl md:text-8xl font-serif mb-6 md:mb-10 leading-[1.1] tracking-tight text-white">
