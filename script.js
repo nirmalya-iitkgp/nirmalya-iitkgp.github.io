@@ -223,6 +223,16 @@ function openDropdown(type) {
         overlay.classList.add('show');
         menu.classList.add('show');
     }, 10);
+
+    // Change the visibility logic at the bottom:
+    overlay.classList.remove('hidden');
+    menu.classList.remove('hidden');
+    
+    // Use a tiny timeout to allow the transition to trigger
+    setTimeout(() => {
+        overlay.classList.add('show');
+        menu.classList.add('show');
+    }, 10);
 }
 
 function closeDropdown() {
