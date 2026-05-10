@@ -34,7 +34,27 @@ const APPS = [
   { name: "Tic-Tac-Toe", desc: "Ultimate version", color: "bg-rose-500", icon: "fa-solid fa-code", href: "https://np-ttt-game.vercel.app/" },
   { name: "Stellar Game", desc: "Space-themed battle", color: "bg-blue-900", icon: "fa-solid fa-rocket", href: "https://np-stellar-game.vercel.app/" },
   { name: "Singularity", desc: "Strategic navigation", color: "bg-slate-800", icon: "fa-solid fa-earth-americas", href: "https://np-singularity-game.vercel.app/" },
-  
+    { 
+    name: "Odisha Heritage", 
+    desc: "Digital cultural archive", 
+    color: "bg-orange-600", 
+    icon: "fa-solid fa-temple", 
+    href: "https://odisha-heritage-archive.vercel.app/" 
+    },
+    { 
+    name: "Unquote", 
+    desc: "Minimalist word game", 
+    color: "bg-indigo-500", 
+    icon: "fa-solid fa-font", 
+    href: "https://unquote-word-game.vercel.app/" 
+    },
+    { 
+    name: "Business Frameworks", 
+    desc: "Strategic consulting tools", 
+    color: "bg-blue-700", 
+    icon: "fa-solid fa-chart-pie", 
+    href: "https://business-frameworks.vercel.app/" 
+    },
 ];
 
 const PARTNER_LOGOS = [
