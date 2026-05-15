@@ -35,11 +35,11 @@ const APPS = [
   { name: "Stellar Game", desc: "Space-themed battle", color: "bg-blue-900", icon: "fa-solid fa-rocket", href: "https://np-stellar-game.vercel.app/" },
   { name: "Singularity", desc: "Strategic navigation", color: "bg-slate-800", icon: "fa-solid fa-earth-americas", href: "https://np-singularity-game.vercel.app/" },
     { 
-    name: "Odisha Heritage", 
-    desc: "Digital cultural archive", 
+    name: "Sudo City", 
+    desc: "Algorithmic urban planning", 
     color: "bg-orange-600", 
     icon: "fa-solid fa-temple", 
-    href: "https://odisha-heritage-archive.vercel.app/" 
+    href: "https://np-sudo-city-game.vercel.app/" 
     },
     { 
     name: "Unquote", 
