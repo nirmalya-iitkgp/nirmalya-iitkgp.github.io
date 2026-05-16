@@ -38,7 +38,7 @@ const APPS = [
     name: "Sudo City", 
     desc: "Algorithmic urban planning", 
     color: "bg-orange-600", 
-    icon: "fa-solid fa-temple", 
+    icon: "fa-solid fa-chip", 
     href: "https://np-sudo-city-game.vercel.app/" 
     },
     { 
