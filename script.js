@@ -55,6 +55,27 @@ const APPS = [
     icon: "fa-solid fa-chart-pie", 
     href: "https://business-frameworks.vercel.app/" 
     },
+    { 
+    name: "Financial Chaos Modeling", 
+    desc: "Non-linear market dynamics", 
+    color: "bg-emerald-600", 
+    icon: "fa-solid fa-chart-line", 
+    href: "https://financial-chaos-modelling.vercel.app/" 
+    },
+    { 
+    name: "Chaos Model Thinking", 
+    desc: "Complex systems simulations", 
+    color: "bg-indigo-500", 
+    icon: "fa-solid fa-diagram-project", 
+    href: "https://chaos-model-thinking.vercel.app/" 
+    },
+    { 
+    name: "Deep Sea Game", 
+    desc: "Subterranean exploration strategy", 
+    color: "bg-blue-900", 
+    icon: "fa-solid fa-fish", 
+    href: "https://np-deep-sea-game.vercel.app/" 
+    }
 ];
 
 const PARTNER_LOGOS = [
