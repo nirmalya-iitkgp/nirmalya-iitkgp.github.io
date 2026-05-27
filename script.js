@@ -75,7 +75,7 @@ const APPS = [
     color: "bg-blue-900", 
     icon: "fa-solid fa-fish", 
     href: "https://np-deep-sea-game.vercel.app/" 
-    }
+    },
 ];
 
 const PARTNER_LOGOS = [
