@@ -34,48 +34,49 @@ const APPS = [
   { name: "Tic-Tac-Toe", desc: "Ultimate version", color: "bg-rose-500", icon: "fa-solid fa-code", href: "https://np-ttt-game.vercel.app/" },
   { name: "Stellar Game", desc: "Space-themed battle", color: "bg-blue-900", icon: "fa-solid fa-rocket", href: "https://np-stellar-game.vercel.app/" },
   { name: "Singularity", desc: "Strategic navigation", color: "bg-slate-800", icon: "fa-solid fa-earth-americas", href: "https://np-singularity-game.vercel.app/" },
-    { 
-    name: "Sudo City", 
-    desc: "Algorithmic urban planning", 
-    color: "bg-orange-600", 
-    icon: "fa-solid fa-chip", 
-    href: "https://np-sudo-city-game.vercel.app/" 
-    },
-    { 
+
+  { 
     name: "Unquote", 
     desc: "Minimalist word game", 
     color: "bg-indigo-500", 
     icon: "fa-solid fa-font", 
     href: "https://unquote-word-game.vercel.app/" 
-    },
-    { 
+  },
+  { 
     name: "Business Frameworks", 
     desc: "Strategic consulting tools", 
     color: "bg-blue-700", 
     icon: "fa-solid fa-chart-pie", 
     href: "https://business-frameworks.vercel.app/" 
-    },
-    { 
+  },
+  { 
     name: "Financial Chaos Modeling", 
     desc: "Non-linear market dynamics", 
     color: "bg-emerald-600", 
     icon: "fa-solid fa-chart-line", 
     href: "https://financial-chaos-modelling.vercel.app/" 
-    },
-    { 
+  },
+  { 
     name: "Chaos Model Thinking", 
     desc: "Complex systems simulations", 
     color: "bg-indigo-500", 
     icon: "fa-solid fa-diagram-project", 
     href: "https://chaos-model-thinking.vercel.app/" 
-    },
-    { 
-    name: "Deep Sea Game", 
-    desc: "Subterranean exploration strategy", 
-    color: "bg-blue-900", 
-    icon: "fa-solid fa-fish", 
-    href: "https://np-deep-sea-game.vercel.app/" 
-    },
+   },
+  {  
+    name: "Behaviour Assessments", 
+    desc: "Psychometric framework analytics", 
+    color: "bg-slate-800", 
+    icon: "fa-solid fa-brain", 
+    href: "https://behaviour-assessments.vercel.app/" 
+  },
+  { 
+    name: "Interview Assessments", 
+    desc: "Structured talent evaluation platforms", 
+    color: "bg-zinc-800", 
+    icon: "fa-solid fa-user-check", 
+    href: "https://interview-assessments.vercel.app/" 
+  },
 ];
 
 const PARTNER_LOGOS = [
