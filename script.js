@@ -77,6 +77,20 @@ const APPS = [
     icon: "fa-solid fa-user-check", 
     href: "https://interview-assessments.vercel.app/" 
   },
+  { 
+    name: "Ideation Coach", 
+    desc: "Structured brainstorming framework", 
+    color: "bg-amber-500", 
+    icon: "fa-solid fa-lightbulb", 
+    href: "https://ideation-coach.vercel.app/" 
+  },
+  { 
+    name: "Innovation Coach", 
+    desc: "Corporate venture and design thinking", 
+    color: "bg-indigo-500", 
+    icon: "fa-solid fa-rocket", 
+    href: "https://innovation-coach.vercel.app/" 
+  },
 ];
 
 const PARTNER_LOGOS = [
