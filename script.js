@@ -66,14 +66,14 @@ const APPS = [
   {  
     name: "Behaviour Assessments", 
     desc: "Psychometric framework analytics", 
-    color: "bg-slate-800", 
+    color: "bg-orange-600", 
     icon: "fa-solid fa-brain", 
     href: "https://behaviour-assessments.vercel.app/" 
   },
   { 
     name: "Interview Assessments", 
     desc: "Structured talent evaluation platforms", 
-    color: "bg-zinc-800", 
+    color: "bg-blue-900", 
     icon: "fa-solid fa-user-check", 
     href: "https://interview-assessments.vercel.app/" 
   },
