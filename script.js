@@ -22,120 +22,26 @@ const CONTACT_LINKS = [
 
 const APPS = [
 	
-  { 
-    name: "Mind Your Subscription", 
-    desc: "SaaS subscription management", 
-    color: "bg-blue-600", 
-    icon: "fa-solid fa-wand-magic-sparkles", 
-    href: "https://mind-your-subscription.vercel.app/" 
-  },
-  { 
-    name: "Chitra Art Guide", 
-    desc: "AI-assisted art exploration", 
-    color: "bg-rose-500", icon: "fa-solid fa-palette", 
-    href: "https://chitra-art-guide.vercel.app/" 
-  },
-  { 
-    name: "Forest Focus", 
-    desc: "Nature-based productivity", 
-    color: "bg-emerald-600", 
-    icon: "fa-solid fa-tree", 
-    href: "https://forest-focus-game.vercel.app/" 
-  },
-  { 
-    name: "Rewire", 
-    desc: "Self-improvement journey", 
-    color: "bg-amber-500", 
-    icon: "fa-solid fa-arrow-trend-up", 
-    href: "https://improve-your-life.lovable.app/" 
-  },
-  { 
-    name: "Thought Journal", 
-    desc: "CBT-based mental health", 
-    color: "bg-indigo-500", 
-    icon: "fa-solid fa-heart-pulse", 
-    href: "https://drive.google.com/file/d/1BJKZuhwSpcUG5SQDKaOmcGpxy0SqL0GV" 
-  },
+  { name: "Mind Your Subscription", desc: "SaaS subscription management", color: "bg-blue-600", icon: "fa-solid fa-wand-magic-sparkles", href: "https://mind-your-subscription.vercel.app/" },
+  { name: "Chitra Art Guide", desc: "AI-assisted art exploration", color: "bg-rose-500", icon: "fa-solid fa-palette", href: "https://chitra-art-guide.vercel.app/" },
+  { name: "Forest Focus", desc: "Nature-based productivity", color: "bg-emerald-600", icon: "fa-solid fa-tree", href: "https://forest-focus-game.vercel.app/" },
+  { name: "Rewire", desc: "Self-improvement journey", color: "bg-amber-500", icon: "fa-solid fa-arrow-trend-up", href: "https://improve-your-life.lovable.app/" },
+  { name: "Thought Journal", desc: "Download privacy first CBT journal", color: "bg-indigo-500", icon: "fa-solid fa-heart-pulse", href: "https://drive.google.com/file/d/1BJKZuhwSpcUG5SQDKaOmcGpxy0SqL0GV" },
   { name: "Cricket Champ", desc: "AI-based strategy game", color: "bg-blue-600", icon: "fa-solid fa-gamepad", href: "https://np-hand-cricket.lovable.app" },
   { name: "Tic-Tac-Toe", desc: "Ultimate version", color: "bg-rose-500", icon: "fa-solid fa-code", href: "https://np-ttt-game.vercel.app/" },
   { name: "Stellar Game", desc: "Space-themed battle", color: "bg-blue-900", icon: "fa-solid fa-rocket", href: "https://np-stellar-game.vercel.app/" },
   { name: "Singularity", desc: "Strategic navigation", color: "bg-slate-800", icon: "fa-solid fa-earth-americas", href: "https://np-singularity-game.vercel.app/" },
-  { 
-    name: "Unquote", 
-    desc: "Minimalist word game", 
-    color: "bg-indigo-500", 
-    icon: "fa-solid fa-font", 
-    href: "https://unquote-word-game.vercel.app/" 
-  },
-  { name: "Fin Calc", 
-    desc: "Complex operation finance", 
-    color: "bg-emerald-500", 
-    icon: "fa-solid fa-briefcase", 
-    href: "https://np-fin.lovable.app" 
-  },
-  { 
-    name: "Medical Calc", 
-    desc: "Healthcare professional tool", 
-    color: "bg-red-600", 
-    icon: "fa-solid fa-stethoscope", 
-    href: "https://np-medical-calc.vercel.app/" 
-  },
-  { 
-    name: "Automotive SCM", 
-    desc: "Digital twin for supply chain", 
-    color: "bg-teal-600", 
-    icon: "fa-solid fa-computer", 
-    href: "https://automotive-scm-digital-twin.vercel.app/" 
-  },
-  { 
-    name: "Financial Chaos Modeling", 
-    desc: "Non-linear market dynamics", 
-    color: "bg-emerald-600", 
-    icon: "fa-solid fa-chart-line", 
-    href: "https://financial-chaos-modelling.vercel.app/" 
-  },
-  { 
-    name: "Chaos Model Thinking", 
-    desc: "Complex systems simulations", 
-    color: "bg-indigo-500", 
-    icon: "fa-solid fa-diagram-project", 
-    href: "https://chaos-model-thinking.vercel.app/" 
-   },
-  {  
-    name: "Behaviour Assessments", 
-    desc: "Psychometric framework analytics", 
-    color: "bg-orange-600", 
-    icon: "fa-solid fa-brain", 
-    href: "https://behaviour-assessments.vercel.app/" 
-  },
-  { 
-    name: "Interview Assessments", 
-    desc: "Structured talent evaluation platforms", 
-    color: "bg-blue-900", 
-    icon: "fa-solid fa-user-check", 
-    href: "https://interview-assessments.vercel.app/" 
-  },
-  { 
-    name: "Personality Assessments", 
-    desc: "Advanced behavioral profiling analytics", 
-    color: "bg-teal-600", 
-    icon: "fa-solid fa-id-card-clip", 
-    href: "https://personality-assessments-seven.vercel.app/" 
-  },
-  { 
-    name: "Ideation Coach", 
-    desc: "Structured brainstorming framework", 
-    color: "bg-amber-500", 
-    icon: "fa-solid fa-lightbulb", 
-    href: "https://ideation-coach.vercel.app/" 
-  },
-  { 
-    name: "Innovation Coach", 
-    desc: "Corporate venture and design thinking", 
-    color: "bg-indigo-500", 
-    icon: "fa-solid fa-rocket", 
-    href: "https://innovation-coach.vercel.app/" 
-  },
+  { name: "Unquote", desc: "Minimalist word game", color: "bg-indigo-500", icon: "fa-solid fa-font", href: "https://unquote-word-game.vercel.app/" },
+  { name: "Fin Calc", desc: "Complex operation finance", color: "bg-emerald-500", icon: "fa-solid fa-briefcase", href: "https://np-fin.lovable.app" },
+  { name: "Medical Calc", desc: "Healthcare professional tool", color: "bg-red-600", icon: "fa-solid fa-stethoscope", href: "https://np-medical-calc.vercel.app/" },
+  { name: "Automotive SCM", desc: "Digital twin for supply chain",color: "bg-teal-600", icon: "fa-solid fa-computer", href: "https://automotive-scm-digital-twin.vercel.app/" },
+  { name: "Financial Chaos Modeling", desc: "Non-linear market dynamics",color: "bg-emerald-600", icon: "fa-solid fa-chart-line", href: "https://financial-chaos-modelling.vercel.app/" },
+  { name: "Chaos Model Thinking", desc: "Complex systems simulations", color: "bg-indigo-500", icon: "fa-solid fa-diagram-project", href: "https://chaos-model-thinking.vercel.app/" },
+  { name: "Behaviour Assessments", desc: "Psychometric framework analytics", color: "bg-orange-600", icon: "fa-solid fa-brain", href: "https://behaviour-assessments.vercel.app/" },
+  { name: "Interview Assessments", desc: "Structured talent evaluation platforms", color: "bg-blue-900", icon: "fa-solid fa-user-check", href: "https://interview-assessments.vercel.app/" },
+  { name: "Personality Assessments", desc: "Advanced behavioral profiling analytics", color: "bg-teal-600", icon: "fa-solid fa-id-card-clip", href: "https://personality-assessments-seven.vercel.app/" },
+  { name: "Ideation Coach", desc: "Structured brainstorming framework", color: "bg-amber-500", icon: "fa-solid fa-lightbulb", href: "https://ideation-coach.vercel.app/" },
+  { name: "Innovation Coach", desc: "Corporate venture and design thinking", color: "bg-indigo-500", icon: "fa-solid fa-rocket", href: "https://innovation-coach.vercel.app/" },
 ];
 
 const PARTNER_LOGOS = [
