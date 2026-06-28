@@ -10,23 +10,23 @@
   --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
 }
 
-.bg-sky-500 { background-color: #0ea5e9 !important; }
-.bg-red-600 { background-color: #dc2626 !important; }
-.bg-blue-700 { background-color: #1d4ed8 !important; }
-.bg-green-600 { background-color: #16a34a !important; }
-.bg-pink-600 { background-color: #db2777 !important; }
-.bg-orange-600 { background-color: #ea580c !important; }
 .bg-blue-600 { background-color: #2563eb !important; }
-.bg-indigo-500 { background-color: #6366f1 !important; }
-.bg-emerald-500 { background-color: #10b981 !important; }
-.bg-rose-500 { background-color: #f43f5e !important; }
-.bg-zinc-800 { background-color: #27272a !important; }
+.bg-blue-700 { background-color: #1d4ed8 !important; }
 .bg-blue-900 { background-color: #1e3a8a !important; }
-.bg-slate-800 { background-color: #1e293b !important; }
 .bg-teal-600 { background-color: #0d9488 !important; }
-.bg-rose-500 { background-color: #f43f5e !important; }
+.bg-emerald-500 { background-color: #10b981 !important; }
 .bg-emerald-600 { background-color: #059669 !important; }
+.bg-green-600 { background-color: #16a34a !important; }
+.bg-sky-500 { background-color: #0ea5e9 !important; }
+.bg-indigo-500 { background-color: #6366f1 !important; }
+.bg-purple-600 { background-color: #9333ea !important; } 
+.bg-rose-500 { background-color: #f43f5e !important; }
+.bg-pink-600 { background-color: #db2777 !important; }
+.bg-red-600 { background-color: #dc2626 !important; }
+.bg-orange-600 { background-color: #ea580c !important; }
 .bg-amber-500 { background-color: #f59e0b !important; }
+.bg-slate-800 { background-color: #1e293b !important; }
+.bg-zinc-800 { background-color: #27272a !important; }
 
 body {
   background-color: var(--brand-bg);
