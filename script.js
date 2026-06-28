@@ -22,19 +22,44 @@ const CONTACT_LINKS = [
 
 const APPS = [
 	
-  { name: "Mind Your Subscription", desc: "SaaS subscription management", color: "bg-blue-600", icon: "fa-solid fa-wand-magic-sparkles", href: "https://mind-your-subscription.vercel.app/" },
-  { name: "Medical Calc", desc: "Healthcare professional tool", color: "bg-red-600", icon: "fa-solid fa-stethoscope", href: "https://np-medical-calc.vercel.app/" },
-  { name: "Automotive SCM", desc: "Digital twin for supply chain", color: "bg-teal-600", icon: "fa-solid fa-computer", href: "https://automotive-scm-digital-twin.vercel.app/" },
-  { name: "Chitra Art Guide", desc: "AI-assisted art exploration", color: "bg-rose-500", icon: "fa-solid fa-palette", href: "https://chitra-art-guide.vercel.app/" },
-  { name: "Forest Focus", desc: "Nature-based productivity", color: "bg-emerald-600", icon: "fa-solid fa-tree", href: "https://forest-focus-game.vercel.app/" },
-  { name: "Rewire", desc: "Self-improvement journey", color: "bg-amber-500", icon: "fa-solid fa-arrow-trend-up", href: "https://improve-your-life.lovable.app/" },
-  { name: "Thought Journal", desc: "CBT-based mental health", color: "bg-indigo-500", icon: "fa-solid fa-heart-pulse", href: "https://drive.google.com/file/..." },
-  { name: "Fin Calc", desc: "Complex operation finance", color: "bg-emerald-500", icon: "fa-solid fa-briefcase", href: "https://np-fin.lovable.app" },
+  { 
+    name: "Mind Your Subscription", 
+    desc: "SaaS subscription management", 
+    color: "bg-blue-600", 
+    icon: "fa-solid fa-wand-magic-sparkles", 
+    href: "https://mind-your-subscription.vercel.app/" 
+  },
+  { 
+    name: "Chitra Art Guide", 
+    desc: "AI-assisted art exploration", 
+    color: "bg-rose-500", icon: "fa-solid fa-palette", 
+    href: "https://chitra-art-guide.vercel.app/" 
+  },
+  { 
+    name: "Forest Focus", 
+    desc: "Nature-based productivity", 
+    color: "bg-emerald-600", 
+    icon: "fa-solid fa-tree", 
+    href: "https://forest-focus-game.vercel.app/" 
+  },
+  { 
+    name: "Rewire", 
+    desc: "Self-improvement journey", 
+    color: "bg-amber-500", 
+    icon: "fa-solid fa-arrow-trend-up", 
+    href: "https://improve-your-life.lovable.app/" 
+  },
+  { 
+    name: "Thought Journal", 
+    desc: "CBT-based mental health", 
+    color: "bg-indigo-500", 
+    icon: "fa-solid fa-heart-pulse", 
+    href: "https://drive.google.com/file/..." 
+  },
   { name: "Cricket Champ", desc: "AI-based strategy game", color: "bg-blue-600", icon: "fa-solid fa-gamepad", href: "https://np-hand-cricket.lovable.app" },
   { name: "Tic-Tac-Toe", desc: "Ultimate version", color: "bg-rose-500", icon: "fa-solid fa-code", href: "https://np-ttt-game.vercel.app/" },
   { name: "Stellar Game", desc: "Space-themed battle", color: "bg-blue-900", icon: "fa-solid fa-rocket", href: "https://np-stellar-game.vercel.app/" },
   { name: "Singularity", desc: "Strategic navigation", color: "bg-slate-800", icon: "fa-solid fa-earth-americas", href: "https://np-singularity-game.vercel.app/" },
-
   { 
     name: "Unquote", 
     desc: "Minimalist word game", 
@@ -42,12 +67,25 @@ const APPS = [
     icon: "fa-solid fa-font", 
     href: "https://unquote-word-game.vercel.app/" 
   },
+  { name: "Fin Calc", 
+    desc: "Complex operation finance", 
+    color: "bg-emerald-500", 
+    icon: "fa-solid fa-briefcase", 
+    href: "https://np-fin.lovable.app" 
+  },
   { 
-    name: "Business Frameworks", 
-    desc: "Strategic consulting tools", 
-    color: "bg-blue-700", 
-    icon: "fa-solid fa-chart-pie", 
-    href: "https://business-frameworks.vercel.app/" 
+    name: "Medical Calc", 
+    desc: "Healthcare professional tool", 
+    color: "bg-red-600", 
+    icon: "fa-solid fa-stethoscope", 
+    href: "https://np-medical-calc.vercel.app/" 
+  },
+  { 
+    name: "Automotive SCM", 
+    desc: "Digital twin for supply chain", 
+    color: "bg-teal-600", 
+    icon: "fa-solid fa-computer", 
+    href: "https://automotive-scm-digital-twin.vercel.app/" 
   },
   { 
     name: "Financial Chaos Modeling", 
@@ -76,6 +114,13 @@ const APPS = [
     color: "bg-blue-900", 
     icon: "fa-solid fa-user-check", 
     href: "https://interview-assessments.vercel.app/" 
+  },
+  { 
+    name: "Personality Assessments", 
+    desc: "Advanced behavioral profiling analytics", 
+    color: "bg-teal-600", 
+    icon: "fa-solid fa-id-card-clip", 
+    href: "https://personality-assessments-seven.vercel.app/" 
   },
   { 
     name: "Ideation Coach", 
