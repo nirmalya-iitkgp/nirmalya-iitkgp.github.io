@@ -36,7 +36,7 @@ const APPS = [
   { name: "Fin Calc", desc: "Complex operation finance", color: "bg-emerald-500", icon: "fa-solid fa-briefcase", href: "https://np-fin.lovable.app" },
   { name: "Medical Calc", desc: "Healthcare professional tool", color: "bg-red-600", icon: "fa-solid fa-stethoscope", href: "https://np-medical-calc.vercel.app/" },
   { name: "Automotive SCM", desc: "Digital twin for supply chain",color: "bg-teal-600", icon: "fa-solid fa-computer", href: "https://automotive-scm-digital-twin.vercel.app/" },
-  { name: "Business Simulation", desc: "Interactive corporate strategy environment", color: "bg-blue-700", icon: "fa-solid fa-chess-knight", href: "https://business-simulation-beta.vercel.app/" }
+  { name: "Business Simulation", desc: "Interactive corporate strategy environment", color: "bg-blue-700", icon: "fa-solid fa-chess-knight", href: "https://business-simulation-beta.vercel.app/" },
   { name: "Chaos Model Thinking", desc: "Complex systems simulations", color: "bg-indigo-500", icon: "fa-solid fa-diagram-project", href: "https://chaos-model-thinking.vercel.app/" },
   { name: "Behaviour Assessments", desc: "Psychometric framework analytics", color: "bg-orange-600", icon: "fa-solid fa-brain", href: "https://behaviour-assessments.vercel.app/" },
   { name: "Interview Assessments", desc: "Structured talent evaluation platforms", color: "bg-blue-900", icon: "fa-solid fa-user-check", href: "https://interview-assessments.vercel.app/" },
