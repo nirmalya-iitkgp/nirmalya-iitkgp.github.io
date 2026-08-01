@@ -1,5 +1,7 @@
 // --- 1. DATA CONSTANTS ---
 const SOCIAL_MEDIA_LINKS = [
+  { icon: "fa-brands fa-linkedin", href: "https://www.linkedin.com/in/nirmalya-panigrahi-461958140/", label: "LinkedIn", color: "bg-blue-600" },
+  { icon: "fa-brands fa-github", href: "https://github.com/nirmalya-iitkgp", label: "GitHub", color: "bg-zinc-800" },
   { icon: "fa-brands fa-x-twitter", href: "https://x.com/panigrahiNirma", label: "Twitter", color: "bg-sky-500" },
   { icon: "fa-brands fa-youtube", href: "https://www.youtube.com/@nirmalyapanigrahi", label: "YouTube", color: "bg-red-600" },
   { icon: "fa-brands fa-facebook", href: "https://www.facebook.com/PanigrahiNirma", label: "Facebook", color: "bg-blue-700" },
@@ -16,8 +18,6 @@ const BLOG_LINKS = [
 ];
 
 const CONTACT_LINKS = [
-  { icon: "fa-brands fa-linkedin", href: "https://www.linkedin.com/in/nirmalya-panigrahi-461958140/", label: "LinkedIn", color: "bg-blue-600" },
-  { icon: "fa-brands fa-github", href: "https://github.com/nirmalya-iitkgp", label: "GitHub", color: "bg-zinc-800" },
   { icon: "fa-solid fa-envelope", href: "mailto:nirmalya.iitkharagpur@gmail.com", label: "Mail", color: "bg-red-500" },
 ];
 
