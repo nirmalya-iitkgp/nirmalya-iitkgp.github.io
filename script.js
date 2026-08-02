@@ -20,7 +20,7 @@ const BLOG_LINKS = [
 const CONTACT_LINKS = [
   { icon: "fa-solid fa-envelope", href: "mailto:nirmalya.iitkharagpur@gmail.com", label: "Mail", color: "bg-blue-500" },
   { icon: "fa-solid fa-envelope", href: "mailto:nirmalya.iima@gmail.com", label: "Mail", color: "bg-red-500" },
-  { icon: "fa-solid fa-envelope", href: "mailto:panigrahi.nirmalya.np@gmail.com", label: "Mail", color: "bg-rose-500" },
+  { icon: "fa-solid fa-envelope", href: "mailto:panigrahi.nirmalya.np@gmail.com", label: "Mail", color: "bg-green-600" },
   { icon: "fa-brands fa-facebook", href: "https://m.me/nirmalya.panigrahi.3", label: "Facebook", color: "bg-blue-700" },
   
 ];
