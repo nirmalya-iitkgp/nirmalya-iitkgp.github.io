@@ -24,7 +24,7 @@ const CONTACT_LINKS = [
   { icon: "fa-solid fa-envelope", href: "mailto:panigrahi.nirmalya.np@gmail.com", label: "Mail", color: "bg-green-600" },
   { icon: "fa-brands fa-facebook", href: "https://m.me/nirmalya.panigrahi.3", label: "Facebook", color: "bg-blue-700" },
 ];
-8/
+*/
 
 const APPS = [
 	
