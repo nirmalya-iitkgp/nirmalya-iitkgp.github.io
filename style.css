@@ -23,7 +23,7 @@
 .bg-rose-500 { background-color: #f43f5e !important; }
 .bg-pink-600 { background-color: #db2777 !important; }
 .bg-red-600 { background-color: #dc2626 !important; }
-.bg-orange-600 { background-color: #ea5800 !important; }
+.bg-orange-600 { background-color: #ea580c !important; }
 .bg-amber-500 { background-color: #f59e0b !important; }
 .bg-slate-800 { background-color: #1e293b !important; }
 .bg-zinc-800 { background-color: #27272a !important; }
@@ -111,10 +111,9 @@ body {
   transform: translate(-50%, -20px) scale(0.95);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   
-  /* SCROLL FIXES HERE */
-  max-height: 85vh;          /* Limits height to 85% of screen */
-  overflow-y: auto;          /* Enables vertical scrolling */
-  scrollbar-width: thin;     /* Firefox scrollbar styling */
+  max-height: 85vh;
+  overflow-y: auto;
+  scrollbar-width: thin;
   scrollbar-color: rgba(255, 255, 255, 0.2) transparent;
 }
 
@@ -124,10 +123,13 @@ body {
   transform: translate(-50%, 0) scale(1);
 }
 
-/* The app hub fits 20 apps in a 5-column by 4-row desktop panel. */
-@media (min-width: 1024px) {
+#dropdown-grid.apps-grid {
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+
+@media (max-width: 1023px) {
   #dropdown-grid.apps-grid {
-    grid-template-columns: repeat(5, minmax(0, 1fr));
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
@@ -142,7 +144,7 @@ body {
 
 #dropdown-overlay.show, 
 #mobile-menu.show {
-  display: block !important; /* Force it to show over Tailwind's 'hidden' */
+  display: block !important;
   opacity: 1;
 }
 
@@ -165,32 +167,29 @@ body {
 
 .theme-dot.inactive {
   opacity: 0.2;
-  transform: translateY(1rem); /* 4 units in tailwind */
+  transform: translateY(1rem);
 }
 
-/* Theme Toggle Label Container */
 #theme-label-container {
   display: flex;
   flex-direction: column;
   transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Individual Theme Label height must be fixed for the math to work */
 .theme-label {
-  height: 1rem; /* 16px */
+  height: 1rem;
   line-height: 1rem;
   font-size: 8px;
   font-weight: 900;
   letter-spacing: 0.1em;
 }
 
-/* Theme Dot States */
 .theme-dot {
   width: 0.75rem;
   height: 0.75rem;
   border-radius: 9999px;
   transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-  transform: translateY(12px); /* Start dropped down */
+  transform: translateY(12px);
   opacity: 0.2;
 }
 
@@ -206,24 +205,23 @@ body {
 
 /* 8. Mobile Menu Logic */
 #mobile-menu {
-  display: none; /* Default state */
+  display: none;
   opacity: 0;
   transition: opacity 0.3s ease;
   position: fixed;
   inset: 0;
   z-index: 60;
   background-color: var(--brand-bg);
-  /* FIXES START HERE */
-  overflow-y: auto;          /* Enable vertical scrolling */
-  -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
-  padding: 3rem 1.5rem;      /* Ensure padding doesn't get cut off */
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  padding: 3rem 1.5rem;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start; /* Start from top to allow scrolling down */
+  justify-content: flex-start;
 }
 
 #mobile-menu.show {
-  display: flex; /* Overrides display: none */
+  display: flex;
   opacity: 1;
 }
 
@@ -234,7 +232,7 @@ body {
 
 /* 10. Lucide Icon Sizing Helper */
 .lucide {
-  width: 1.25rem; /* 5 units */
+  width: 1.25rem;
   height: 1.25rem;
 }
 
@@ -244,17 +242,15 @@ body {
   height: 100%;
   top: 0;
   left: 0;
-  z-index: 0; /* Keeps it behind your text */
-  pointer-events: none; /* Allows you to still click buttons in front of it */
+  z-index: 0;
+  pointer-events: none;
 }
 
-/* Ensure the hero section is relative so particles stay inside */
 #hero-section {
   position: relative;
   z-index: 1;
 }
 
-/* Mobile Menu Link Styling */
 .mobile-link-item {
   width: 100%;
   max-width: 300px;
