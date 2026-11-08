@@ -23,7 +23,7 @@
 .bg-rose-500 { background-color: #f43f5e !important; }
 .bg-pink-600 { background-color: #db2777 !important; }
 .bg-red-600 { background-color: #dc2626 !important; }
-.bg-orange-600 { background-color: #ea580c !important; }
+.bg-orange-600 { background-color: #ea5800 !important; }
 .bg-amber-500 { background-color: #f59e0b !important; }
 .bg-slate-800 { background-color: #1e293b !important; }
 .bg-zinc-800 { background-color: #27272a !important; }
@@ -122,6 +122,13 @@ body {
   display: block;
   opacity: 1;
   transform: translate(-50%, 0) scale(1);
+}
+
+/* The app hub fits 20 apps in a 5-column by 4-row desktop panel. */
+@media (min-width: 1024px) {
+  #dropdown-grid.apps-grid {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
 }
 
 /* Custom Scrollbar for Chrome/Safari */
