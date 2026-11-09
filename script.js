@@ -48,6 +48,10 @@ const APPS = [
   { name: "Personality Assessments", desc: "Advanced behavioral profiling analytics", color: "bg-teal-600", icon: "fa-solid fa-id-card-clip", href: "https://personality-assessments-seven.vercel.app/" },
   { name: "Ideation Coach", desc: "Structured brainstorming framework", color: "bg-amber-500", icon: "fa-solid fa-lightbulb", href: "https://ideation-coach.vercel.app/" },
   { name: "Innovation Coach", desc: "Corporate venture and design thinking", color: "bg-indigo-500", icon: "fa-solid fa-rocket", href: "https://innovation-coach.vercel.app/" },
+  { name: "Standard Model Physics", desc: "Particle physics interactive model", color: "bg-purple-600", icon: "fa-solid fa-atom", href: "https://nirmalya-iitkgp.github.io/Standard-Model-Physics/" },
+  { name: "Ind Pay Visualizer", desc: "Payment systems visualization", color: "bg-emerald-500", icon: "fa-solid fa-chart-pie", href: "https://nirmalya-iitkgp.github.io/ind-pay-visualizer/" },
+  { name: "CogniCare", desc: "Cognitive health and care platform", color: "bg-teal-600", icon: "fa-solid fa-brain", href: "https://github.com/nirmalya-iitkgp/CogniCare" },
+  { name: "Utkala Odisha", desc: "Cultural showcase of Odisha", color: "bg-amber-500", icon: "fa-solid fa-landmark", href: "https://nirmalya-iitkgp.github.io/Utkala-odisha-website/" },
 ];
 
 const PARTNER_LOGOS = [
