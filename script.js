@@ -50,7 +50,7 @@ const APPS = [
   { name: "Innovation Coach", desc: "Corporate venture and design thinking", color: "bg-indigo-500", icon: "fa-solid fa-rocket", href: "https://innovation-coach.vercel.app/" },
   { name: "Standard Model Physics", desc: "Particle physics interactive model", color: "bg-purple-600", icon: "fa-solid fa-atom", href: "https://nirmalya-iitkgp.github.io/Standard-Model-Physics/" },
   { name: "Ind Pay Visualizer", desc: "Payment systems visualization", color: "bg-emerald-500", icon: "fa-solid fa-chart-pie", href: "https://nirmalya-iitkgp.github.io/ind-pay-visualizer/" },
-  { name: "CogniCare", desc: "Cognitive health and care platform", color: "bg-teal-600", icon: "fa-solid fa-brain", href: "https://github.com/nirmalya-iitkgp/CogniCare" },
+  { name: "CogniCare", desc: "Cognitive health and care platform", color: "bg-teal-600", icon: "fa-solid fa-brain", href: "https://nirmalya-iitkgp.github.io/CogniCare/" },
   { name: "Utkala Odisha", desc: "Cultural showcase of Odisha", color: "bg-amber-500", icon: "fa-solid fa-landmark", href: "https://nirmalya-iitkgp.github.io/Utkala-odisha-website/" },
 ];
 
