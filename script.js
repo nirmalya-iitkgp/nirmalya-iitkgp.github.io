@@ -26,7 +26,7 @@ const CONTACT_LINKS = [
 ];
 */
 
-const APPS_GROUPED = [
+const APPS = [
   // Group 1: Games, Culture & Interactive Play
   { name: "Cricket Champ", desc: "AI-based strategy game", color: "bg-blue-600", icon: "fa-solid fa-gamepad", href: "https://np-hand-cricket.lovable.app", group: "Games & Culture" },
   { name: "Tic-Tac-Toe", desc: "Ultimate version", color: "bg-rose-500", icon: "fa-solid fa-code", href: "https://np-ttt-game.vercel.app/", group: "Games & Culture" },
