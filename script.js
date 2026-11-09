@@ -182,7 +182,6 @@ function setupEventListeners() {
     const navItems = {
         'nav-social': 'social',
         'nav-blog': 'blog',
-        'nav-contact': 'contact',
         'nav-apps': 'apps'
     };
 
@@ -213,7 +212,6 @@ function openDropdown(type) {
     let source = [];
     if (type === 'social') source = SOCIAL_MEDIA_LINKS;
     else if (type === 'blog') source = BLOG_LINKS;
-    else if (type === 'contact') source = CONTACT_LINKS;
     else if (type === 'apps') source = APPS;
 
     // Unified mapping to handle all data structures
@@ -321,7 +319,7 @@ function initMobileMenu() {
     if (!mobileMenu || !mobileMenuToggle || !closeMobileMenu) return;
 
     // Combine all link arrays into one flat list
-    const allLinks = [...SOCIAL_MEDIA_LINKS, ...BLOG_LINKS, ...CONTACT_LINKS];
+    const allLinks = [...SOCIAL_MEDIA_LINKS, ...BLOG_LINKS];
 
     // Select the container inside mobile-menu (or replace the existing static list)
     const listContainer = mobileMenu.querySelector('.flex-col.items-center');
